@@ -72,4 +72,13 @@ body {
 	border:1px solid #4C964D;
 	color:#FFF;
 }
-	
+
+/* ====================== Color Edits */
+a{
+    color:#6c7b0e;
+}
+a.hover{
+    color:#6c7b0e;
+}
+.pills .active a{color:#ffffff;text-shadow:0 1px 1px rgba(0, 0, 0, 0.25);background-color:#6c7b0e;}
+.media-grid a:hover{border-color:#6c7b0e;-webkit-box-shadow:0 1px 4px rgba(0, 105, 214, 0.25);-moz-box-shadow:0 1px 4px rgba(0, 105, 214, 0.25);box-shadow:0 1px 4px rgba(0, 105, 214, 0.25);}
