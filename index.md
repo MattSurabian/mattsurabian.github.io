@@ -1,46 +1,34 @@
 ---
 layout: page
-title: Hello World!
-tagline: Supporting tagline
+title: Showing machines who's boss since 1984.
+tagline:
 ---
 {% include JB/setup %}
 
-Read [Jekyll Quick Start](http://jekyllbootstrap.com/usage/jekyll-quick-start.html)
+## About
+I'm a web developer living in Massachusetts and working remotely on a global development team for [Ceros](http://www.ceros.com), a powerful, collaborative, realtime, cloud based publish everywhere solution for mobile apps.
 
-Complete usage and documentation available at: [Jekyll Bootstrap](http://jekyllbootstrap.com)
+I'm interested in clean code, security, and collaborative realtime technologies. I believe truly great ideas require an amazing team and a strong DevOps foundation.  I usually write about web technologies, and am passionate about my craft.
 
-## Update Author Attributes
+## Latest Post
+{% assign first_post = site.posts.first %}
+### <a href="{{ BASE_PATH }}{{ first_post.url }}">{{ first_post.title }}</a>
+{{ first_post.description }}
 
-In `_config.yml` remember to specify your own data:
-    
-    title : My Blog =)
-    
-    author :
-      name : Name Lastname
-      email : blah@email.test
-      github : username
-      twitter : username
+## Favorite Posts
 
-The theme should reference these variables whenever needed.
-    
-## Sample Posts
+### <a href="http://mattsurabian.github.io/DevOps/how-and-why-im-using-rackspace-and-opscode-hosted-chef/">How and Why I'm Using Rackspace and OpsCode Hosted Chef</a>
+I recently went through the exercise of migrating my old Debian servers on Rackspace configured using a shell script to the new Rackspace OpenCloud with OpsCode hosted Chef. This post outlines what Chef is, why I’ve chosen to utilize it, and provides a link and introduction to my github hosted rackspace-kitchen.chef repo
 
-This blog contains sample posts which help stage pages and blog data.
-When you don't need the samples anymore just delete the `_posts/core-samples` folder.
+### <a href="http://mattsurabian.github.io/Computer%20Science/eliminating-confirmation-bias-putting-the-science-back-into-computer-science/">Eliminating Confirmation Bias: Putting the Science Back Into Computer Science</a>
+Confirmation bias is the tendency to favor information that supports one’s views or hypothesis. Every time you’re troubleshooting a problem and think, “I know it can’t be ________” you might be guilty of it. As a web developer I know that feeling all too well. Think about your last debugging experience...
 
-    $ rm -rf _posts/core-samples
 
-Here's a sample "posts list".
+
+## More Posts
 
 <ul class="posts">
   {% for post in site.posts %}
     <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
   {% endfor %}
 </ul>
-
-## To-Do
-
-This theme is still unfinished. If you'd like to be added as a contributor, [please fork](http://github.com/plusjade/jekyll-bootstrap)!
-We need to clean up the themes, make theme usage guides with theme-specific markup examples.
-
-
