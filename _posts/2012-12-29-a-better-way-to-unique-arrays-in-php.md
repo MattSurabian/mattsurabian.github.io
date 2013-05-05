@@ -3,7 +3,7 @@ layout: post
 title: "A Better Way To Unique Arrays In PHP"
 description: "Are you uniquing PHP arrays using array_unique?  Consider doubling up with array_flip instead.  Array_unique is pretty slow."
 category: PHP
-tags: [Web Development, PHP, Performance, Tips]
+tags: [web development, PHP, performance, tips/tricks]
 ---
 {% include JB/setup %}
 

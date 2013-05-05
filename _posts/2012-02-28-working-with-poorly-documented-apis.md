@@ -3,7 +3,7 @@ layout: post
 title: "Working With Poorly Documented APIs"
 description: "APIs are awesome!  Being able to tap into a web service and work with data can make a lot of tasks easier and cleaner.   APIs also allow us to link into advanced functionality and provide a richer experience for end users.  Unfortunately, a lot of APIs are poorly documented.  Here's how to deal with it..."
 category: Web Development 
-tags: [Web Development, Tips]
+tags: [web development, tips/tricks]
 ---
 {% include JB/setup %}
 

@@ -3,7 +3,7 @@ layout: post
 title: "The 10 Commandments of Working From Home"
 description: "Lots of people dream about working from home. Whiling away the hours in the comfort of their castle and making a living at the same time. Why not? Everything is perfect when you’re working from home. Nothing can interrupt or distract you. Success is guaranteed, and just being there dissolves time management challenges and makes meeting deadlines a breeze..."
 category: Telecommuting
-tags: [Telecommuting, Web Development, Productivity]
+tags: [telecommuting, web development, productivity]
 ---
 {% include JB/setup %}
 
