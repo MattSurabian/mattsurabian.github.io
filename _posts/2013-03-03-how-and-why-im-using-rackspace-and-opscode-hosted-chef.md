@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "How and Why I'm Using Rackspace and OpsCode Hosted Chef"
-description: ""
-category: 
-tags: []
+description: "I recently went through the exercise of migrating my old Debian servers on Rackspace configured using a shell script to the new Rackspace OpenCloud with OpsCode hosted Chef. This post outlines what Chef is, why I’ve chosen to utilize it, and provides a link and introduction to my github hosted rackspace-kitchen.chef repo"
+category: DevOps
+tags: [DevOps, Chef, Rackspace, Github, Scale]
 ---
 {% include JB/setup %}
 
