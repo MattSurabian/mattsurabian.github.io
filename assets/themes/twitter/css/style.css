@@ -4,6 +4,7 @@ html, body {
 }
 body {
   padding-top: 40px; /* 40px to make the container go all the way to the bottom of the topbar */
+  line-height: 24px;
 }
 .container > footer p {
   text-align: center; /* center align it with the container */
@@ -34,6 +35,10 @@ body {
 
 .page-header>h1{
     font-size:27px;
+}
+
+h2{
+    margin:7px 0px;
 }
 
 .topbar .btn {
@@ -88,4 +93,9 @@ a.hover{
     background-image:url("https://s3-us-west-2.amazonaws.com/mattsurabian.com/img/treeSmall.png");
     background-repeat:no-repeat;
     background-position: right 70px;
+}
+
+/* ======= Text Spacing ========== */
+p{
+    line-height: 24px;
 }
