@@ -17,7 +17,6 @@ Think about your last debugging experience. Did you solve the problem as quickly
 <br/>
 >_It ain’t what you don’t know that gets you into trouble.<br/>
 >It’s what you know for sure that just ain’t so._ <br/>-- <cite>Mark Twain</cite>
-<br/>
 
 You Are A Scientist
 --------------------
@@ -27,7 +26,6 @@ The first step of my debugging process is to define the parameters necessary to 
 
 Don’t get me wrong, there are plenty of times when our feelings and instincts are correct, and I’m not suggesting that they should always be completely disregarded- but unless the problem is properly investigated and defined you can never really trust in your proposed solution. Sometimes a seemingly small bug is the effect of a much deeper problem, and the sooner those situations can be identified the better.
 
- <br/>
 
 Deceptive Error Messages: Information Bias
 --------------------
@@ -37,12 +35,10 @@ Some time ago I was helping deploy a single page web app on a client’s server.
 
 In reality the files weren’t missing at all, they never existed in the first place. The problem was one of routing. The htaccess file was missing a RewriteBase parameter and API calls were being routed to the wrong place, causing the 404. By taking the time to assess the full situation and read over the code we were able to avoid a lot of wasted time and misplaced blame.
 
- <br/>
 Looking In The Wrong Places: Misdirection Bias
 --------------------
 My favorite games to play in a pool are the throw, dive, and retrieve variety. They’re a lot of fun and a pretty good workout too. While working on this article I had occasion to frolic around in a pool playing just such a game with my hotel room key. It’s a simple game: throw the card, swim to where it landed, dive down and find it. I was playing the game with another developer and we had just finished a conversation about confirmation bias. I threw the card across to the deep end of the pool and we started the search. Ten minutes later we still hadn’t found the card. We had been scouring the bottom of the pool and both were pretty confident in the location we saw it land, but still we were coming up empty. Surface tension is a funny thing. Most of the time the card readily sinks, but sometimes it lands just right and sits on top of the water, almost invisible at a distance, free to drift around with the current created by two idiots diving around near it. We were so used to diving to the bottom of the pool, it hadn’t even occurred to us that the card could be sitting right on top of the water!
 
-<br/>
 Conclusion
 --------------------
 If there is one thing I’m certain of it’s that we can’t escape confirmation bias for very long- it’s human nature to favor information that reinforces our existing beliefs. Unfortunately, as developers we don’t have the luxury of human nature; all we have is science.
