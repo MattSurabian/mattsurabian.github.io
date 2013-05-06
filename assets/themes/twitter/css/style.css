@@ -82,3 +82,10 @@ a.hover{
 }
 .pills .active a{color:#ffffff;text-shadow:0 1px 1px rgba(0, 0, 0, 0.25);background-color:#6c7b0e;}
 .media-grid a:hover{border-color:#6c7b0e;-webkit-box-shadow:0 1px 4px rgba(0, 105, 214, 0.25);-moz-box-shadow:0 1px 4px rgba(0, 105, 214, 0.25);box-shadow:0 1px 4px rgba(0, 105, 214, 0.25);}
+
+/* ======== Background Edits ======= */
+.content{
+    background-image:url("https://s3-us-west-2.amazonaws.com/mattsurabian.com/img/treeSmall.png");
+    background-repeat:no-repeat;
+    background-position: right 70px;
+}
