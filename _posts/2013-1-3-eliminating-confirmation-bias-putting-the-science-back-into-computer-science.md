@@ -7,6 +7,9 @@ tags: [debugging, computer science, scientific method]
 ---
 {% include JB/setup %}
 
+What is Confirmation Bias
+-------------------------
+
 Confirmation bias is the tendency to favor information that supports one’s views or hypothesis. Every time you’re troubleshooting a problem and think, “I know it can’t be ________” you might be guilty of it. As a web developer I know that feeling all too well.
 
 Think about your last debugging experience. Did you solve the problem as quickly as you expected? How familiar with the codebase were you?  [Workplace studies](http://www.codinghorror.com/blog/2006/09/when-understanding-means-rewriting.html) have shown that the majority of a programmer’s time is spent understanding, rather than producing code. And that stands to reason, as it often takes a deep understanding of a language or codebase to produce a minimal amount of elegant, functional code. Unfortunately, it seems that the more familiar one is with a given problem the greater the tendency toward bias becomes.
