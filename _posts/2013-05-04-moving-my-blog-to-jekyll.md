@@ -27,7 +27,7 @@ Jekyll provided me everything I wanted in blogging engine.  I can write posts in
 
 Goodbye, WordPress
 -----------------
-I won't miss the way you absolutely required a caching layer for reasonable performance.  Or the way you constantly screwed up my code snippet formatting.  I'll laugh when I think back to the the time I migrated your data using SSH and a well constructed linux pipe command, and I'll cry when I think about how vulnerable you were to any slag with an active internet connection.  
+I won't miss the way you absolutely [required a caching layer for reasonable performance](http://codex.wordpress.org/High_Traffic_Tips_For_WordPress).  Or the way you constantly screwed up my code snippet formatting.  I'll laugh when I think back to the the time I migrated your data using SSH and a well constructed linux pipe command, and I'll cry when I think about [how vulnerable you were to any slag with an active internet connection](http://krebsonsecurity.com/2013/04/brute-force-attacks-build-wordpress-botnet/).  
 
 It's been a good ride but we're through.  I'll continue to talk you up to our mutual friends, but my heart belongs to another.
 
@@ -39,7 +39,7 @@ It's just great.  Seriously.  Futuristically awesome.  Maybe I'm easily impresse
 The Migration Process
 ---------------------
  - Prerequisites: [GitHub](https://github.com) account, [Disqus](http://disqus.com/) account if you require commenting
- - Follow the [Jekyll quick-start guide](http://jekyllbootstrap.com/usage/jekyll-quick-start.html)
+ - Follow the [Jekyll quick-start guide](http://jekyllbootstrap.com/usage/jekyll-quick-start.html).  It seriously is this simple.
  - [Pick a classy theme](http://themes.jekyllbootstrap.com/) and modify it, or make your own theme.
  - Migrate your pages to Markdown (maybe there's a shortcut here, I just did it by hand)
  - Setup [301 Redirects](http://support.google.com/webmasters/bin/answer.py?hl=en&answer=93633)
