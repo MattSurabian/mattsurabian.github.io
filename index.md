@@ -6,9 +6,10 @@ tagline:
 {% include JB/setup %}
 
 ## About
-I'm a web developer living in Massachusetts and working remotely on a global development team for [Ceros](http://www.ceros.com), a powerful, collaborative, realtime, cloud based publish everywhere solution for mobile apps.
+I'm a web developer living in Massachusetts and working remotely on a global development team for [Ceros](http://www.ceros.com), a powerful, collaborative, real time, cloud based publish everywhere solution for interactive content experiences.
 
 I'm interested in clean code, security, and collaborative realtime technologies. I believe truly great ideas require an amazing team and a strong DevOps foundation.  I usually write about web technologies, and am passionate about my craft.
+
 
 ## Latest Post
 {% assign first_post = site.posts.first %}
