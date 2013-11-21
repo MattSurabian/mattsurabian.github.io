@@ -28,6 +28,11 @@ body {
 
 p {
     font-size:16px;
+    margin-bottom:15px;
+}
+
+li {
+	font-size:16px;
 }
 /* Page header tweaks */
 .page-header {
