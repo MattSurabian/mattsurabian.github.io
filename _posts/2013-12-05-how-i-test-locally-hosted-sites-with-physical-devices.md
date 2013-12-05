@@ -118,7 +118,7 @@ Port: Charles proxy port (from step two)
 Authentication: Off
 </pre>
 
-When you open a web browser on your phone after saving these settings Charles should pop up with a warning, saying a client is trying to connect to its proxy and requesting permission for this action. Allow it, it's your phone (hopefully)! Now all your phones traffic will be routed through your local machine, be displayed in Charles, and be subject to the mapping rules setup in step two and any /etc/hosts settings on the machine.
+When you open a web browser on your phone after saving these settings Charles should pop up with a warning, saying a client is trying to connect to its proxy and requesting permission for this action. Allow it, it's your phone (hopefully)! Now all your phone's traffic will be routed through your local machine, be displayed in Charles, and be subject to the mapping rules setup in step two and any /etc/hosts settings on the machine.
 
 **Don't forget to set your proxy settings back to none when you're done testing. Otherwise when Charles is closed your device will no longer have an internet connection.**
 
