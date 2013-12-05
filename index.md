@@ -18,7 +18,7 @@ I'm interested in clean code, security, and collaborative realtime technologies.
 
 ## Favorite Posts
 
-### <a href="">DotVaults: Encrypted hidden file backup</a>
+### <a href="http://mattsurabian.github.io/dot-vaults-encrypted-hidden-file-backup/">DotVaults: Encrypted hidden file backup</a>
 An outline of my dot-files project and how it can help to backup hidden configuration files
 
 ### <a href="http://mattsurabian.github.io/how-and-why-im-using-rackspace-and-opscode-hosted-chef/">How and Why I'm Using Rackspace and OpsCode Hosted Chef</a>
