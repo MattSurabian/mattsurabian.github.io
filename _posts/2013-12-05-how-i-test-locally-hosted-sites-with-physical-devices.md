@@ -31,7 +31,7 @@ The network environment you're testing in will likely fall into one of these cat
 
 #### Setting up an ad-hoc testing network (optional headache) 
 
-In order for you to test site with your mobile devices they either need to be on the same network, or the site needs to be on the public internet. Sometimes for security reasons networks won't allow traffic between machines on the network. This is a common setting for public wifi hotspots. So if you're in an environment like this and need to test a locally hosted site you'll need to setup an ad-hoc network. Otherwise you can proceed to step one.
+In order for you to test a site with your mobile devices they either need to be on the same network, or the site needs to be on the public internet. Sometimes for security reasons networks won't allow traffic between machines on the network. This is a common setting for public wifi hotspots. So if you're in an environment like this and need to test a locally hosted site you'll need to setup an ad-hoc network. Otherwise you can proceed to step one.
 
 In OS X this can easily be done from the "create network…" option in the wifi menu icon. Unfortunately, some Android devices cannot natively connect to ad hoc networks. Plus your host machine, unless it is hardwired via ethernet will lose its connection to wifi as the card is now broadcasting a signal instead of receiving it, meaning everything you need to test must reside locally.
 
