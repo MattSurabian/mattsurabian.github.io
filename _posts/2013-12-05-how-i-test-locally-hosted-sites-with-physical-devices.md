@@ -92,7 +92,7 @@ Map To:
 
 These rules can be turned on an off using the checkboxes next to them in the main "map remote" view. Wildcards can be used in the host name but remember a host value of `*charlestest.com` will match `www.charlestest.com` and `wowholycowcharlestest.com`. That may not be desired behavior depending on the brevity of your testing URL. I usually just have two entries: one for `www` and the other without.
 
-## Step 3: Determine your host machines local IP address
+## Step 3: Determine your host machine's local IP address
 
 This is the IP address of your test computer as far as the local network is concerned. You can find this out from system settings or a command prompt. If your machine is connected to the internet *DO NOT* go to `whatismyip.com` because that's you're WAN IP and not what we need for this test.
 
