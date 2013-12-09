@@ -35,7 +35,6 @@ However, this module is smart enough to only attempt loading the script (and all
 
 Note that the gist sets the sensor param as true, and does not define an API key on the URL. Make sure to adjust the loading url as necessary for your project.
 
-<script src="https://gist.github.com/MattSurabian/7868115.js"></script>
 
  
  
