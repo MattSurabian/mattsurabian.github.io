@@ -21,7 +21,7 @@ The prevailing dicussions on the interwebs supported using the [requirejs async 
  - It's not really compatible with the [optimizer](http://requirejs.org/docs/optimization.html).
  - There is no provided way to see if a given "async dependency" has actually **finished** loading. Especially if the dependency being loaded might make its own additional async loading calls.
  
- Because the API link above loads additional files by design, we needed to ensure that GoogleMaps was totally finished loading before trying to use it in the app, even when using optimized code. We also wanted to make sure that including the dependency across multiple files didn't cause additional unnecessary script load requests to be fired.
+ Because the API link above loads additional files by design, we needed to ensure that Google Maps was totally finished loading before trying to use it in the app, especially when using optimized code. We also wanted to make sure that including the dependency across multiple files didn't cause additional unnecessary script load requests to be fired.
  
 ##The Solution
 
