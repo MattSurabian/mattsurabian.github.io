@@ -18,6 +18,9 @@ I'm interested in clean code, security, and collaborative realtime technologies.
 
 ## Favorite Posts
 
+### <a href="http://mattsurabian.github.io/how-i-test-locally-hosted-sites-with-physical-devices/">How I Test Locally Hosted Sites With Physical Devices</a>
+A walk through of how I use Charles proxy to test locally hosted sites with physical devices
+
 ### <a href="http://mattsurabian.github.io/dot-vaults-encrypted-hidden-file-backup/">DotVaults: Encrypted hidden file backup</a>
 An outline of my dot-files project and how it can help to backup hidden configuration files
 
