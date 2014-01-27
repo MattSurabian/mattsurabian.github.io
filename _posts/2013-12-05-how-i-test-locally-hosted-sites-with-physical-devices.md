@@ -100,7 +100,7 @@ From here on out I'll refer to this as your **LAN IP**
 
 ## Step 4: Configure your mobile device to use Charles' proxy
 
-At this point you should be able to access your mapped domain via a browser on your local machine where Charles is running and everything should be working. Now the magic of getting your mobile device to use your machine as a proxy. All the networking headaches mentioned in earlier in the article have built up to this point. If your mobile device and your host computer running Charles are on the same network and can talk to one another, you can go into your devices network settings:
+At this point you should be able to access your mapped domain via a browser on your local machine where Charles is running and everything should be working. Now the magic of getting your mobile device to use your machine as a proxy. All the networking headaches mentioned earlier in the article have built up to this point. If your mobile device and your host computer running Charles are on the same network and can talk to one another, you can go into your devices network settings:
 
 **Android:** The simplest way to set proxy settings is to go to the list of wifi networks, long press on the network you're connected to, select "modify network", and then use the "show advanced options" checkbox to reveal a "proxy settings" section, change the selection from "none" to "manual" and enter the following information:
 
@@ -131,6 +131,6 @@ That's it! Now read the [Charles manual](http://www.charlesproxy.com/documentati
 
 [xip.io](http://xip.io) is a free [37signals](http://37signals.com/) offering that solves this problem using DNS. [Scott González](http://scottgonzalez.com/) just wrote a blog post called [Blissful Testing of Locally Hosted Sites](http://blog.nemikor.com/2013/12/06/blissful-testing-of-locally-hosted-sites/) which goes into his local workflow and how he's leveraging [xip.io](http://xip.io). 
 
-The best thing about [xip.io](http://xip.io) is that it's one of things that "just works". However, as with using Charles proxy there are pros and cons; so definitely checkout Scott's article and figure out what's going to work best for you.
+The best thing about [xip.io](http://xip.io) is that it's one of those things that "just works". However, as with using Charles proxy there are pros and cons; so definitely checkout Scott's article and figure out what's going to work best for you.
 
 
