@@ -7,6 +7,8 @@ tags: [telecommuting, web development, productivity]
 ---
 {% include JB/setup %}
 
+*I've since reflected on this post! Check it out: [Retrospective: 10 Commandments of Working From Home](http://mattsurabian.github.io/retrospective-10-commandments-of-working-from-home/)*
+
 Lots of people, not just developers, dream about working from home.  Whiling away the hours in the comfort of their castle and making a living at the same time.  Why not?  Everything is perfect when you’re working from home.  Nothing can interrupt or distract you.  Success is guaranteed, and just being there dissolves time management challenges and makes meeting deadlines a breeze.
 
  
@@ -14,7 +16,7 @@ Working from home solves all your problems… right?
 ------------------------
 Ok, so maybe it’s not exactly that easy.  But it can be pretty sweet.  I’m no stranger to working from home, but my new role at [Crowd Fusion](http://www.crowdfusion.com) will be my first full time telecommuting position.  To get my head in the game for this shift in routine, I’ve come up with 10 Commandments that I feel must be followed to succeed at working from home.
 
-This list is mainly things that have already worked for me, things I’ve seen several of my successful telecommuter friends do, and things that I want to do for myself.  I’m posting this list here as a reminder for myself to periodically reflect on it and be held accountable.  I have no idea what will be valuable or applicable in your situation.
+This list is mainly things that have already worked for me, things I’ve seen several of my successful telecommuter friends do, and things that I want to do for myself.  I’m posting this list here as a reminder for myself to [periodically reflect on it and be held accountable](http://mattsurabian.github.io/retrospective-10-commandments-of-working-from-home/).  I have no idea what will be valuable or applicable in your situation.
 
  
 
