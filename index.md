@@ -30,7 +30,7 @@ I recently went through the exercise of migrating my old Debian servers on Racks
 ### <a href="http://mattsurabian.github.io/eliminating-confirmation-bias-putting-the-science-back-into-computer-science/">Eliminating Confirmation Bias: Putting the Science Back Into Computer Science</a>
 Confirmation bias is the tendency to favor information that supports one’s views or hypothesis. Every time you’re troubleshooting a problem and think, “I know it can’t be ________” you might be guilty of it. As a web developer I know that feeling all too well. Think about your last debugging experience...
 
-### <a href="">My Off Grid Power Setup</a>
+### <a href="http://mattsurabian.github.io/my-off-grid-power-setup/">My Off Grid Power Setup</a>
 A writeup on the off grid power setup I have, how it works, and a general overview on what you need to know to build one yourself.
 
 
