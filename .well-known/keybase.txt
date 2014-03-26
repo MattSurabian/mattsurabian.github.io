@@ -4,7 +4,7 @@ https://keybase.io/mattsurabian
 
 I hereby claim:
 
-  * I am an admin of http://mattsurabian.com
+  * I am an admin of https://mattsurabian.github.io
   * I am mattsurabian (https://keybase.io/mattsurabian) on keybase.
   * I have a public key with fingerprint 4166 58C3 5DE7 068C 2BF3  E9DE 7A3B 61CD D032 A9E4
 
@@ -20,16 +20,16 @@ To claim this, I am signing this object:
             "username": "mattsurabian"
         },
         "service": {
-            "hostname": "mattsurabian.com",
-            "protocol": "http:"
+            "hostname": "mattsurabian.github.io",
+            "protocol": "https:"
         },
         "type": "web_service_binding",
         "version": 1
     },
-    "ctime": 1395872734,
+    "ctime": 1395873137,
     "expire_in": 157680000,
-    "prev": "576266ac58811e657557dd0babacbc5efea20fa9d72ffcbc10dbb002a9449205",
-    "seqno": 6,
+    "prev": "98a6235316cf23c10c127b96cf4efe3597a5318fb379eb2f68a86ec6d2ed6371",
+    "seqno": 7,
     "tag": "signature"
 }
 
@@ -39,22 +39,22 @@ with the aforementioned key, yielding the PGP signature:
 Version: GnuPG/MacGPG2 v2.0.22 (Darwin)
 Comment: GPGTools - http://gpgtools.org
 
-owFtkVtIFGEUx3c117IiezAUK2nqqczmftk1zEsWRRR5qUBav5n5Zh11Z9aZWfPC
-hlAGBmEq9LIaXXzQB2PB0Ie2FCOSwkqJJG+JhVELUlSgkNg3Um99Lx/nnN/5n9vN
-rfGOOGeDB4y9IXs/OV8Or4iOIqposRETdbkeczdiVXD9U1TNB42AoWoW5sZogmUZ
-XqIYGXI4y0ukqFBQQAagRJaQZBmnSCBAGsvEKnTTzkAyIjBhlqojHzK8qoy8XC6V
-xxL5BQWIzxWO2nxwPQBkUhYUCTKcoii0gNM8wwKKJhhAQIrFcRs0oaEBP0S0H1iW
-GTSAqAINC2ViKFKrStDu2y7/HypL0v1II2Doli7p1ShaYVkBt51s1Qds+hIUvX91
-vKKqyWh+lFALDVPVNcxNIFKyVFuYoASG50iOojMxWBdQDehVbYLhWB5Hzy4Da5Ek
-cpAsCySG5wkCsgzHMBxalQhEIIkSAxUISFwBgsyRioI8BC6LIo6jTdK0QOIMZk9W
-o+mYm0VtAh+SNFWfBqygAbFQi3PnBoczzuFKiLMv6EjalPzvrsNnE9cKOq/OeUL3
-tOlvlV0jrsrVqmrvQzplcsAz2uffU/X72s/E/pGeQrZr8eDrtPmm/LRTq+PsDXrz
-u+Tir5EF0Dp4+PHe5SG2pXslP72s5nrdDKS4tuEn9R2/bk2URGMXt+VlkObTOf7Q
-5WMPap4NYvztBm3XfORuwJT2Q1dha2RjpLPdcecj0zBTGs7+QZefibZ7J89Fp/b5
-MhKebz8ivC/2jOd09R/oaVRgT+jFZ9LxPTaUIzefbuqoPnF8LD2c3Zw0sND2dulR
-eTR4IbzU+yG9r48tjo2en5oumdXCsbK2Vydj5v2J+OUrcnPqBEPuSJ3aV7r7y5bZ
-btf0Wsof
-=+n9u
+owFtkV1IFFEUx3e1FLUgFYrM0CaIHlbbmbvztStuq0aa9CGWhGDLnZk766g7s87O
+rm22ISWBptVKBIX4oE+SZiiiPghKhIIuGiR90hdiHy8ZRk/JdsfqrftyOef8zv9/
+7j23dyZbkqyXXDC+TA2uWhdmLYKlGpzTWwlBkyKEs5VoRFuXrKg+pAd0RTUIJ+Eg
+GYbmREBLiLUznEgJMkA8DiAQGFKUJDugII8chI2o14JmB5YRYBAVKhrO4cCrSDjL
+ekAJQ5aWlWHewx8z+dBWAUqUxMsiollZlh283cHRDAQOkoYkAozdboJBpKvQjzDt
+h4YRDOlQUKBKRG0EroQVEZlzm/b/oQp9ilEfEv6ME9A1QxO1JszUG0Yg6DQ1jEjA
+bGpBgvevnFdQVAl/A+4IIz2oaCrhJDEpGoqpTwKe5lhAAtZGoIsBRUdexSRoluHs
++Jg+KIwleQ4yFKAByYgyBUTSLpIUK/A4ciAZAZpnIS5ysgBYHgmUzHCQY5DISBSS
+GMCShPnAZlUjnNjJgD4sGVR8KjRCOiKiHdbcbRZrkiVle5K5SEt62q5/613pS00I
+bG08b/DG+mJ20Y+TT9eE2GpZ257eaSK5ZP7e2cxwYvJZTdXN4e5be0eWEle8b8tf
+OhffNZxQW8cLGvqblyoXQOX1bp9rtrlp6EvvPn9F4HiPu//hXDHb1pVfulGzQ12/
+MEd1nj860WXz3M+9M+bvODPXOb94aso25GbKx6tG1z3un3UzR0aVTVcLyktuSHMn
+DtVN5juuvcr8XqespqihmC0+M/JtZjnrblvjiDbw+XDhWuPjaMVuI1YQf7KRWlw0
+3JSx8vxDxen2KJtVHt188ejggV/p+99fnrja97XW93F6KmLkZbzuGRgfa/e5esdi
+2W/au+iFnE8PqnMi4Dc=
+=1euM
 -----END PGP MESSAGE-----
 
 And finally, I am proving ownership of this host by posting or
