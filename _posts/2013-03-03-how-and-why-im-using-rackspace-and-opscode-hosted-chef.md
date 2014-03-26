@@ -50,7 +50,7 @@ ReadMe Documents
 
 [Rackspace Kitchen Roles Readme](https://github.com/MattSurabian/rackspace-kitchen.chef/tree/master/roles)
 
-[Rackspace Kitchen Custom Config Cookbook Readme](https://github.com/MattSurabian/rackspace-kitchen.chef/tree/master/cookbooks/custom-config)
+[Rackspace Kitchen Custom Apache Config Cookbook Readme](https://github.com/MattSurabian/rackspace-kitchen.chef/tree/master/cookbooks/custom-apache-config)
 
 
 Resources to Start Using OpsCode Hosted Chef with Rackspace
