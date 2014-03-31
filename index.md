@@ -6,9 +6,9 @@ tagline:
 {% include JB/setup %}
 
 ## About
-I'm a web developer living in Massachusetts and working remotely on a global development team for [Ceros](http://www.ceros.com), a powerful, collaborative, real time, cloud based publish everywhere solution for interactive content experiences.
+I'm an open web engineer living in Massachusetts and working for [Bocoup](http://bocoup.com), a technology company that helps move the web forward by contributing to open source technologies, training the community, and consulting.
 
-I'm interested in clean code, security, and collaborative realtime technologies. I believe truly great ideas require an amazing team and a strong DevOps foundation.  I usually write about web technologies, and am passionate about my craft.
+I'm interested in clean code, security, and a successful, healthy deployment process. I believe truly great ideas require an amazing team and a strong DevOps foundation. I usually write about web technologies, and am passionate about my craft.
 
 
 ## Latest Post
