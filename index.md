@@ -18,6 +18,9 @@ I'm interested in clean code, security, and a successful, healthy deployment pro
 
 ## Favorite Posts
 
+### <a href="http://mattsurabian.github.io/requirejs-projects-and-asynchronously-loading-the-google-maps-api/">RequireJS Projects and Asynchronously Loading the Google Maps API</a>
+A pattern that is useful for handling dependencies which asynchronously load their own dependencies. Like google maps.
+
 ### <a href="http://mattsurabian.github.io/how-i-test-locally-hosted-sites-with-physical-devices/">How I Test Locally Hosted Sites With Physical Devices</a>
 A walk through of how I use Charles proxy to test locally hosted sites with physical devices
 

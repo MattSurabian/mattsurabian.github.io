@@ -2,7 +2,7 @@
 layout: post
 title: "Eliminating Confirmation Bias: Putting the Science Back Into Computer Science"
 description: "Confirmation bias is the tendency to favor information that supports one’s views or hypothesis. Every time you’re troubleshooting a problem and think, “I know it can’t be ________” you might be guilty of it. As a web developer I know that feeling all too well. Think about your last debugging experience..."
-category: Computer Science
+category: Perspective
 tags: [debugging, computer science, scientific method]
 ---
 {% include JB/setup %}
