@@ -26,7 +26,7 @@ Think about the last project you worked on: when did you start talking about how
 
 For too many projects these conversations and decisions occur as the project is wrapping. The last possible second. A perception exists that digging too far into any one of these areas constitutes "premature optimization" or is "putting the cart before the horse"; other common engineer/developer traps. As someone with experience working on projects both large and small I feel strongly that nothing could be further from the truth.
 
-I'm not advocating for your JS based game being be deployed behind a load balancer in an auto-scaling array, or ensuring your new project's infrastructure should be able to sustain 500+ requests per second before designing a functional UI. That's not what the "always be deploying" mindset it about. In fact I think adopting the ABD™ mindset is a great way to PREVENT premature optimization.
+I'm not advocating for your JS based game being be deployed behind a load balancer in an auto-scaling array, or ensuring your new project's infrastructure should be able to sustain 500+ requests per second before designing a functional UI. That's not what the "always be deploying" mindset is about. In fact I think adopting the ABD™ mindset is a great way to PREVENT premature optimization.
 
 ### Always Be Deploying
 
