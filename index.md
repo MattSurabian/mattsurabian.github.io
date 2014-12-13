@@ -27,9 +27,6 @@ A walk through of how I use Charles proxy to test locally hosted sites with phys
 ### <a href="http://mattsurabian.github.io/dot-vaults-encrypted-hidden-file-backup/">DotVaults: Encrypted hidden file backup</a>
 An outline of my dot-files project and how it can help to backup hidden configuration files
 
-### <a href="http://mattsurabian.github.io/how-and-why-im-using-rackspace-and-opscode-hosted-chef/">How and Why I'm Using Rackspace and OpsCode Hosted Chef</a>
-I recently went through the exercise of migrating my old Debian servers on Rackspace configured using a shell script to the new Rackspace OpenCloud with OpsCode hosted Chef. This post outlines what Chef is, why I’ve chosen to utilize it, and provides a link and introduction to my github hosted rackspace-kitchen.chef repo
-
 ### <a href="http://mattsurabian.github.io/eliminating-confirmation-bias-putting-the-science-back-into-computer-science/">Eliminating Confirmation Bias: Putting the Science Back Into Computer Science</a>
 Confirmation bias is the tendency to favor information that supports one’s views or hypothesis. Every time you’re troubleshooting a problem and think, “I know it can’t be ________” you might be guilty of it. As a web developer I know that feeling all too well. Think about your last debugging experience...
 
