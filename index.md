@@ -18,19 +18,22 @@ I'm interested in clean code, security, and a successful, healthy deployment pro
 
 ## Favorite Posts
 
-### <a href="http://mattsurabian.github.io/requirejs-projects-and-asynchronously-loading-the-google-maps-api/">RequireJS Projects and Asynchronously Loading the Google Maps API</a>
+### <a href="https://mattsurabian.github.io/arch-linux-on-a-macbook-81">Arch Linux on a Macbook 8.1</a>
+My experience running Arch Linux on a Macbook Pro 8,1.
+
+### <a href="https://mattsurabian.github.io/requirejs-projects-and-asynchronously-loading-the-google-maps-api/">RequireJS Projects and Asynchronously Loading the Google Maps API</a>
 A pattern that is useful for handling dependencies which asynchronously load their own dependencies. Like google maps.
 
-### <a href="http://mattsurabian.github.io/how-i-test-locally-hosted-sites-with-physical-devices/">How I Test Locally Hosted Sites With Physical Devices</a>
+### <a href="https://mattsurabian.github.io/how-i-test-locally-hosted-sites-with-physical-devices/">How I Test Locally Hosted Sites With Physical Devices</a>
 A walk through of how I use Charles proxy to test locally hosted sites with physical devices
 
-### <a href="http://mattsurabian.github.io/dot-vaults-encrypted-hidden-file-backup/">DotVaults: Encrypted hidden file backup</a>
+### <a href="https://mattsurabian.github.io/dot-vaults-encrypted-hidden-file-backup/">DotVaults: Encrypted hidden file backup</a>
 An outline of my dot-files project and how it can help to backup hidden configuration files
 
-### <a href="http://mattsurabian.github.io/eliminating-confirmation-bias-putting-the-science-back-into-computer-science/">Eliminating Confirmation Bias: Putting the Science Back Into Computer Science</a>
+### <a href="https://mattsurabian.github.io/eliminating-confirmation-bias-putting-the-science-back-into-computer-science/">Eliminating Confirmation Bias: Putting the Science Back Into Computer Science</a>
 Confirmation bias is the tendency to favor information that supports one’s views or hypothesis. Every time you’re troubleshooting a problem and think, “I know it can’t be ________” you might be guilty of it. As a web developer I know that feeling all too well. Think about your last debugging experience...
 
-### <a href="http://mattsurabian.github.io/my-off-grid-power-setup/">My Off Grid Power Setup</a>
+### <a href="https://mattsurabian.github.io/my-off-grid-power-setup/">My Off Grid Power Setup</a>
 A writeup on the off grid power setup I have, how it works, and a general overview on what you need to know to build one yourself.
 
 
