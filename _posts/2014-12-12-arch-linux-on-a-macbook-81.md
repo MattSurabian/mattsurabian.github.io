@@ -61,8 +61,8 @@ In order to really make Arch Linux sing you're going to want to get hooked up wi
 
  * `lib32-apulse` (sound for Skype, see the [Arch wiki article on Skype](https://wiki.archlinux.org/index.php/skype))
  * `slock` (to lock the screen)
- * `openVPN` (vpn connections)
- * `openSSH` (ssh)
+ * `openvpn` (vpn connections)
+ * `openssh` (ssh)
  * `python-pyenchant` (for spell checking)
  * `aspell-en` (for English spell checking)
 
@@ -73,7 +73,7 @@ Check the wiki for info about printing and [support for your printers of choice]
 So many choices; I picked `lxdm`. The config file has lots of cool options and lives, as you may have guessed in `/etc/lxdm/lxdm.conf`. I use the `ArchStripes` theme.
 
 ### Window Manager
-I went with `xfce4` because it's simplistic and I dig that. I also installed `xfce4-goodies`. For wifi status in the notification window I installed `nm-applet`. I get screen shot functionality from `xfce4-screenshooter` which is included in `xfce4-goodies`. I added a keyboard shortcut to the region command `xfce4-screenshooter -r -s /home/USERNAME/Desktop/` to make taking screenshots easy.
+I went with `xfce4` because it's simplistic and I dig that. I also installed `xfce4-goodies`. For wifi status in the notification window I installed `network-manager-applet`. I get screen shot functionality from `xfce4-screenshooter` which is included in `xfce4-goodies`. I added a keyboard shortcut to the region command `xfce4-screenshooter -r -s /home/USERNAME/Desktop/` to make taking screenshots easy.
 
 ### Browsers and DRM Flash Content
 If you want to watch Netflix, Amazon, Youtube or other DRM'd sources of content you'll find that you can't without doing some work. I installed `hal`, `hal-info`, and `flashplugin` to get this content to work in Firefox. Chromium was another story. I installed `chromium` and `chromium-pepper-flash` but it didn't matter. DRM flash still couldn't be played. Fortunately some friends of mine reminded me that `google-chrome` existed in the `AUR` and it "just worked". Did I mention how much I love `yaourt`?
