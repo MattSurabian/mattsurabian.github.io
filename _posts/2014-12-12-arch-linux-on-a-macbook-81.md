@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Arch Linux on a Macbook 8.1"
+title: "Arch Linux on a Macbook Pro 8.1"
 description: "My experience running Arch Linux on a Macbook Pro 8,1."
 category: tinkering
 tags: [tinkering, devices, tips/tricks, Linux, Arch, Apple, OS X, Yosemite]
