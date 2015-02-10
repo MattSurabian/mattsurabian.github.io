@@ -126,11 +126,11 @@ When you open a web browser on your phone after saving these settings Charles sh
 
 That's it! Now read the [Charles manual](http://www.charlesproxy.com/documentation/) and find out about all the other stuff you can do with it! 
 
-<br/>
+
 ## Other Solutions
 
 [xip.io](http://xip.io) is a free [37signals](http://37signals.com/) offering that solves this problem using DNS. [Scott González](http://scottgonzalez.com/) just wrote a blog post called [Blissful Testing of Locally Hosted Sites](http://blog.nemikor.com/2013/12/06/blissful-testing-of-locally-hosted-sites/) which goes into his local workflow and how he's leveraging [xip.io](http://xip.io). 
 
-The best thing about [xip.io](http://xip.io) is that it's one of those things that "just works". However, as with using Charles proxy there are pros and cons; so definitely checkout Scott's article and figure out what's going to work best for you.
+The best thing about [xip.io](http://xip.io) is that it's one of those things that "just works". However, as with using Charles proxy there are pros and cons; so definitely checkout Scott's article and figure out what's going to work best for you. Specifically if you're looking to be able to analyze the traffic or reply packets Charles will be the better choice, if that's not important at all, maybe [xip.io](http://xip.io) would be a simpler avenue.
 
 
