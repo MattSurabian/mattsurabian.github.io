@@ -18,6 +18,9 @@ I'm interested in clean code, security, and a successful, healthy deployment pro
 
 ## Favorite Posts
 
+### <a href="https://mattsurabian.github.io/proxpn-bash-client/">A ProXPN Client for Linux</a>
+Introduction to the command line client I wrote to simplify the use of ProXPN’s OpenVPN service on Linux.
+
 ### <a href="https://mattsurabian.github.io/arch-linux-on-a-macbook-81">Arch Linux on a Macbook 8.1</a>
 My experience running Arch Linux on a Macbook Pro 8,1.
 
