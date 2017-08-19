@@ -1,0 +1,22 @@
+baseurl = "https://mattsurabian.github.io/"
+title = "Matt vs Computers"
+theme= "hugo_theme_solit"
+publishDir = "docs"
+
+googleAnalytics = "UA-40781616-1" # Optional
+
+[permalinks]
+  posts = "/:title/"
+  projects = "/:title/"
+
+[params]
+  contact = "matt@mattsurabian.com" # Optional
+  dateformat = "1.2.2006" # Optional
+  # Fonts settings.
+  googlefonts = "https://fonts.googleapis.com/css?family=Oswald:700|Open+Sans"
+  fontfamily = "'Open Sans', sans-serif" # Optional, Override body font family.
+  logofontfamily = "'Oswald', sans-serif" # Optional, Override logo font.
+  ampscripts = """
+<script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
+<script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+"""
