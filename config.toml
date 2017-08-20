@@ -1,7 +1,6 @@
 baseurl = "https://mattsurabian.github.io/"
 title = "Matt vs Computers"
 theme= "hugo_theme_solit"
-publishDir = "docs"
 
 googleAnalytics = "UA-40781616-1" # Optional
 
