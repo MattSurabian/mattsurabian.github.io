@@ -17,6 +17,10 @@ So this works fine, and in this situation there will probably not be any other i
 
 Ok, now I’m wishing there was an easier way to do this. Enter my colleague’s amazing tip:
 
-<script src="https://gist.github.com/MattSurabian/5522097.js"></script>
+<amp-gist
+    data-gistid="5522097"
+    layout="fixed-height"
+    height="225">
+</amp-gist>
 
 To be honest I was embarrassed it hadn’t occurred to me before now. Both strtolower and in_array are VERY cheap operations in PHP, so using this to validate inputs with multiple acceptable values is a no brainer. As illustrated above I usually check the inverse of the if statement and throw an error or exception.

@@ -68,7 +68,11 @@ Our episodes are output as `m4a` but `ogg` versions need to be created for [cros
 
 At this point, even though the new episode exists and is available online, it's not in the feed or showing on the site. For that to happen a new markdown file is created in the `episodes/_posts` [directory](https://github.com/RubberDucking/rubberduckcast.com/tree/master/episodes/_posts) which looks something like this:
 
-<script src="https://gist.github.com/MattSurabian/a5140257def6f699a8ab.js"></script>
+<amp-gist
+    data-gistid="a5140257def6f699a8ab"
+    layout="fixed-height"
+    height="225">
+</amp-gist>
 
 The actual file size and playback length are added, along with the content written earlier. The Grunt `dev` task is then used to ensure everything looks as it should before pushing the built site live using the `deploy-prod` task. The post's markdown file has all the information necessary for the front end of the site and [the XML based feed](https://github.com/RubberDucking/rubberduckcast.com/blob/master/_includes/feed.xml) [required by the Apple store](https://www.apple.com/itunes/podcasts/specs.html) and supported by many podcatcher applications.
 
@@ -95,7 +99,11 @@ Create an AWS account if you don't already have one. Login to the [management co
 
 Next, create as many users as you need in the [IAM section of the AWS management console](https://console.aws.amazon.com/iam/home). Keep a copy of the `access-key` and `secret-key`. Also create [a group](https://console.aws.amazon.com/iam/home#groups) for these new podcast users to belong to. The group IAM policy we use looks like this:
 
-<script src="https://gist.github.com/MattSurabian/577ea7094bf8eb812ba1.js"></script>
+<amp-gist
+    data-gistid="577ea7094bf8eb812ba1"
+    layout="fixed-height"
+    height="225">
+</amp-gist>
 
 To use this policy, replace the S3 bucket names with the one's you've created and add it to the new users or the group they all belong to.
 
@@ -105,7 +113,11 @@ Install the AWS CLI onto your machine (Google for instructions based on your OS,
 
 This is what my credentials file looks like. It includes a profile called `rubberduck`.
 
-<script src="https://gist.github.com/MattSurabian/23c31a2f8d987f50b3ba.js"></script>
+<amp-gist
+    data-gistid="23c31a2f8d987f50b3ba"
+    layout="fixed-height"
+    height="225">
+</amp-gist>
 
 You can see this profile is used by the [shell tasks which call the AWS CLI](https://github.com/RubberDucking/rubberduckcast.com/blob/master/build/tasks/shell.js#L9).
 
@@ -119,21 +131,18 @@ However you manage DNS, copy the endpoint provided in the static site hosting pr
 
 **YOURDOMAIN Bucket Properties**
 
-<a href="http://i.imgur.com/ysZiFnI.png">
-  <img src="http://imgur.com/ysZiFnIl.png" />
-</a>
+{{% img src="images/podcasting-with-jekyll-images/ysZiFnIl.png" %}}
+
 
 **WWW.YOURDOMAIN Bucket Properties**
 
-<a href="http://i.imgur.com/3bG7swW.png">
-  <img src="http://imgur.com/3bG7swWl.png"/>
-</a>
+{{% img src="images/podcasting-with-jekyll-images/3bG7swWl.png" %}}
+
 
 **CloudFlare Settings**
 
-<a href="http://i.imgur.com/fB6p2BG.png">
-  <img src="http://imgur.com/fB6p2BGl.png" />
-</a>
+{{% img src="images/podcasting-with-jekyll-images/fB6p2BG.png" %}}
+
 
 #### FFMPEG
 
