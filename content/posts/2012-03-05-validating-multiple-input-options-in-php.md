@@ -5,6 +5,8 @@ description = "While pair programming last week a colleague of mine showed me a 
 thumbnail = "images/options.jpg"
 +++
 
+<script async custom-element="amp-gist" src="https://cdn.ampproject.org/v0/amp-gist-0.1.js"></script>
+
 While pair programming last week a colleague of mine showed me a great trick for validating user input with multiple options. This trick works best in PHP because of its fantastic array support. But with the right utility classes or frameworks you could really use it with any language. It just might not save you as much time as it does in PHP.
 
 In this case we were writing some setters for a class. The input had two valid values “allow” and “deny”. The normal way I would do this is with an OR inside an if statement. Maybe you’d want to convert it to lowercase before the if block.

@@ -8,6 +8,8 @@ aliases =  [
 ]
 +++
 
+<script async custom-element="amp-gist" src="https://cdn.ampproject.org/v0/amp-gist-0.1.js"></script>
+
 At the beginning of this year Matt Gagne, Adam Jarret, and I finally decided to follow through with our idea to record a podcast together; it's called [Rubber Ducking](http://rubberduckcast.com/) and we try to record twice a month. We started out by making sure everyone was setup to properly record vocals and did a few riff sessions to determine the overall tone and content. Given that we're three loudmouths from New England, this was the easy part. Deciding on how we wanted to record it, host the site, and serve the audio files on the other hand...
 
 ## Recording

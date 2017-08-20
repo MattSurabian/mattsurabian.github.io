@@ -4,6 +4,7 @@ title = "RequireJS Projects and Asynchronously Loading the Google Maps API"
 description = "A pattern that is useful for handling dependencies which asynchronously load their own dependencies. Like google maps."
 thumbnail = "images/gmaps.png"
 +++
+<script async custom-element="amp-gist" src="https://cdn.ampproject.org/v0/amp-gist-0.1.js"></script>
 
 ##The Problem
 
