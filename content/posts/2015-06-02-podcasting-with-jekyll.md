@@ -3,6 +3,9 @@ date = "2015-06-02T17:00:00+09:00"
 title = "Podcasting With Jekyll"
 description = "My experience using Jekyll to power the Rubber Ducking Podcast website, and an overview on how to host a static site using S3."
 thumbnail = "images/jekyll-logo.png"
+aliases =  [
+    "/Podcasting-With-Jekyll"
+]
 +++
 
 At the beginning of this year Matt Gagne, Adam Jarret, and I finally decided to follow through with our idea to record a podcast together; it's called [Rubber Ducking](http://rubberduckcast.com/) and we try to record twice a month. We started out by making sure everyone was setup to properly record vocals and did a few riff sessions to determine the overall tone and content. Given that we're three loudmouths from New England, this was the easy part. Deciding on how we wanted to record it, host the site, and serve the audio files on the other hand...
