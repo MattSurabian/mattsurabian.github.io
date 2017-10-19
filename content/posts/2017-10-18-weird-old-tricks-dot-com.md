@@ -14,7 +14,7 @@ In an M Night Shyamalan twist this means the only social network I'm on
 these days is [LinkedIn where I've commandeered the im-matt-surabian 
 short link](https://www.linkedin.com/in/im-matt-surabian/).
 
-Tonight I purchased the shockingly available domain name 
+Last night I purchased the shockingly available domain name 
 [weirdoldtricks.com](https://weirdoldtricks.com) at the 
 urging of my good friend Tyler Kellen from [Going 
 Slowly](http://goingslowly.com/).
