@@ -5,10 +5,19 @@
     <link>https://mattsurabian.github.io/posts/</link>
     <description>Recent content in Posts on Matt vs Computers</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 23 Oct 2017 17:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 25 Oct 2017 17:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://mattsurabian.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>3 Ways Docker Has Improved My Development Workflow</title>
+      <link>https://mattsurabian.github.io/3-ways-docker-has-improved-my-development-workflow/</link>
+      <pubDate>Wed, 25 Oct 2017 17:00:00 +0900</pubDate>
+      
+      <guid>https://mattsurabian.github.io/3-ways-docker-has-improved-my-development-workflow/</guid>
+      <description>When Docker came out four years ago it seemed to me like complicated virtual machines with an obtuse workflow, and like a fool I decided it didn’t seem worth the trouble. I should have taken it as a sign that people way smarter than me like Jessie Frazelle were all over containers and doing really cool things right with them right out of the gate. Instead, I buried my head in the sand, thinking that containers were “too much for my needs”.</description>
+    </item>
     
     <item>
       <title>Debugging Process Signaling In Bash</title>
