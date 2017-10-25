@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>https://mattsurabian.github.io/debugging-process-signaling-in-bash/</loc>
+    <lastmod>2017-10-23T17:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mattsurabian.github.io/use-ssh-configure-key-based-access-automatically/</loc>
+    <lastmod>2017-10-20T18:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mattsurabian.github.io/youre-using-ssh-wrong/</loc>
+    <lastmod>2017-10-20T17:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mattsurabian.github.io/one-weird-old-trick-that-changed-my-digital-life-forever.../</loc>
+    <lastmod>2017-10-18T17:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mattsurabian.github.io/podcasting-with-jekyll/</loc>
+    <lastmod>2015-06-02T17:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mattsurabian.github.io/a-proxpn-client-for-linux/</loc>
+    <lastmod>2015-04-30T17:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mattsurabian.github.io/overcoming-the-managers-schedule/</loc>
+    <lastmod>2014-12-13T17:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mattsurabian.github.io/arch-linux-on-a-macbook-pro-8.1/</loc>
+    <lastmod>2014-12-12T17:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mattsurabian.github.io/always-be-deploying/</loc>
+    <lastmod>2014-04-06T17:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mattsurabian.github.io/requirejs-projects-and-asynchronously-loading-the-google-maps-api/</loc>
+    <lastmod>2013-12-09T17:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mattsurabian.github.io/how-i-test-locally-hosted-sites-with-physical-devices/</loc>
+    <lastmod>2013-12-05T17:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mattsurabian.github.io/my-off-grid-power-setup/</loc>
+    <lastmod>2013-11-25T17:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mattsurabian.github.io/retrospective-10-commandments-of-working-from-home/</loc>
+    <lastmod>2013-11-25T17:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mattsurabian.github.io/dot-vaults-encrypted-hidden-file-backup/</loc>
+    <lastmod>2013-11-04T17:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mattsurabian.github.io/moving-my-blog-to-jekyll/</loc>
+    <lastmod>2013-05-04T17:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mattsurabian.github.io/how-and-why-im-using-rackspace-and-opscode-hosted-chef/</loc>
+    <lastmod>2013-03-03T17:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mattsurabian.github.io/eliminating-confirmation-bias-putting-the-science-back-into-computer-science/</loc>
+    <lastmod>2013-01-03T17:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mattsurabian.github.io/a-better-way-to-unique-arrays-in-php/</loc>
+    <lastmod>2012-12-29T17:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mattsurabian.github.io/validating-multiple-input-options-in-php/</loc>
+    <lastmod>2012-03-05T17:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mattsurabian.github.io/working-with-poorly-documented-apis/</loc>
+    <lastmod>2012-02-28T17:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mattsurabian.github.io/10-commandments-of-working-from-home/</loc>
+    <lastmod>2012-02-09T17:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mattsurabian.github.io/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mattsurabian.github.io/</loc>
+    <lastmod>2017-10-23T17:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mattsurabian.github.io/posts/</loc>
+    <lastmod>2017-10-23T17:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mattsurabian.github.io/projects/</loc>
+    <lastmod>2015-04-30T17:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mattsurabian.github.io/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

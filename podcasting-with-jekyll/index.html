@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html ⚡>
+  <head>
+    <meta charset="utf-8">
+<meta name="pinterest" content="nopin">
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="theme-color" content="#263238">
+<meta name="contact" content="matt@mattsurabian.com">
+<meta name="generator" content="Hugo 0.30-DEV" />
+
+<link rel="apple-touch-icon" href="https://mattsurabian.github.io/images/logo.png">
+
+
+<link rel="canonical" href="https://mattsurabian.github.io/podcasting-with-jekyll/">
+
+<link rel="icon" href="https://mattsurabian.github.io/favicon.ico?v=2">
+    <script async custom-element="amp-gist" src="https://cdn.ampproject.org/v0/amp-gist-0.1.js"></script>
+
+
+    
+    <link href="https://fonts.googleapis.com/css?family=Oswald:700%7cOpen&#43;Sans" rel="stylesheet">
+    
+    <title>Podcasting With Jekyll - Matt vs Computers</title>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+    
+    
+<meta name="description" content="My experience using Jekyll to power the Rubber Ducking Podcast website, and an overview on how to host a static site using S3.">
+
+<meta property="og:title" content="Podcasting With Jekyll - Matt vs Computers">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://mattsurabian.github.io/podcasting-with-jekyll/">
+<meta property="og:image" content="https://mattsurabian.github.io/images/jekyll-logo.png">
+<meta property="og:site_name" content="Matt vs Computers">
+<meta property="og:description" content="My experience using Jekyll to power the Rubber Ducking Podcast website, and an overview on how to host a static site using S3.">
+<meta property="og:locale" content="ja_JP">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="Matt vs Computers">
+<meta name="twitter:url" content="https://mattsurabian.github.io/podcasting-with-jekyll/">
+<meta name="twitter:title" content="Podcasting With Jekyll - Matt vs Computers">
+<meta name="twitter:description" content="My experience using Jekyll to power the Rubber Ducking Podcast website, and an overview on how to host a static site using S3.">
+<meta name="twitter:image" content="https://mattsurabian.github.io/images/jekyll-logo.png">
+
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id":"https://mattsurabian.github.io/"
+    },
+    "headline": "Podcasting With Jekyll - Matt vs Computers",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://mattsurabian.github.io/images/jekyll-logo.png",
+      "height": 800,
+      "width": 800
+    },
+    "datePublished": "2015-06-02T17:00:00JST",
+    "dateModified": "2015-06-02T17:00:00JST",
+    "author": {
+      "@type": "Person",
+      "name": "Matt vs Computers"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Matt vs Computers",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://mattsurabian.github.io/images/logo.png",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "description": "My experience using Jekyll to power the Rubber Ducking Podcast website, and an overview on how to host a static site using S3."
+  }
+</script>
+
+
+    <style amp-custom>
+      html { font-size: 18px;}@media (max-width: 768px) { html { font-size: 15px; }}body { font-family: Lato,'Hiragino Kaku Gothic Pro',メイリオ,Meiryo,sans-serif; font-size: inherit; margin: 0; color: #263238; background-color: #eceff1; background-image: url(https://mattsurabian.github.io/images/bg-body.jpg); background-size: cover; background-position: top center; background-repeat: no-repeat; background-attachment: fixed;}html, body { margin: 0;}a { color: #ff9800; text-decoration: none;}p { margin: 0;}ul,ol { margin: 0; padding: 0;}h1, h2, h3, h4, h5, h6 { margin: 0; font-weight: 700;}h1 { font-size: 1.8rem; line-height: 2rem; margin: 1.5rem 0; }h2 { font-size: 1.4rem; line-height: 2rem; margin: 1.5rem 0; }h3 { font-size: 1.2rem; line-height: 1.5rem; margin: 1.5rem 0; }h4, h5, h6 { font-size: 1rem; line-height: 1.5rem; margin: 1.5rem 0; }.clearfix::after { content: ''; display: block; clear: both;}.content-inner { padding: 2rem 4rem;}.content-inner.thin { padding-top: 1rem; padding-bottom: 1rem;}@media (max-width: 768px) { .content-inner { padding: 2rem; }}.l-header { padding: 2rem; padding-bottom: 2rem;}.l-footer { font-size: .8rem; text-align: center; color: #fff;}.l-footer aside { margin-top: 1rem; font-size: .7rem;}main { display: block; max-width: 48rem; margin: 0 auto;}.l-container { background-color: #fff; border-radius: 5px;}@media (max-width: 768px) { .l-container { border-radius: 0; }}.p-page-title { border-bottom: 1px solid #eceff1; text-transform: uppercase;}.p-paginator { margin-bottom: 1.5rem;}.p-paginator a { display: block; width: 3rem; height: 3rem; background-position: center; background-size: contain;}.p-paginator a.prev { background-image: url(https://mattsurabian.github.io/images/icon-arrow-left-inverse.png); }.p-paginator a.next { background-image: url(https://mattsurabian.github.io/images/icon-arrow-right-inverse.png); float: right; }.p-nav { position: absolute; top: 2rem; right: 2rem;}@media (max-width: 768px) { .p-nav { position: static; text-align: center; }}.p-nav ul { list-style: none;}.p-nav li { display: inline-block; margin-left: .5rem;}@media (max-width: 768px) { .p-nav li { margin: 0 .5rem; }}.p-nav a { display: inline-block; color: #fff; line-height: 2rem; font-weight: 700; font-size: .8rem; text-transform: uppercase;}.p-movetop { position: fixed; right: 1rem; bottom: 1rem; width: 3rem; height: 3rem; background-color: #fff; border: 3px solid #263238; background-image: url(https://mattsurabian.github.io/images/icon-arrow-up.png); background-position: center; background-size: 1.5rem; background-repeat: no-repeat; border-radius: 50%; display: block;}.p-logo { color: #fff;}@media (max-width: 768px) { .p-logo { margin: 0 auto; margin-bottom: 1rem; text-align: center; }}.p-logo a { display: inline-block; font-size: 2rem; line-height: 2rem; color: #fff;}.h-logo { font-family: Lobster, cursive;}.p-share { min-width: 100%;}.p-share .share-inner { display: table; table-layout: fixed; width: 100%;}.p-share a { display: table-cell; text-align: center; font-weight: 700; font-size: .8rem; padding: .75rem 0; color: #fff;}.p-share a.ht { background-color: #00a4de; }.p-share a.fb { background-color: #3b5998; }.p-share a.tw { background-color: #1da1f2; }.p-share a.gp { background-color: #dd4b39; }.p-share a.ln { background-color: #00c300; }.p-share a.ht::before { content: 'Hatena'; }.p-share a.fb::before { content: 'Facebook'; }.p-share a.tw::before { content: 'Twitter'; }.p-share a.gp::before { content: 'Google+'; }.p-share a.ln::before { content: 'LINE'; }.p-crumb { margin-bottom: 1.5rem; font-size: .8rem; list-style: none; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;}.p-crumb:last-child { margin-bottom: 0;}.p-crumb li { display: inline;}.p-crumb li::after { content: '/'; margin: 0 .25rem;}.p-crumb li:last-child::after { content: ''; }.p-crumb li i { width: 1rem; height: 1rem;}.p-facts { margin-bottom: 1rem;}.p-facts:last-child { margin-bottom: 0;}.p-facts,.p-facts ul { list-style: none; text-transform: uppercase;}.p-facts li { display: inline-block; margin-right: 1rem; line-height: 1.25rem; font-size: .8rem; font-weight: 700;}.p-facts li li { margin-right: .25rem;}.p-facts li li::after { content: ',';}.p-facts li li:last-child::after { content: '';}.p-facts header { margin-bottom: .5rem;}.p-facts header a { color: #263238; text-decoration: underline;}.p-terms { list-style: none;}.p-terms>li { border-bottom: 1px solid #eceff1;}.p-terms>li:last-child { border-bottom: none;}.p-terms .terms-title { margin: 0; text-transform: uppercase;}section>header { position: relative; text-align: center; font-weight: 700; font-size: .8rem; text-transform: uppercase; padding: 1rem 0; background-color: #263238; color: #fff; letter-spacing: 3px;}.p-articles { list-style: none;}.p-articles>li { border-bottom: 1px solid #eceff1;}.p-articles li:last-child { margin-bottom: 0; border-bottom: none; }article { word-break: break-word;}article .title { position: relative; margin: 0; margin-bottom: .5rem; color: #000; font-size: 1.4rem; font-weight: 700;}article .title a { color: #000;}article .summary { margin-bottom: 2.5rem;}article .readmore { text-align: right;}article .readmore a { display: inline-block; color: #263238; line-height: 1.5rem; font-weight: 700; font-size: .8rem;}article .readmore a::after { content: ''; display: block; float: right; width: 1.5rem; height: 1.5rem; margin-left: .5rem; background-image: url(https://mattsurabian.github.io/images/icon-arrow-right.png); background-position: center; background-size: contain;}article .thumbnail { display: block; height: 12rem; background-position: center; background-size: cover; background-image: url(https://mattsurabian.github.io/images/default.jpg);}@media (max-width: 768px) { article .thumbnail { height: 10rem; }}article .article-footer { background-color: #eceff1;}article.li.sm .thumbnail { float: right; width: 8rem; height: 5rem; margin-left: 1.5rem; margin-bottom: 0;}@media (max-width: 768px) { article.li.sm .thumbnail { float: none; width: auto; margin: 0; margin-bottom: 1rem; }}article.li.sm .article-header { margin-bottom: 0;}.article-body h2 { padding: 1rem 0; border-bottom: 2px solid #eceff1;}.article-body h2:first-child { margin-top: 0; }.article-body h3 { color: #00acc1;}.article-body h4 { border-left: solid .25rem #00acc1; padding: 0 .5rem;}.article-body p { margin: 1.5rem 0; line-height: 1.5rem;}.article-body a { text-decoration: underline;}.article-body ul,.article-body ol { padding-left: 1.5rem;}.article-body code { display: inline-block; font-family: Menlo, consolas, monospace; background-color: #eceff1; font-size: .8rem; padding: 0 .5rem; line-height: 1.5rem;}.article-body pre { margin: 1.5rem 0; padding: 1.5rem; font-size: .8rem; background-color: #263238; color: #fff; overflow: auto;}.article-body pre code { background-color: transparent;}.article-body blockquote { margin: 1.5rem 0; padding: .5rem 0; font-size: .8rem; border-top: 1px solid #eceff1; border-bottom: 1px solid #eceff1; color: #607d8b;}.article-body blockquote p { margin: .5rem 0; line-height: 1rem;}.article-body strong { box-shadow: 0 -.5rem 0 0 #ffd54f inset;}.article-body em { font-style: normal; font-weight: 700; color: #e91e63;}.article-body figure { margin: 1.5rem -4rem; }.article-body figure.left,.article-body figure.right { width: 15rem; height: 12rem; margin-top: 0; margin-left: 0; margin-right: 0;}.article-body figure.left { float: left; margin-right: 1rem; margin-left: -4rem; }.article-body figure.right { float: right; margin-left: 1rem; margin-right: -4rem; }@media (max-width: 768px) { .article-body figure { margin: 0 -2rem; } .article-body figure.left, .article-body figure.right { float: none; margin: 0 -2rem; width: auto; height: auto; }}.article-body figcaption { padding: .5rem 0; font-size: .8rem; text-align: center;}.article-body figcaption a { color: #263238;}i { width: 1.5em; height: 1.5em; background-position: center; background-size: contain; background-repeat: no-repeat; float: left;}i.inline { margin-right: .5em;}i.calendar { background-image: url(https://mattsurabian.github.io/images/icon-calendar.svg); }i.cursor { background-image: url(https://mattsurabian.github.io/images/icon-cursor.svg); }i.clip { background-image: url(https://mattsurabian.github.io/images/icon-clip.svg); }i.home { background-image: url(https://mattsurabian.github.io/images/icon-home.svg); }
+      h1, h2, h3, h4, h5, h6 { font-family: "Oswald", sans-serif;}.p-logo a, .p-nav a, article .title, article .title a { color: #393939;}.p-logo a { font-size:3rem; line-height: 3rem;}.p-nav a{ font-size: 1.4rem; line-height:4rem;}.l-container { background-color: #fafafa;}.l-footer { color: #fafafa;}.content-inner { padding: 1rem 4rem;}.p-share a.ln::before { content: 'LinkedIn'; }.p-share a.ln { background-color: #0077B5; }body{ background-blend-mode: luminosity; color: #393939;}@media (max-width: 900px) { .p-nav { position: static; text-align: center; } .p-nav a { line-height: 2.75rem; } .p-logo { margin: 0 auto; margin-bottom: 1rem; text-align: center; }}
+
+       .article-e63d5bd7546c161599039701fdabb73e .thumbnail { background-image: url(https://mattsurabian.github.io/images/signal-plane.jpg);  }  .article-b264197169c0eed62762dfca90983ec9 .thumbnail { background-image: url(https://mattsurabian.github.io/images/enter-password.jpg);  }  .article-7c507f28ab3f4c9e333e370dfba69926 .thumbnail { background-image: url(https://mattsurabian.github.io/images/boat-first.jpg);  }  .article-be3c5db3951565a06e6b7142e8e227f4 .thumbnail { background-image: url(https://mattsurabian.github.io/images/twitter-woof.png);  }  .article-bccf15e04bab0fba8f39aeeb74a295dd .thumbnail { background-image: url(https://mattsurabian.github.io/images/jekyll-logo.png);  }  .article-4a1425d67d83daf404e93baea7b2a9b1 .thumbnail { background-image: url(https://mattsurabian.github.io/images/crypto-crap.png);  }  .article-6aa8e26fdc21ebe50824b6c4fa6a95c4 .thumbnail { background-image: url(https://mattsurabian.github.io/images/broken-headphones.jpg);  }  .article-ed7338c501cedfc2a4d82aad66c63848 .thumbnail { background-image: url(https://mattsurabian.github.io/images/arch-book.jpg);  }  .article-9e07d64b667283d9f052f950d779fc73 .thumbnail { background-image: url(https://mattsurabian.github.io/images/abandoned-cable.jpg);  }  .article-f4ff48561d6caaffccecddc5387035c8 .thumbnail { background-image: url(https://mattsurabian.github.io/images/gmaps.png);  }  .article-fc688b4e5b1554f180016d97158f467b .thumbnail { background-image: url(https://mattsurabian.github.io/images/odl.jpg);  }  .article-a01b359f12c83b79e3b59cc69dcdebf4 .thumbnail { background-image: url(https://mattsurabian.github.io/images/trees.jpg);  }  .article-12067ed5b7a0aef81b3a2d3c7a23942d .thumbnail { background-image: url(https://mattsurabian.github.io/images/work-from-home.jpg);  }  .article-c29c85f25087fd1977d64c3620d83684 .thumbnail { background-image: url(https://mattsurabian.github.io/images/vault.jpg);  }  .article-5d5291a51f86cfbec51f784b885d5f5e .thumbnail { background-image: url(https://mattsurabian.github.io/images/jekyll-logo.png);  }  .article-6f61a58a6a9fa29a1dc103b553f2d5ca .thumbnail { background-image: url(https://mattsurabian.github.io/images/kitchen-utensils.jpg);  }  .article-7ef2a44590e17c1ebf24bd997ae25f2a .thumbnail { background-image: url(https://mattsurabian.github.io/images/floating-toy.jpg);  }  .article-6edb3bf4497204a2a59c27a1a8850f6e .thumbnail { background-image: url(https://mattsurabian.github.io/images/tire-flip.jpg);  }  .article-7d401628ec023efbe2ce4ed9f83426cd .thumbnail { background-image: url(https://mattsurabian.github.io/images/options.jpg);  }  .article-a2e982ce51b435b97242e04062aaa227 .thumbnail { background-image: url(https://mattsurabian.github.io/images/lego-404.jpg);  }  .article-dac89a708c322fcea8c3e3a25a9ede9b .thumbnail { background-image: url(https://mattsurabian.github.io/images/work-from-home.jpg);  } 
+
+       body { font-family: 'Open Sans', sans-serif; } 
+       .h-logo { font-family: 'Oswald', sans-serif; } 
+    </style>
+  </head>
+
+  <body>
+    
+    
+    <amp-analytics type="googleanalytics" id="analytics1">
+      <script type="application/json">
+        {
+          "vars": {
+            "account": "UA-40781616-1"
+          },
+          "triggers": {
+            "trackPageview": {
+              "on": "visible",
+              "request": "pageview"
+            }
+          }
+        }
+      </script>
+    </amp-analytics>
+    
+    
+
+    <header class="l-header">
+      <div class="h-logo p-logo">
+        <a href="https://mattsurabian.github.io/" class="h-logo">Matt vs Computers</a>
+      </div>
+      <nav class="p-nav">
+    <ul>
+        <li><a href="https://mattsurabian.github.io/projects/">Projects</a></li>
+        <li><a href="https://mattsurabian.com" target="_blank">Contact</a></li>
+    </ul>
+</nav>
+    </header>
+
+    <main>
+      
+<div class="l-container">
+  <article class="single article-bccf15e04bab0fba8f39aeeb74a295dd">
+  <header class="article-header">
+    <div class="clearfix content-inner">
+
+      <h1 class="title">Podcasting With Jekyll</h1>
+      <ul class="p-facts">
+        <li><i class="inline calendar"></i><time datetime="2015-06-02T17:00:00JST">6.2.2015</time></li>
+        <li><i class="inline cursor"></i><a href="https://mattsurabian.github.io/posts/">posts</a></li>
+        
+      </ul>
+    </div>
+    <div class="thumbnail"></div>
+    <aside class="p-share">
+    <div class="share-inner">
+        <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fmattsurabian.github.io%2fpodcasting-with-jekyll%2f&t=Podcasting%20With%20Jekyll" title="Facebook" class="fb" target="_blank" rel="nofollow"></a>
+        <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fmattsurabian.github.io%2fpodcasting-with-jekyll%2f&text=Podcasting%20With%20Jekyll&tw_p=tweetbutton" title="Twitter" class="tw" target="_blank" rel="nofollow"></a>
+        <a href="https://plus.google.com/share?url=https%3a%2f%2fmattsurabian.github.io%2fpodcasting-with-jekyll%2f" title="Google Plus" class="gp" target="_blank" rel="nofollow"></a>
+        <a href="https://www.linkedin.com/cws/share?url=https%3a%2f%2fmattsurabian.github.io%2fpodcasting-with-jekyll%2f" title="LinkedIn" class="ln" target="_blank" rel="nofollow"></a>
+    </div>
+</aside>
+
+  </header>
+
+  <div class="content-inner">
+    <div class="article-body">
+
+<p>At the beginning of this year Matt Gagne, Adam Jarret, and I finally decided to follow through with our idea to record a podcast together; it&rsquo;s called <a href="http://rubberduckcast.com/">Rubber Ducking</a> and we try to record twice a month. We started out by making sure everyone was setup to properly record vocals and did a few riff sessions to determine the overall tone and content. Given that we&rsquo;re three loudmouths from New England, this was the easy part. Deciding on how we wanted to record it, host the site, and serve the audio files on the other hand&hellip;</p>
+
+<h2 id="recording">Recording</h2>
+
+<h4 id="audio-gear">Audio Gear</h4>
+
+<p>The first thing we all did was get the same microphone. We opted for the <a href="http://www.amazon.com/gp/product/B002OO18NS/ref=as_li_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=B002OO18NS&amp;linkCode=as2&amp;tag=rubberduckin-20&amp;linkId=2H4SNRRDFEQJKDKY">USB version of the blue snowball mic</a> because it was reasonably cheap and good quality. But all that really mattered was that our input method was consistent.</p>
+
+<h4 id="voip">VOIP</h4>
+
+<p>Because it&rsquo;s a ridiculous resource hog, seemingly worse with every update, and <a href="http://www.theguardian.com/world/2013/jul/11/microsoft-nsa-collaboration-user-data">houses a backdoor for the NSA</a>, we weren&rsquo;t thrilled with the idea of using Skype. We opted to use Google Hangouts instead, which admittedly is only mildly better with resources and security. Ultimately though, we could have these conversations using any means of audio communication since we record &ldquo;double-ender&rdquo; style.</p>
+
+<h4 id="double-ender-style">Double-Ender Style</h4>
+
+<p>To record a double-ender, each individual records only their own voice (bonus side-effect: this forces everyone to wear headphones) and the tracks are combined during the editing phase. We all get on a call, start a local recording, sit silently for a moment, and clap once at a predetermined time as reflected by <a href="http://time.gov">time.gov</a>. This makes it easy to sync up the tracks later regardless of signal latency issues.</p>
+
+<p>We record in this style because it allows us to get high quality audio without worrying about connection issues; if someone&rsquo;s connection drops, everyone leaves their recording running and when the person rejoins we pickup where we left off. The chunk of silence can be easily removed while editing without needing to re-sync the tracks. Recording double-ender style also means we don&rsquo;t need to rely on random recording add-ons/plugins for Hangouts or Skype.</p>
+
+<h4 id="sharing-our-voice-recordings">Sharing Our Voice Recordings</h4>
+
+<p>We use <a href="https://www.getsync.com/">BitTorrent Sync</a> to share our individually recorded voice tracks with each other, but are considering switching over to <a href="https://syncthing.net/">Syncthing</a> because it&rsquo;s open source. Either way, the feature-set is the same: both provide a secure, free, convenient, and decentralized way to share large files between multiple computers. <a href="https://www.dropbox.com/personal">DropBox</a> could be used just as easily, but file size could cause an issue for people without a premium account.</p>
+
+<h2 id="editing">Editing</h2>
+
+<p>Simple, convenient, open source, and free- <a href="http://web.audacityteam.org/">Audacity</a> works great to both record individual voices and edit the podcast together. At minimum, the sync-up claps need to be aligned, which is straightforward since it shows up as a big spike in the waveform. We also cut content for length and use filters to reduce background noise.</p>
+
+<h2 id="hosting">Hosting</h2>
+
+<p>An auto scaling server setup is cool, but expensive and excessive for a small podcast website. We didn&rsquo;t want to sacrifice scalability or stability, so we decided to use Amazon S3 and produce a static site that could be easily cached. Hosting for our modest listener base (around 900 visitors to the site this month) is typically under $1 per month.</p>
+
+<h4 id="static-files">Static Files</h4>
+
+<p>There are a number of static site generators available but we opted for <a href="http://jekyllrb.com/">Jekyll</a>, since two-thirds of us were already comfortable using it. The code for our <a href="https://rubberduckcast.com">podcast&rsquo;s website</a> lives on <a href="https://github.com/rubberduckcast/rubberduckcast.com">github</a>, and the workflow for pushing the site live relies heavily on <a href="http://gruntjs.com/">Grunt</a> (more on this later).</p>
+
+<h4 id="why-bother">Why Bother?</h4>
+
+<p>Fair question. There are lots of options for hosting a podcast site. The most straightforward one, which Matt Gagne threatened me with, was a <a href="http://www.squarespace.com/">SquareSpace</a> site and a <a href="http://feedburner.com/">feedburner account</a>. Honestly, that&rsquo;s a fine solution and is employed by many a successful podcast.</p>
+
+<p>We opted for Jekyll and S3 because it was the cheapest option (especially at scale) and didn&rsquo;t require us to give up control over the site or feed. If you&rsquo;re a moderately technical person and thinking about starting a podcast and hosting the site yourself, our hope is that something in here motivates you to make that happen.</p>
+
+<h4 id="episode-hosting">Episode Hosting</h4>
+
+<p>For maximum flexibility, we host our episodes in a different S3 bucket from the site and serve them on the subdomain: <code>episodes.rubberduckcast.com</code>. This allows us to <a href="https://github.com/RubberDucking/rubberduckcast.com/blob/master/build/tasks/shell.js#L15-L16">track episode downloads</a> using <a href="https://github.com/wvanbergen/request-log-analyzer#request-log-analyzer-">S3 logs</a> without website access noise. It also allows us to have a <a href="https://github.com/RubberDucking/rubberduckcast.com/blob/master/build/tasks/shell.js#L9">simple deployment script</a> and keep large binary assets out of the site repository.</p>
+
+<h2 id="site-design">Site Design</h2>
+
+<p>We&rsquo;re not designers, but we tried to make an attempt by using <a href="http://www.colourlovers.com/palettes">Colour Lovers</a> to find a reasonable color pallet and <a href="http://www.shutterstock.com/cat.mhtml?autocomplete_id=143321356231711920000&amp;language=en&amp;lang=en&amp;search_source=&amp;safesearch=1&amp;version=llv1&amp;searchterm=ducks&amp;media_type=vectors">ShutterStock to find vector images of ducks</a>.</p>
+
+<p>We then decided on a rudimentary plan to make the site responsive, <a href="https://github.com/RubberDucking/rubberduckcast.com/blob/master/_includes/header.html#L3-L6">wired up</a> the <a href="https://responsiveimages.org/">picture element</a> for our logo, and <a href="https://github.com/RubberDucking/rubberduckcast.com/blob/master/styles/layouts/default.styl#L5-L10">set</a> <a href="https://github.com/RubberDucking/rubberduckcast.com/blob/master/styles/layouts/default.styl#L35-L39">some</a> <a href="https://github.com/RubberDucking/rubberduckcast.com/blob/master/styles/layouts/default.styl#L68-L74">break points</a> based on what looked best to us given the content we had.</p>
+
+<p>We use <a href="https://learnboost.github.io/stylus/">stylus</a> and the <a href="https://github.com/RubberDucking/rubberduckcast.com/blob/master/build/tasks/stylus.js">grunt stylus plugin</a> to <a href="https://github.com/RubberDucking/rubberduckcast.com/blob/master/styles/index.styl">manage our CSS</a>. During <a href="https://github.com/RubberDucking/rubberduckcast.com/blob/master/styles/layouts/default.styl#L35-L39">active development</a> a <a href="https://github.com/RubberDucking/rubberduckcast.com/blob/master/build/tasks/watch.js">watch task</a> recompiles CSS for us. We use the <a href="https://github.com/RubberDucking/rubberduckcast.com/blob/master/build/tasks/concurrent.js">grunt-concurrent plugin</a> to allow us to watch for both changes to our Jekyll code and stylus modifications.</p>
+
+<h2 id="the-workflow">The Workflow</h2>
+
+<p>After a new episode is recorded, we give it a title and write up both a long and short description which are added to the audio file&rsquo;s tags during the export process. Matt Gagne is our fearless editor, and when draft episodes are ready for our review he puts them in our BitTorrentSync folder. When everyone has given a listen and a :+1: Matt moves the episode draft into a final version folder which is symlinked into the Jekyll project directory as <code>_audio</code>. This directory is ignored by git and only symlinked into the project to provide a unified workspace.</p>
+
+<p>Our episodes are output as <code>m4a</code> but <code>ogg</code> versions need to be created for <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Supported_media_formats#Browser_compatibility">cross browser streaming support</a>. We automate this with a Grunt task we&rsquo;ve named <code>oggify</code>. The <a href="https://github.com/RubberDucking/rubberduckcast.com/blob/master/build/tasks/ffmpeg.js">code for this task</a> looks through the <code>_audio</code> folder for all files that have an <code>m4a</code> version but not an <code>ogg</code> version, and uses <a href="https://www.ffmpeg.org/">ffmpeg</a> to do the conversion on the command line. This means ffmpeg must be installed on your machine before running the task. The newly created files are then pushed up to our <code>episodes.rubberduckcast.com</code> S3 bucket using the <code>push-episodes</code> <a href="https://github.com/RubberDucking/rubberduckcast.com/blob/master/build/tasks/shell.js#L12">Grunt task</a>.</p>
+
+<p>At this point, even though the new episode exists and is available online, it&rsquo;s not in the feed or showing on the site. For that to happen a new markdown file is created in the <code>episodes/_posts</code> <a href="https://github.com/RubberDucking/rubberduckcast.com/tree/master/episodes/_posts">directory</a> which looks something like this:</p>
+
+<p><amp-gist
+    data-gistid="a5140257def6f699a8ab"
+    layout="fixed-height"
+    height="225">
+</amp-gist></p>
+
+<p>The actual file size and playback length are added, along with the content written earlier. The Grunt <code>dev</code> task is then used to ensure everything looks as it should before pushing the built site live using the <code>deploy-prod</code> task. The post&rsquo;s markdown file has all the information necessary for the front end of the site and <a href="https://github.com/RubberDucking/rubberduckcast.com/blob/master/_includes/feed.xml">the XML based feed</a> <a href="https://www.apple.com/itunes/podcasts/specs.html">required by the Apple store</a> and supported by many podcatcher applications.</p>
+
+<p>Managing the site in this way makes it approachable and efficient for any of us to publish a new episode. No database or manual XML editing required, and the data that drives the site is always in sync with the feed.</p>
+
+<h2 id="the-prerequisites">The Prerequisites</h2>
+
+<p>While it&rsquo;s true that once setup this podcast hosting method is pretty low on cost and maintenance; the initial setup is non-trivial. Honestly, these prerequisites could probably be a series of posts about static site hosting, but instead I&rsquo;m opting for this high level crash course. There are lots of resources out there for learning this stuff, hopefully what&rsquo;s provided here establishes a good starting point and gets you through any confusing portions.</p>
+
+<h4 id="a-domain-name">A Domain Name</h4>
+
+<p>My registrar of choice is <a href="https://namecheap.com">namecheap</a> but this really doesn&rsquo;t matter; secure a domain name you love from a registrar you trust.</p>
+
+<h4 id="aws">AWS</h4>
+
+<p>Create an AWS account if you don&rsquo;t already have one. Login to the <a href="https://console.aws.amazon.com">management console</a> and create some <a href="https://console.aws.amazon.com/s3/home">S3 buckets</a>!</p>
+
+<ul>
+<li>YOURDOMAINNAME
+
+<ul>
+<li>Static site hosting will need to be enabled</li>
+</ul></li>
+<li>WWW.YOURDOMAINNAME
+
+<ul>
+<li>This will also have static site hosting enabled but will redirect to the YOURDOMAINNAME bucket</li>
+</ul></li>
+<li>EPISODES.YOURDOMAINNAME
+
+<ul>
+<li>Static site hosting does NOT need to be enabled, but we will use a public-read access control value when uploading episodes to this bucket. This allows public individual episode access but not entire bucket access.</li>
+</ul></li>
+</ul>
+
+<p>Next, create as many users as you need in the <a href="https://console.aws.amazon.com/iam/home">IAM section of the AWS management console</a>. Keep a copy of the <code>access-key</code> and <code>secret-key</code>. Also create <a href="https://console.aws.amazon.com/iam/home#groups">a group</a> for these new podcast users to belong to. The group IAM policy we use looks like this:</p>
+
+<p><amp-gist
+    data-gistid="577ea7094bf8eb812ba1"
+    layout="fixed-height"
+    height="225">
+</amp-gist></p>
+
+<p>To use this policy, replace the S3 bucket names with the one&rsquo;s you&rsquo;ve created and add it to the new users or the group they all belong to.</p>
+
+<h4 id="aws-cli">AWS-CLI</h4>
+
+<p>Install the AWS CLI onto your machine (Google for instructions based on your OS, there are lots of options) and create a credentials file in <code>~/.aws/credentials</code>. It&rsquo;s a good idea to namespace the credentials using profiles (shown below) to prevent conflicts if you need to access different AWS accounts or resources.</p>
+
+<p>This is what my credentials file looks like. It includes a profile called <code>rubberduck</code>.</p>
+
+<p><amp-gist
+    data-gistid="23c31a2f8d987f50b3ba"
+    layout="fixed-height"
+    height="225">
+</amp-gist></p>
+
+<p>You can see this profile is used by the <a href="https://github.com/RubberDucking/rubberduckcast.com/blob/master/build/tasks/shell.js#L9">shell tasks which call the AWS CLI</a>.</p>
+
+<p>While it&rsquo;s true that there is a node SDK that we could use, I prefer the standard CLI.</p>
+
+<h4 id="dns">DNS</h4>
+
+<p>I use <a href="https://www.cloudflare.com/">Cloudflare</a> for DNS because it saves us some bandwidth, costs nothing, and provides a great management interface. Plus I prefer not to couple my registrar with my DNS provider. Regardless of what you&rsquo;re using, the DNS provider needs to support using only CNAME records for a domain.</p>
+
+<p>However you manage DNS, copy the endpoint provided in the static site hosting properties panel of your newly created S3 bucket and make a CNAME record for the root domain, the www subdomain, and the episodes subdomain buckets; ours looks something like this:</p>
+
+<p><strong>YOURDOMAIN Bucket Properties</strong></p>
+
+<figure>
+  <amp-img src="https://mattsurabian.github.io/images/podcasting-with-jekyll-images/ysZiFnIl.png" alt="Podcasting With Jekyll images/podcasting-with-jekyll-images/ysZiFnIl.png" width=640 height=400 layout="responsive"></amp-img>
+  
+</figure>
+
+
+<p><strong>WWW.YOURDOMAIN Bucket Properties</strong></p>
+
+<figure>
+  <amp-img src="https://mattsurabian.github.io/images/podcasting-with-jekyll-images/3bG7swWl.png" alt="Podcasting With Jekyll images/podcasting-with-jekyll-images/3bG7swWl.png" width=640 height=400 layout="responsive"></amp-img>
+  
+</figure>
+
+
+<p><strong>CloudFlare Settings</strong></p>
+
+<figure>
+  <amp-img src="https://mattsurabian.github.io/images/podcasting-with-jekyll-images/fB6p2BG.png" alt="Podcasting With Jekyll images/podcasting-with-jekyll-images/fB6p2BG.png" width=640 height=400 layout="responsive"></amp-img>
+  
+</figure>
+
+
+<h4 id="ffmpeg">FFMPEG</h4>
+
+<p>As discussed in the Workflow section, <code>ogg</code> and <code>m4a</code> versions are required to allow the site to provide <a href="https://github.com/RubberDucking/rubberduckcast.com/blob/master/_layouts/episode.html#L10-L14">in browser playback</a> via the <code>audio</code> tag. We use <a href="https://www.ffmpeg.org/">FFMPEG</a> to accomplish the conversion from <code>m4a</code> to <code>ogg</code> because it&rsquo;s open source and has cross platform support. Make sure it&rsquo;s <a href="https://www.ffmpeg.org/download.html">installed</a> on your machine.</p>
+
+<h4 id="the-codebase">The Codebase</h4>
+
+<p>Clone or download our <a href="https://github.com/RubberDucking/rubberduckcast.com">open source podcast site code</a> and start modifying it to suit your needs! The <a href="https://github.com/RubberDucking/rubberduckcast.com/blob/master/README.md">README</a> has more detailed descriptions of all the Grunt tasks.</p>
+
+<p>We&rsquo;re trying to figure out the best way to open source the podcast site repo and make it more generally applicable. If you have any ideas on the best way to accomplish that let me know in the comments!</p>
+</div>
+  </div>
+
+  <footer class="article-footer">
+    <aside class="p-share">
+    <div class="share-inner">
+        <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fmattsurabian.github.io%2fpodcasting-with-jekyll%2f&t=Podcasting%20With%20Jekyll" title="Facebook" class="fb" target="_blank" rel="nofollow"></a>
+        <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fmattsurabian.github.io%2fpodcasting-with-jekyll%2f&text=Podcasting%20With%20Jekyll&tw_p=tweetbutton" title="Twitter" class="tw" target="_blank" rel="nofollow"></a>
+        <a href="https://plus.google.com/share?url=https%3a%2f%2fmattsurabian.github.io%2fpodcasting-with-jekyll%2f" title="Google Plus" class="gp" target="_blank" rel="nofollow"></a>
+        <a href="https://www.linkedin.com/cws/share?url=https%3a%2f%2fmattsurabian.github.io%2fpodcasting-with-jekyll%2f" title="LinkedIn" class="ln" target="_blank" rel="nofollow"></a>
+    </div>
+</aside>
+
+    <div class="content-inner">
+      <ol class="p-crumb">
+        <li><a href="https://mattsurabian.github.io/"><i class="home"></i></a></li>
+        
+        <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://mattsurabian.github.io/posts/" itemprop="url"><span itemprop="title">posts</span></a></li>
+        
+        <li>Podcasting With Jekyll</li>
+      </ol>
+
+      
+      
+      
+      
+      
+      
+    </div>
+  </footer>
+
+</article>
+
+
+  
+  
+  <section>
+    <header>Recent articles</header>
+    <ul class="p-articles bordered">
+      
+      <li><article class="li sm article-e63d5bd7546c161599039701fdabb73e">
+  <div class="content-inner">
+    <header class="article-header">
+      <div class="clearfix">
+        <a href="https://mattsurabian.github.io/debugging-process-signaling-in-bash/" class="thumbnail" title="Debugging Process Signaling In Bash"></a>
+        <div class="title"><a href="https://mattsurabian.github.io/debugging-process-signaling-in-bash/">Debugging Process Signaling In Bash</a></div>
+        <ul class="p-facts">
+          <li><i class="inline calendar"></i><time datetime="2017-10-23T17:00:00JST">10.23.2017</time></li>
+          <li><i class="inline cursor"></i><a href="https://mattsurabian.github.io/posts/">posts</a></li>
+          
+        </ul>
+      </div>
+    </header>
+  </div>
+</article>
+</li><li><article class="li sm article-b264197169c0eed62762dfca90983ec9">
+  <div class="content-inner">
+    <header class="article-header">
+      <div class="clearfix">
+        <a href="https://mattsurabian.github.io/use-ssh-configure-key-based-access-automatically/" class="thumbnail" title="Use SSH: Configure Key Based Access Automatically"></a>
+        <div class="title"><a href="https://mattsurabian.github.io/use-ssh-configure-key-based-access-automatically/">Use SSH: Configure Key Based Access Automatically</a></div>
+        <ul class="p-facts">
+          <li><i class="inline calendar"></i><time datetime="2017-10-20T18:00:00JST">10.20.2017</time></li>
+          <li><i class="inline cursor"></i><a href="https://mattsurabian.github.io/posts/">posts</a></li>
+          
+        </ul>
+      </div>
+    </header>
+  </div>
+</article>
+</li><li><article class="li sm article-7c507f28ab3f4c9e333e370dfba69926">
+  <div class="content-inner">
+    <header class="article-header">
+      <div class="clearfix">
+        <a href="https://mattsurabian.github.io/youre-using-ssh-wrong/" class="thumbnail" title="You&#39;re Using SSH Wrong"></a>
+        <div class="title"><a href="https://mattsurabian.github.io/youre-using-ssh-wrong/">You&#39;re Using SSH Wrong</a></div>
+        <ul class="p-facts">
+          <li><i class="inline calendar"></i><time datetime="2017-10-20T17:00:00JST">10.20.2017</time></li>
+          <li><i class="inline cursor"></i><a href="https://mattsurabian.github.io/posts/">posts</a></li>
+          
+        </ul>
+      </div>
+    </header>
+  </div>
+</article>
+</li><li><article class="li sm article-be3c5db3951565a06e6b7142e8e227f4">
+  <div class="content-inner">
+    <header class="article-header">
+      <div class="clearfix">
+        <a href="https://mattsurabian.github.io/one-weird-old-trick-that-changed-my-digital-life-forever.../" class="thumbnail" title="One weird old trick that changed my digital life forever..."></a>
+        <div class="title"><a href="https://mattsurabian.github.io/one-weird-old-trick-that-changed-my-digital-life-forever.../">One weird old trick that changed my digital life forever...</a></div>
+        <ul class="p-facts">
+          <li><i class="inline calendar"></i><time datetime="2017-10-18T17:00:00JST">10.18.2017</time></li>
+          <li><i class="inline cursor"></i><a href="https://mattsurabian.github.io/posts/">posts</a></li>
+          
+        </ul>
+      </div>
+    </header>
+  </div>
+</article>
+</li><li><article class="li sm article-4a1425d67d83daf404e93baea7b2a9b1">
+  <div class="content-inner">
+    <header class="article-header">
+      <div class="clearfix">
+        <a href="https://mattsurabian.github.io/a-proxpn-client-for-linux/" class="thumbnail" title="A ProXPN Client for Linux"></a>
+        <div class="title"><a href="https://mattsurabian.github.io/a-proxpn-client-for-linux/">A ProXPN Client for Linux</a></div>
+        <ul class="p-facts">
+          <li><i class="inline calendar"></i><time datetime="2015-04-30T17:00:00JST">4.30.2015</time></li>
+          <li><i class="inline cursor"></i><a href="https://mattsurabian.github.io/projects/">projects</a></li>
+          
+        </ul>
+      </div>
+    </header>
+  </div>
+</article>
+</li>
+    </ul>
+  </section>
+  
+</div>
+
+
+    </main>
+
+    
+
+    <footer class="l-footer">
+      <div class="content-inner">
+        <p><span class="h-logo">&copy; Matt vs Computers</span></p>
+        <aside>
+          <p>Powered by <a href="https://gohugo.io/">Hugo</a>.</p>
+          <p><a href="https://github.com/dim0627/hugo_theme_solit" class="h-logo">Solit</a> designed by <a href="http://yet.unresolved.xyz/">Daisuke Tsuji</a>.</p>
+        </aside>
+      </div>
+    </footer>
+
+    <a href="#" class="p-movetop" title="ページ上部へ戻る" rel="nofollow"></a>
+  </body>
+</html>
+

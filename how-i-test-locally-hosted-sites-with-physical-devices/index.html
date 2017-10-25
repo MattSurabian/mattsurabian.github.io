@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html ⚡>
+  <head>
+    <meta charset="utf-8">
+<meta name="pinterest" content="nopin">
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="theme-color" content="#263238">
+<meta name="contact" content="matt@mattsurabian.com">
+<meta name="generator" content="Hugo 0.30-DEV" />
+
+<link rel="apple-touch-icon" href="https://mattsurabian.github.io/images/logo.png">
+
+
+<link rel="canonical" href="https://mattsurabian.github.io/how-i-test-locally-hosted-sites-with-physical-devices/">
+
+<link rel="icon" href="https://mattsurabian.github.io/favicon.ico?v=2">
+    
+
+    
+    <link href="https://fonts.googleapis.com/css?family=Oswald:700%7cOpen&#43;Sans" rel="stylesheet">
+    
+    <title>How I Test Locally Hosted Sites With Physical Devices - Matt vs Computers</title>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+    
+    
+<meta name="description" content="A walk through of how I use Charles proxy to test locally hosted sites with physical devices">
+
+<meta property="og:title" content="How I Test Locally Hosted Sites With Physical Devices - Matt vs Computers">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://mattsurabian.github.io/how-i-test-locally-hosted-sites-with-physical-devices/">
+<meta property="og:image" content="https://mattsurabian.github.io/images/odl.jpg">
+<meta property="og:site_name" content="Matt vs Computers">
+<meta property="og:description" content="A walk through of how I use Charles proxy to test locally hosted sites with physical devices">
+<meta property="og:locale" content="ja_JP">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="Matt vs Computers">
+<meta name="twitter:url" content="https://mattsurabian.github.io/how-i-test-locally-hosted-sites-with-physical-devices/">
+<meta name="twitter:title" content="How I Test Locally Hosted Sites With Physical Devices - Matt vs Computers">
+<meta name="twitter:description" content="A walk through of how I use Charles proxy to test locally hosted sites with physical devices">
+<meta name="twitter:image" content="https://mattsurabian.github.io/images/odl.jpg">
+
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id":"https://mattsurabian.github.io/"
+    },
+    "headline": "How I Test Locally Hosted Sites With Physical Devices - Matt vs Computers",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://mattsurabian.github.io/images/odl.jpg",
+      "height": 800,
+      "width": 800
+    },
+    "datePublished": "2013-12-05T17:00:00JST",
+    "dateModified": "2013-12-05T17:00:00JST",
+    "author": {
+      "@type": "Person",
+      "name": "Matt vs Computers"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Matt vs Computers",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://mattsurabian.github.io/images/logo.png",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "description": "A walk through of how I use Charles proxy to test locally hosted sites with physical devices"
+  }
+</script>
+
+
+    <style amp-custom>
+      html { font-size: 18px;}@media (max-width: 768px) { html { font-size: 15px; }}body { font-family: Lato,'Hiragino Kaku Gothic Pro',メイリオ,Meiryo,sans-serif; font-size: inherit; margin: 0; color: #263238; background-color: #eceff1; background-image: url(https://mattsurabian.github.io/images/bg-body.jpg); background-size: cover; background-position: top center; background-repeat: no-repeat; background-attachment: fixed;}html, body { margin: 0;}a { color: #ff9800; text-decoration: none;}p { margin: 0;}ul,ol { margin: 0; padding: 0;}h1, h2, h3, h4, h5, h6 { margin: 0; font-weight: 700;}h1 { font-size: 1.8rem; line-height: 2rem; margin: 1.5rem 0; }h2 { font-size: 1.4rem; line-height: 2rem; margin: 1.5rem 0; }h3 { font-size: 1.2rem; line-height: 1.5rem; margin: 1.5rem 0; }h4, h5, h6 { font-size: 1rem; line-height: 1.5rem; margin: 1.5rem 0; }.clearfix::after { content: ''; display: block; clear: both;}.content-inner { padding: 2rem 4rem;}.content-inner.thin { padding-top: 1rem; padding-bottom: 1rem;}@media (max-width: 768px) { .content-inner { padding: 2rem; }}.l-header { padding: 2rem; padding-bottom: 2rem;}.l-footer { font-size: .8rem; text-align: center; color: #fff;}.l-footer aside { margin-top: 1rem; font-size: .7rem;}main { display: block; max-width: 48rem; margin: 0 auto;}.l-container { background-color: #fff; border-radius: 5px;}@media (max-width: 768px) { .l-container { border-radius: 0; }}.p-page-title { border-bottom: 1px solid #eceff1; text-transform: uppercase;}.p-paginator { margin-bottom: 1.5rem;}.p-paginator a { display: block; width: 3rem; height: 3rem; background-position: center; background-size: contain;}.p-paginator a.prev { background-image: url(https://mattsurabian.github.io/images/icon-arrow-left-inverse.png); }.p-paginator a.next { background-image: url(https://mattsurabian.github.io/images/icon-arrow-right-inverse.png); float: right; }.p-nav { position: absolute; top: 2rem; right: 2rem;}@media (max-width: 768px) { .p-nav { position: static; text-align: center; }}.p-nav ul { list-style: none;}.p-nav li { display: inline-block; margin-left: .5rem;}@media (max-width: 768px) { .p-nav li { margin: 0 .5rem; }}.p-nav a { display: inline-block; color: #fff; line-height: 2rem; font-weight: 700; font-size: .8rem; text-transform: uppercase;}.p-movetop { position: fixed; right: 1rem; bottom: 1rem; width: 3rem; height: 3rem; background-color: #fff; border: 3px solid #263238; background-image: url(https://mattsurabian.github.io/images/icon-arrow-up.png); background-position: center; background-size: 1.5rem; background-repeat: no-repeat; border-radius: 50%; display: block;}.p-logo { color: #fff;}@media (max-width: 768px) { .p-logo { margin: 0 auto; margin-bottom: 1rem; text-align: center; }}.p-logo a { display: inline-block; font-size: 2rem; line-height: 2rem; color: #fff;}.h-logo { font-family: Lobster, cursive;}.p-share { min-width: 100%;}.p-share .share-inner { display: table; table-layout: fixed; width: 100%;}.p-share a { display: table-cell; text-align: center; font-weight: 700; font-size: .8rem; padding: .75rem 0; color: #fff;}.p-share a.ht { background-color: #00a4de; }.p-share a.fb { background-color: #3b5998; }.p-share a.tw { background-color: #1da1f2; }.p-share a.gp { background-color: #dd4b39; }.p-share a.ln { background-color: #00c300; }.p-share a.ht::before { content: 'Hatena'; }.p-share a.fb::before { content: 'Facebook'; }.p-share a.tw::before { content: 'Twitter'; }.p-share a.gp::before { content: 'Google+'; }.p-share a.ln::before { content: 'LINE'; }.p-crumb { margin-bottom: 1.5rem; font-size: .8rem; list-style: none; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;}.p-crumb:last-child { margin-bottom: 0;}.p-crumb li { display: inline;}.p-crumb li::after { content: '/'; margin: 0 .25rem;}.p-crumb li:last-child::after { content: ''; }.p-crumb li i { width: 1rem; height: 1rem;}.p-facts { margin-bottom: 1rem;}.p-facts:last-child { margin-bottom: 0;}.p-facts,.p-facts ul { list-style: none; text-transform: uppercase;}.p-facts li { display: inline-block; margin-right: 1rem; line-height: 1.25rem; font-size: .8rem; font-weight: 700;}.p-facts li li { margin-right: .25rem;}.p-facts li li::after { content: ',';}.p-facts li li:last-child::after { content: '';}.p-facts header { margin-bottom: .5rem;}.p-facts header a { color: #263238; text-decoration: underline;}.p-terms { list-style: none;}.p-terms>li { border-bottom: 1px solid #eceff1;}.p-terms>li:last-child { border-bottom: none;}.p-terms .terms-title { margin: 0; text-transform: uppercase;}section>header { position: relative; text-align: center; font-weight: 700; font-size: .8rem; text-transform: uppercase; padding: 1rem 0; background-color: #263238; color: #fff; letter-spacing: 3px;}.p-articles { list-style: none;}.p-articles>li { border-bottom: 1px solid #eceff1;}.p-articles li:last-child { margin-bottom: 0; border-bottom: none; }article { word-break: break-word;}article .title { position: relative; margin: 0; margin-bottom: .5rem; color: #000; font-size: 1.4rem; font-weight: 700;}article .title a { color: #000;}article .summary { margin-bottom: 2.5rem;}article .readmore { text-align: right;}article .readmore a { display: inline-block; color: #263238; line-height: 1.5rem; font-weight: 700; font-size: .8rem;}article .readmore a::after { content: ''; display: block; float: right; width: 1.5rem; height: 1.5rem; margin-left: .5rem; background-image: url(https://mattsurabian.github.io/images/icon-arrow-right.png); background-position: center; background-size: contain;}article .thumbnail { display: block; height: 12rem; background-position: center; background-size: cover; background-image: url(https://mattsurabian.github.io/images/default.jpg);}@media (max-width: 768px) { article .thumbnail { height: 10rem; }}article .article-footer { background-color: #eceff1;}article.li.sm .thumbnail { float: right; width: 8rem; height: 5rem; margin-left: 1.5rem; margin-bottom: 0;}@media (max-width: 768px) { article.li.sm .thumbnail { float: none; width: auto; margin: 0; margin-bottom: 1rem; }}article.li.sm .article-header { margin-bottom: 0;}.article-body h2 { padding: 1rem 0; border-bottom: 2px solid #eceff1;}.article-body h2:first-child { margin-top: 0; }.article-body h3 { color: #00acc1;}.article-body h4 { border-left: solid .25rem #00acc1; padding: 0 .5rem;}.article-body p { margin: 1.5rem 0; line-height: 1.5rem;}.article-body a { text-decoration: underline;}.article-body ul,.article-body ol { padding-left: 1.5rem;}.article-body code { display: inline-block; font-family: Menlo, consolas, monospace; background-color: #eceff1; font-size: .8rem; padding: 0 .5rem; line-height: 1.5rem;}.article-body pre { margin: 1.5rem 0; padding: 1.5rem; font-size: .8rem; background-color: #263238; color: #fff; overflow: auto;}.article-body pre code { background-color: transparent;}.article-body blockquote { margin: 1.5rem 0; padding: .5rem 0; font-size: .8rem; border-top: 1px solid #eceff1; border-bottom: 1px solid #eceff1; color: #607d8b;}.article-body blockquote p { margin: .5rem 0; line-height: 1rem;}.article-body strong { box-shadow: 0 -.5rem 0 0 #ffd54f inset;}.article-body em { font-style: normal; font-weight: 700; color: #e91e63;}.article-body figure { margin: 1.5rem -4rem; }.article-body figure.left,.article-body figure.right { width: 15rem; height: 12rem; margin-top: 0; margin-left: 0; margin-right: 0;}.article-body figure.left { float: left; margin-right: 1rem; margin-left: -4rem; }.article-body figure.right { float: right; margin-left: 1rem; margin-right: -4rem; }@media (max-width: 768px) { .article-body figure { margin: 0 -2rem; } .article-body figure.left, .article-body figure.right { float: none; margin: 0 -2rem; width: auto; height: auto; }}.article-body figcaption { padding: .5rem 0; font-size: .8rem; text-align: center;}.article-body figcaption a { color: #263238;}i { width: 1.5em; height: 1.5em; background-position: center; background-size: contain; background-repeat: no-repeat; float: left;}i.inline { margin-right: .5em;}i.calendar { background-image: url(https://mattsurabian.github.io/images/icon-calendar.svg); }i.cursor { background-image: url(https://mattsurabian.github.io/images/icon-cursor.svg); }i.clip { background-image: url(https://mattsurabian.github.io/images/icon-clip.svg); }i.home { background-image: url(https://mattsurabian.github.io/images/icon-home.svg); }
+      h1, h2, h3, h4, h5, h6 { font-family: "Oswald", sans-serif;}.p-logo a, .p-nav a, article .title, article .title a { color: #393939;}.p-logo a { font-size:3rem; line-height: 3rem;}.p-nav a{ font-size: 1.4rem; line-height:4rem;}.l-container { background-color: #fafafa;}.l-footer { color: #fafafa;}.content-inner { padding: 1rem 4rem;}.p-share a.ln::before { content: 'LinkedIn'; }.p-share a.ln { background-color: #0077B5; }body{ background-blend-mode: luminosity; color: #393939;}@media (max-width: 900px) { .p-nav { position: static; text-align: center; } .p-nav a { line-height: 2.75rem; } .p-logo { margin: 0 auto; margin-bottom: 1rem; text-align: center; }}
+
+       .article-e63d5bd7546c161599039701fdabb73e .thumbnail { background-image: url(https://mattsurabian.github.io/images/signal-plane.jpg);  }  .article-b264197169c0eed62762dfca90983ec9 .thumbnail { background-image: url(https://mattsurabian.github.io/images/enter-password.jpg);  }  .article-7c507f28ab3f4c9e333e370dfba69926 .thumbnail { background-image: url(https://mattsurabian.github.io/images/boat-first.jpg);  }  .article-be3c5db3951565a06e6b7142e8e227f4 .thumbnail { background-image: url(https://mattsurabian.github.io/images/twitter-woof.png);  }  .article-bccf15e04bab0fba8f39aeeb74a295dd .thumbnail { background-image: url(https://mattsurabian.github.io/images/jekyll-logo.png);  }  .article-4a1425d67d83daf404e93baea7b2a9b1 .thumbnail { background-image: url(https://mattsurabian.github.io/images/crypto-crap.png);  }  .article-6aa8e26fdc21ebe50824b6c4fa6a95c4 .thumbnail { background-image: url(https://mattsurabian.github.io/images/broken-headphones.jpg);  }  .article-ed7338c501cedfc2a4d82aad66c63848 .thumbnail { background-image: url(https://mattsurabian.github.io/images/arch-book.jpg);  }  .article-9e07d64b667283d9f052f950d779fc73 .thumbnail { background-image: url(https://mattsurabian.github.io/images/abandoned-cable.jpg);  }  .article-f4ff48561d6caaffccecddc5387035c8 .thumbnail { background-image: url(https://mattsurabian.github.io/images/gmaps.png);  }  .article-fc688b4e5b1554f180016d97158f467b .thumbnail { background-image: url(https://mattsurabian.github.io/images/odl.jpg);  }  .article-a01b359f12c83b79e3b59cc69dcdebf4 .thumbnail { background-image: url(https://mattsurabian.github.io/images/trees.jpg);  }  .article-12067ed5b7a0aef81b3a2d3c7a23942d .thumbnail { background-image: url(https://mattsurabian.github.io/images/work-from-home.jpg);  }  .article-c29c85f25087fd1977d64c3620d83684 .thumbnail { background-image: url(https://mattsurabian.github.io/images/vault.jpg);  }  .article-5d5291a51f86cfbec51f784b885d5f5e .thumbnail { background-image: url(https://mattsurabian.github.io/images/jekyll-logo.png);  }  .article-6f61a58a6a9fa29a1dc103b553f2d5ca .thumbnail { background-image: url(https://mattsurabian.github.io/images/kitchen-utensils.jpg);  }  .article-7ef2a44590e17c1ebf24bd997ae25f2a .thumbnail { background-image: url(https://mattsurabian.github.io/images/floating-toy.jpg);  }  .article-6edb3bf4497204a2a59c27a1a8850f6e .thumbnail { background-image: url(https://mattsurabian.github.io/images/tire-flip.jpg);  }  .article-7d401628ec023efbe2ce4ed9f83426cd .thumbnail { background-image: url(https://mattsurabian.github.io/images/options.jpg);  }  .article-a2e982ce51b435b97242e04062aaa227 .thumbnail { background-image: url(https://mattsurabian.github.io/images/lego-404.jpg);  }  .article-dac89a708c322fcea8c3e3a25a9ede9b .thumbnail { background-image: url(https://mattsurabian.github.io/images/work-from-home.jpg);  } 
+
+       body { font-family: 'Open Sans', sans-serif; } 
+       .h-logo { font-family: 'Oswald', sans-serif; } 
+    </style>
+  </head>
+
+  <body>
+    
+    
+    <amp-analytics type="googleanalytics" id="analytics1">
+      <script type="application/json">
+        {
+          "vars": {
+            "account": "UA-40781616-1"
+          },
+          "triggers": {
+            "trackPageview": {
+              "on": "visible",
+              "request": "pageview"
+            }
+          }
+        }
+      </script>
+    </amp-analytics>
+    
+    
+
+    <header class="l-header">
+      <div class="h-logo p-logo">
+        <a href="https://mattsurabian.github.io/" class="h-logo">Matt vs Computers</a>
+      </div>
+      <nav class="p-nav">
+    <ul>
+        <li><a href="https://mattsurabian.github.io/projects/">Projects</a></li>
+        <li><a href="https://mattsurabian.com" target="_blank">Contact</a></li>
+    </ul>
+</nav>
+    </header>
+
+    <main>
+      
+<div class="l-container">
+  <article class="single article-fc688b4e5b1554f180016d97158f467b">
+  <header class="article-header">
+    <div class="clearfix content-inner">
+
+      <h1 class="title">How I Test Locally Hosted Sites With Physical Devices</h1>
+      <ul class="p-facts">
+        <li><i class="inline calendar"></i><time datetime="2013-12-05T17:00:00JST">12.5.2013</time></li>
+        <li><i class="inline cursor"></i><a href="https://mattsurabian.github.io/posts/">posts</a></li>
+        
+      </ul>
+    </div>
+    <div class="thumbnail"></div>
+    <aside class="p-share">
+    <div class="share-inner">
+        <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fmattsurabian.github.io%2fhow-i-test-locally-hosted-sites-with-physical-devices%2f&t=How%20I%20Test%20Locally%20Hosted%20Sites%20With%20Physical%20Devices" title="Facebook" class="fb" target="_blank" rel="nofollow"></a>
+        <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fmattsurabian.github.io%2fhow-i-test-locally-hosted-sites-with-physical-devices%2f&text=How%20I%20Test%20Locally%20Hosted%20Sites%20With%20Physical%20Devices&tw_p=tweetbutton" title="Twitter" class="tw" target="_blank" rel="nofollow"></a>
+        <a href="https://plus.google.com/share?url=https%3a%2f%2fmattsurabian.github.io%2fhow-i-test-locally-hosted-sites-with-physical-devices%2f" title="Google Plus" class="gp" target="_blank" rel="nofollow"></a>
+        <a href="https://www.linkedin.com/cws/share?url=https%3a%2f%2fmattsurabian.github.io%2fhow-i-test-locally-hosted-sites-with-physical-devices%2f" title="LinkedIn" class="ln" target="_blank" rel="nofollow"></a>
+    </div>
+</aside>
+
+  </header>
+
+  <div class="content-inner">
+    <div class="article-body">
+
+<p>Building web apps is totally awesome, especially when they work great in our multiscreen world. But behind the scenes to all kinds of amazing consistent functionality is a developer banging their head against the wall trying to figure out how to test things across all these different mobile devices locally, because the simulators aren&rsquo;t always good enough and pushing code for every little tweak and test is ridiculous.</p>
+
+<p>That used to be me banging my head against the wall trying to solve this problem. Thanks to a lot of help from others over the years and some really cool tools my head is healed and I&rsquo;ve arrived at my current solution.</p>
+
+<p>It&rsquo;s pretty simple, but before getting into the steps we need to talk a bit about networking.</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<h4 id="download-a-href-http-www-charlesproxy-com-target-blank-charles-proxy-a">Download <a href="http://www.charlesproxy.com/" target="_blank">Charles Proxy</a></h4>
+
+<p>Charles is a super useful traffic monitor and proxy tool. <a href="http://www.charlesproxy.com/documentation/">You can RTFM all about it</a>, but you don&rsquo;t have to do that now. I&rsquo;ll cover the basics in this post.</p>
+
+<h4 id="determine-your-network-environment">Determine your network environment</h4>
+
+<p>The network environment you&rsquo;re testing in will likely fall into one of these categories:</p>
+
+<ul>
+<li><p>A trusted home/office wifi and/or wired network where all connected computers are allowed to see/talk with each other: <strong>Awesome, proceed to the first step:</strong></p></li>
+
+<li><p>A public/private wifi or wired network where all computers are not allowed to see/talk with each other: <strong>You must create an ad-hoc network between your host machine and test devices before continuing.</strong></p></li>
+
+<li><p>A non-trusted wifi network where all computers can see/talk with each other. Like a public wifi hotspot with a jr. network admin: <strong>Why are you connected to this kind of network at all!? You CAN proceed to first step and everything will work, but should probably checkout the ad-hoc network section if the entirety of what you&rsquo;re testing is available locally and you do not require an active internet connection.</strong></p></li>
+</ul>
+
+<h4 id="setting-up-an-ad-hoc-testing-network-optional-headache">Setting up an ad-hoc testing network (optional headache)</h4>
+
+<p>In order for you to test a site with your mobile devices they either need to be on the same network, or the site needs to be on the public internet. Sometimes for security reasons networks won&rsquo;t allow traffic between machines on the network. This is a common setting for public wifi hotspots. So if you&rsquo;re in an environment like this and need to test a locally hosted site you&rsquo;ll need to setup an ad-hoc network. Otherwise you can proceed to step one.</p>
+
+<p>In OS X this can easily be done from the &ldquo;create network…&rdquo; option in the wifi menu icon. Unfortunately, some Android devices cannot natively connect to ad hoc networks. Plus your host machine, unless it is hardwired via ethernet will lose its connection to wifi as the card is now broadcasting a signal instead of receiving it, meaning everything you need to test must reside locally.</p>
+
+<p>If your host machine happens to be hard-wired you can leverage the &ldquo;internet sharing&rdquo; feature provided by many operating systems, which will allow you to share your wired internet connection by creating a wifi hotspot you could connect your mobile device to and be on your way to step one.</p>
+
+<p>Some machines can be configured to share network connections with connected devices via USB as well, maybe worth looking into if you&rsquo;re unable to use the basic ad-hoc wireless network or internet sharing.</p>
+
+<p>Setting up ad-hoc networks can be a real pain, and rather than spend the rest of this post going on about it I&rsquo;ll leave it at this: <em>if your testing devices and your host machine aren&rsquo;t on the same network and can&rsquo;t communicate with each other none of the rest of this will work</em>.</p>
+
+<h2 id="step-1-get-your-site-s-valid-url-or-at-minimum-ip-address">Step 1: Get your site&rsquo;s valid URL, or at minimum IP address</h2>
+
+<p>You can&rsquo;t test a web app without some kind of URL. I have three hosting scenarios for my local testing:</p>
+
+<ul>
+<li><strong>Virtual Machine:</strong> For work and larger projects I have virtual machines setup that get an IP address from my host machine (using NAT mode available in most virtualization products) allowing me to easily connect to it via a browser from my host machine only.</li>
+<li><strong>MAMP, etc:</strong> Great tool that I use for a lot of personal projects. MAMP is a self contained apache and mysql stack that runs locally on a configured port (the default is 8888). This setup produces URLs like <code>http://localhost:8888/</code> <em>Note that Charles wants to use port 8888 by default for its proxy. If you&rsquo;re using MAMP or port 8888 for some other reason, you&rsquo;ll need to either adjust the port you&rsquo;re depending on or change Charles&rsquo; proxy settings to use a different port as discussed in step two.</em></li>
+<li><strong>Ad Hoc Web Servers:</strong> Node, Python, and other languages are capable of hosting websites by creating ad-hoc servers listening on a configured port, these, like MAMP noted above give URLs of the form <code>http://localhost:PORT_NUMBER</code></li>
+</ul>
+
+<p>Most of the time I use /etc/hosts to assign valid domains to my IP address. Charles is capable of handling all the routing, meaning I wouldn&rsquo;t have to use /etc/hosts at all, but when I&rsquo;m only testing locally vs using a device I don&rsquo;t want to always have Charles running. Charles also respects the entries within /etc/hosts so I don&rsquo;t have to deal with double config.</p>
+
+<p>However, the big gotcha with /etc/hosts happens for users of MAMP and Ad Hoc Web Servers because /etc/hosts does not support port numbers! You could map your chosen test domain via /etc/hosts like this</p>
+
+<pre>
+127.0.0.1 awesometest.com
+</pre>
+
+<p>and connect to it at the end of this tutorial via <code>http://awesometest.com:PORT_NUMBER</code>; or you could just configure the port forwarding stuff in Charles, which we&rsquo;ll cover in the next section…</p>
+
+<h2 id="step-2-setup-charles">Step 2: Setup Charles</h2>
+
+<p>Charles is designed to mostly set itself up during the install. If your machine is connected to the internet when you launch Charles you should be able to see traffic trickling through by clicking the &ldquo;sequence&rdquo; view. This is all your machine&rsquo;s http/https traffic, and Charles lets you do all kinds of cool stuff with it. But what we&rsquo;re really interested in here is Charles&rsquo; ability to proxy and map.</p>
+
+<h3 id="proxy-port">Proxy Port</h3>
+
+<p>In the menu bar checkout the &ldquo;proxy&rdquo; menu&rsquo;s &ldquo;proxy settings…&rdquo; option. <strong>By default Charles&rsquo; proxy is available at <code>http://localhost:8888</code> but if you need that port for your application or for MAMP you&rsquo;ll have to change this setting.</strong> If you get a warning about the port already being in use when you start Charles, you may have to manually turn on the proxy once you&rsquo;ve changed the port number. This is done from the &ldquo;proxy&rdquo; menu as well; when enabled in OS X a check is shown next to &ldquo;Mac OS X Proxy&rdquo;.</p>
+
+<p>For the rest of this tutorial I&rsquo;ll be referring to this configured port value as the <strong>Charles proxy port</strong>.</p>
+
+<h3 id="mapping">Mapping</h3>
+
+<p>If you&rsquo;re using MAMP, an ad-hoc web server, or just don&rsquo;t want to deal with /etc/hosts as noted above you&rsquo;ll need to setup Charles to pass requests for your chosen testing domain name to your locally hosted site. This is accomplished by using Charles&rsquo; menubar and selecting &ldquo;tools&rdquo; and &ldquo;map remote&rdquo;.</p>
+
+<p>You can add new rules in here that tell Charles where to send traffic based on the hostname, protocol, and port. The basic settings for an http site hosted locally on port 8080 that you wanted to access using a browser via charlestest.com would be:</p>
+
+<pre>
+Map From:
+  Protocol: http
+  Host: charlestest.com
+  Port: 80
+  Path: LEAVE_BLANK
+  Query: LEAVE_BLANK
+Map To:
+  Protocol: http
+  Host: localhost
+  Port: 8080
+  Path: LEAVE_BLANK
+  Query: LEAVE_BLANK
+</pre>
+
+<p>These rules can be turned on an off using the checkboxes next to them in the main &ldquo;map remote&rdquo; view. Wildcards can be used in the host name but remember a host value of <code>*charlestest.com</code> will match <code>www.charlestest.com</code> and <code>wowholycowcharlestest.com</code>. That may not be desired behavior depending on the brevity of your testing URL. I usually just have two entries: one for <code>www</code> and the other without.</p>
+
+<h2 id="step-3-determine-your-host-machine-s-local-ip-address">Step 3: Determine your host machine&rsquo;s local IP address</h2>
+
+<p>This is the IP address of your test computer as far as the local network is concerned. You can find this out from system settings or a command prompt. If your machine is connected to the internet <em>DO NOT</em> go to <code>whatismyip.com</code> because that&rsquo;s you&rsquo;re WAN IP and not what we need for this test.</p>
+
+<p>From here on out I&rsquo;ll refer to this as your <strong>LAN IP</strong></p>
+
+<h2 id="step-4-configure-your-mobile-device-to-use-charles-proxy">Step 4: Configure your mobile device to use Charles&rsquo; proxy</h2>
+
+<p>At this point you should be able to access your mapped domain via a browser on your local machine where Charles is running and everything should be working. Now the magic of getting your mobile device to use your machine as a proxy. All the networking headaches mentioned earlier in the article have built up to this point. If your mobile device and your host computer running Charles are on the same network and can talk to one another, you can go into your devices network settings:</p>
+
+<p><strong>Android:</strong> The simplest way to set proxy settings is to go to the list of wifi networks, long press on the network you&rsquo;re connected to, select &ldquo;modify network&rdquo;, and then use the &ldquo;show advanced options&rdquo; checkbox to reveal a &ldquo;proxy settings&rdquo; section, change the selection from &ldquo;none&rdquo; to &ldquo;manual&rdquo; and enter the following information:</p>
+
+<pre>
+Proxy hostname: LAN IP (from step three)
+Proxy port: Charles proxy port (from step two)
+Bypass proxy for: LEAVE_BLANK
+</pre>
+
+<p><strong>iOS:</strong> Go to settings and get to your list of wireless networks, click the blue arrow next to the wireless network the device is connected to. Scroll down to the &ldquo;HTTP Proxy&rdquo; section and select the &ldquo;Manual&rdquo; tab. Enter the following information:</p>
+
+<pre>
+Server: LAN IP (from step three)
+Port: Charles proxy port (from step two)
+Authentication: Off
+</pre>
+
+<p>When you open a web browser on your phone after saving these settings Charles should pop up with a warning, saying a client is trying to connect to its proxy and requesting permission for this action. Allow it, it&rsquo;s your phone (hopefully)! Now all your phone&rsquo;s traffic will be routed through your local machine, be displayed in Charles, and be subject to the mapping rules setup in step two and any /etc/hosts settings on the machine.</p>
+
+<p><strong>Don&rsquo;t forget to set your proxy settings back to none when you&rsquo;re done testing. Otherwise when Charles is closed your device will no longer have an internet connection.</strong></p>
+
+<h2 id="step-5-celebrate">Step 5: Celebrate</h2>
+
+<p>That&rsquo;s it! Now read the <a href="http://www.charlesproxy.com/documentation/">Charles manual</a> and find out about all the other stuff you can do with it!</p>
+
+<h2 id="other-solutions">Other Solutions</h2>
+
+<p><a href="http://xip.io">xip.io</a> is a free <a href="http://37signals.com/">37signals</a> offering that solves this problem using DNS. <a href="http://scottgonzalez.com/">Scott González</a> just wrote a blog post called <a href="http://blog.nemikor.com/2013/12/06/blissful-testing-of-locally-hosted-sites/">Blissful Testing of Locally Hosted Sites</a> which goes into his local workflow and how he&rsquo;s leveraging <a href="http://xip.io">xip.io</a>.</p>
+
+<p>The best thing about <a href="http://xip.io">xip.io</a> is that it&rsquo;s one of those things that &ldquo;just works&rdquo;. However, as with using Charles proxy there are pros and cons; so definitely checkout Scott&rsquo;s article and figure out what&rsquo;s going to work best for you. Specifically if you&rsquo;re looking to be able to analyze the traffic or reply packets Charles will be the better choice, if that&rsquo;s not important at all, maybe <a href="http://xip.io">xip.io</a> would be a simpler avenue.</p>
+</div>
+  </div>
+
+  <footer class="article-footer">
+    <aside class="p-share">
+    <div class="share-inner">
+        <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fmattsurabian.github.io%2fhow-i-test-locally-hosted-sites-with-physical-devices%2f&t=How%20I%20Test%20Locally%20Hosted%20Sites%20With%20Physical%20Devices" title="Facebook" class="fb" target="_blank" rel="nofollow"></a>
+        <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fmattsurabian.github.io%2fhow-i-test-locally-hosted-sites-with-physical-devices%2f&text=How%20I%20Test%20Locally%20Hosted%20Sites%20With%20Physical%20Devices&tw_p=tweetbutton" title="Twitter" class="tw" target="_blank" rel="nofollow"></a>
+        <a href="https://plus.google.com/share?url=https%3a%2f%2fmattsurabian.github.io%2fhow-i-test-locally-hosted-sites-with-physical-devices%2f" title="Google Plus" class="gp" target="_blank" rel="nofollow"></a>
+        <a href="https://www.linkedin.com/cws/share?url=https%3a%2f%2fmattsurabian.github.io%2fhow-i-test-locally-hosted-sites-with-physical-devices%2f" title="LinkedIn" class="ln" target="_blank" rel="nofollow"></a>
+    </div>
+</aside>
+
+    <div class="content-inner">
+      <ol class="p-crumb">
+        <li><a href="https://mattsurabian.github.io/"><i class="home"></i></a></li>
+        
+        <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://mattsurabian.github.io/posts/" itemprop="url"><span itemprop="title">posts</span></a></li>
+        
+        <li>How I Test Locally Hosted Sites With Physical Devices</li>
+      </ol>
+
+      
+      
+      
+      
+      
+      
+    </div>
+  </footer>
+
+</article>
+
+
+  
+  
+  <section>
+    <header>Recent articles</header>
+    <ul class="p-articles bordered">
+      
+      <li><article class="li sm article-e63d5bd7546c161599039701fdabb73e">
+  <div class="content-inner">
+    <header class="article-header">
+      <div class="clearfix">
+        <a href="https://mattsurabian.github.io/debugging-process-signaling-in-bash/" class="thumbnail" title="Debugging Process Signaling In Bash"></a>
+        <div class="title"><a href="https://mattsurabian.github.io/debugging-process-signaling-in-bash/">Debugging Process Signaling In Bash</a></div>
+        <ul class="p-facts">
+          <li><i class="inline calendar"></i><time datetime="2017-10-23T17:00:00JST">10.23.2017</time></li>
+          <li><i class="inline cursor"></i><a href="https://mattsurabian.github.io/posts/">posts</a></li>
+          
+        </ul>
+      </div>
+    </header>
+  </div>
+</article>
+</li><li><article class="li sm article-b264197169c0eed62762dfca90983ec9">
+  <div class="content-inner">
+    <header class="article-header">
+      <div class="clearfix">
+        <a href="https://mattsurabian.github.io/use-ssh-configure-key-based-access-automatically/" class="thumbnail" title="Use SSH: Configure Key Based Access Automatically"></a>
+        <div class="title"><a href="https://mattsurabian.github.io/use-ssh-configure-key-based-access-automatically/">Use SSH: Configure Key Based Access Automatically</a></div>
+        <ul class="p-facts">
+          <li><i class="inline calendar"></i><time datetime="2017-10-20T18:00:00JST">10.20.2017</time></li>
+          <li><i class="inline cursor"></i><a href="https://mattsurabian.github.io/posts/">posts</a></li>
+          
+        </ul>
+      </div>
+    </header>
+  </div>
+</article>
+</li><li><article class="li sm article-7c507f28ab3f4c9e333e370dfba69926">
+  <div class="content-inner">
+    <header class="article-header">
+      <div class="clearfix">
+        <a href="https://mattsurabian.github.io/youre-using-ssh-wrong/" class="thumbnail" title="You&#39;re Using SSH Wrong"></a>
+        <div class="title"><a href="https://mattsurabian.github.io/youre-using-ssh-wrong/">You&#39;re Using SSH Wrong</a></div>
+        <ul class="p-facts">
+          <li><i class="inline calendar"></i><time datetime="2017-10-20T17:00:00JST">10.20.2017</time></li>
+          <li><i class="inline cursor"></i><a href="https://mattsurabian.github.io/posts/">posts</a></li>
+          
+        </ul>
+      </div>
+    </header>
+  </div>
+</article>
+</li><li><article class="li sm article-be3c5db3951565a06e6b7142e8e227f4">
+  <div class="content-inner">
+    <header class="article-header">
+      <div class="clearfix">
+        <a href="https://mattsurabian.github.io/one-weird-old-trick-that-changed-my-digital-life-forever.../" class="thumbnail" title="One weird old trick that changed my digital life forever..."></a>
+        <div class="title"><a href="https://mattsurabian.github.io/one-weird-old-trick-that-changed-my-digital-life-forever.../">One weird old trick that changed my digital life forever...</a></div>
+        <ul class="p-facts">
+          <li><i class="inline calendar"></i><time datetime="2017-10-18T17:00:00JST">10.18.2017</time></li>
+          <li><i class="inline cursor"></i><a href="https://mattsurabian.github.io/posts/">posts</a></li>
+          
+        </ul>
+      </div>
+    </header>
+  </div>
+</article>
+</li><li><article class="li sm article-bccf15e04bab0fba8f39aeeb74a295dd">
+  <div class="content-inner">
+    <header class="article-header">
+      <div class="clearfix">
+        <a href="https://mattsurabian.github.io/podcasting-with-jekyll/" class="thumbnail" title="Podcasting With Jekyll"></a>
+        <div class="title"><a href="https://mattsurabian.github.io/podcasting-with-jekyll/">Podcasting With Jekyll</a></div>
+        <ul class="p-facts">
+          <li><i class="inline calendar"></i><time datetime="2015-06-02T17:00:00JST">6.2.2015</time></li>
+          <li><i class="inline cursor"></i><a href="https://mattsurabian.github.io/posts/">posts</a></li>
+          
+        </ul>
+      </div>
+    </header>
+  </div>
+</article>
+</li>
+    </ul>
+  </section>
+  
+</div>
+
+
+    </main>
+
+    
+
+    <footer class="l-footer">
+      <div class="content-inner">
+        <p><span class="h-logo">&copy; Matt vs Computers</span></p>
+        <aside>
+          <p>Powered by <a href="https://gohugo.io/">Hugo</a>.</p>
+          <p><a href="https://github.com/dim0627/hugo_theme_solit" class="h-logo">Solit</a> designed by <a href="http://yet.unresolved.xyz/">Daisuke Tsuji</a>.</p>
+        </aside>
+      </div>
+    </footer>
+
+    <a href="#" class="p-movetop" title="ページ上部へ戻る" rel="nofollow"></a>
+  </body>
+</html>
+

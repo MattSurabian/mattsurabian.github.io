@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on Matt vs Computers</title>
+    <link>https://mattsurabian.github.io/projects/</link>
+    <description>Recent content in Projects on Matt vs Computers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 30 Apr 2015 17:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://mattsurabian.github.io/projects/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>A ProXPN Client for Linux</title>
+      <link>https://mattsurabian.github.io/a-proxpn-client-for-linux/</link>
+      <pubDate>Thu, 30 Apr 2015 17:00:00 +0900</pubDate>
+      
+      <guid>https://mattsurabian.github.io/a-proxpn-client-for-linux/</guid>
+      <description>At the end of 2014 I switched to Arch Linux from OS X. I&amp;rsquo;d though about making the switch before, and for the first time everything lined up to make it so. All of the programs I used on a daily basis would run fine or had solid alternatives available. I had to give up a few programs I only used occasionally, and for the most part they haven&amp;rsquo;t been missed.</description>
+    </item>
+    
+    <item>
+      <title>Dot Vaults: Encrypted hidden file backup</title>
+      <link>https://mattsurabian.github.io/dot-vaults-encrypted-hidden-file-backup/</link>
+      <pubDate>Mon, 04 Nov 2013 17:00:00 +0900</pubDate>
+      
+      <guid>https://mattsurabian.github.io/dot-vaults-encrypted-hidden-file-backup/</guid>
+      <description>This post is here for historical reasons. Don&amp;rsquo;t use this. 3DES via openssl is not considered secure.
+Backing Up Dotfiles After hearing about it for months on Security Now, I finally decided to give Carbonite a try. I&amp;rsquo;d been trying to decide between CrashPlan and Carbonite for far too long and the fact that Carbonite supports a pod cast I enjoy finally put me over the edge.
+Carbonite, like many other automated backup solutions, doesn&amp;rsquo;t provide support for dotfiles.</description>
+    </item>
+    
+    <item>
+      <title>How and Why I&#39;m Using Rackspace and OpsCode Hosted Chef</title>
+      <link>https://mattsurabian.github.io/how-and-why-im-using-rackspace-and-opscode-hosted-chef/</link>
+      <pubDate>Sun, 03 Mar 2013 17:00:00 +0900</pubDate>
+      
+      <guid>https://mattsurabian.github.io/how-and-why-im-using-rackspace-and-opscode-hosted-chef/</guid>
+      <description>I am not affiliated in any way with Rack Space or OpsCode, I’m just a user that loves the flexibility it offers me. I am a LAMP stack developer that uses Ubuntu.
+What is Chef?  Chef is an open source configuration management tool written primarily in Ruby. Chef is a tool used for DevOps that allows for the provisioning and creation of cloud services and servers using ruby and JSON.</description>
+    </item>
+    
+  </channel>
+</rss>

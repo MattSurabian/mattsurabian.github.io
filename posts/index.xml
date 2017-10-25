@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Matt vs Computers</title>
+    <link>https://mattsurabian.github.io/posts/</link>
+    <description>Recent content in Posts on Matt vs Computers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 23 Oct 2017 17:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://mattsurabian.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Debugging Process Signaling In Bash</title>
+      <link>https://mattsurabian.github.io/debugging-process-signaling-in-bash/</link>
+      <pubDate>Mon, 23 Oct 2017 17:00:00 +0900</pubDate>
+      
+      <guid>https://mattsurabian.github.io/debugging-process-signaling-in-bash/</guid>
+      <description>Recently I was working on this blog in my favorite IDE: IntelliJ IDEA. This blog is a hugo site and recently I noticed that whenever I ran hugo serve locally from inside my IDE I was unable to ctrl-c out of it. I didn&amp;rsquo;t remember this being a problem the last time I was using hugo. So I did what any developer might do in this situation: cried to the internet for help.</description>
+    </item>
+    
+    <item>
+      <title>Use SSH: Configure Key Based Access Automatically</title>
+      <link>https://mattsurabian.github.io/use-ssh-configure-key-based-access-automatically/</link>
+      <pubDate>Fri, 20 Oct 2017 18:00:00 +0900</pubDate>
+      
+      <guid>https://mattsurabian.github.io/use-ssh-configure-key-based-access-automatically/</guid>
+      <description>This post is part of a series about using SSH more effectively. SSH is one of those programs that a lot of developers interact with but few seem to take full advantage of. This series highlights some of the very powerful features that have saved me a lot of time over the years.
+Stop typing your password when connecting to remote servers I really hate having to type my password over and over again when logging into remote machines.</description>
+    </item>
+    
+    <item>
+      <title>You&#39;re Using SSH Wrong</title>
+      <link>https://mattsurabian.github.io/youre-using-ssh-wrong/</link>
+      <pubDate>Fri, 20 Oct 2017 17:00:00 +0900</pubDate>
+      
+      <guid>https://mattsurabian.github.io/youre-using-ssh-wrong/</guid>
+      <description>Ok, maybe you’re not using it wrong exactly, but I’m willing to bet there are some pretty awesome features you could be using that would make your life easier. In this series I’ll cover some of my favorite SSH features that you can hopefully put to use right away and save yourself some time. This series assumes you already have at least one SSH key pair created that lives in the default location ~/.</description>
+    </item>
+    
+    <item>
+      <title>One weird old trick that changed my digital life forever...</title>
+      <link>https://mattsurabian.github.io/one-weird-old-trick-that-changed-my-digital-life-forever.../</link>
+      <pubDate>Wed, 18 Oct 2017 17:00:00 +0900</pubDate>
+      
+      <guid>https://mattsurabian.github.io/one-weird-old-trick-that-changed-my-digital-life-forever.../</guid>
+      <description>Today is the first day of the rest of my digital life. I quit Twitter on Sunday evening after reflecting on some of the pros/cons:
+   In an M Night Shyamalan twist this means the only social network I&amp;rsquo;m on these days is LinkedIn where I&amp;rsquo;ve commandeered the im-matt-surabian short link.
+Last night I purchased the shockingly available domain name weirdoldtricks.com at the urging of my good friend Tyler Kellen from Going Slowly.</description>
+    </item>
+    
+    <item>
+      <title>Podcasting With Jekyll</title>
+      <link>https://mattsurabian.github.io/podcasting-with-jekyll/</link>
+      <pubDate>Tue, 02 Jun 2015 17:00:00 +0900</pubDate>
+      
+      <guid>https://mattsurabian.github.io/podcasting-with-jekyll/</guid>
+      <description>At the beginning of this year Matt Gagne, Adam Jarret, and I finally decided to follow through with our idea to record a podcast together; it&amp;rsquo;s called Rubber Ducking and we try to record twice a month. We started out by making sure everyone was setup to properly record vocals and did a few riff sessions to determine the overall tone and content. Given that we&amp;rsquo;re three loudmouths from New England, this was the easy part.</description>
+    </item>
+    
+    <item>
+      <title>Overcoming the Manager&#39;s Schedule</title>
+      <link>https://mattsurabian.github.io/overcoming-the-managers-schedule/</link>
+      <pubDate>Sat, 13 Dec 2014 17:00:00 +0900</pubDate>
+      
+      <guid>https://mattsurabian.github.io/overcoming-the-managers-schedule/</guid>
+      <description>Just as with my 10 Commandments of Working From Home post, I wrote this as a way to explore my thoughts and hold myself accountable. I don&amp;rsquo;t know if anything here will resonate with anyone else. I plan to do a retrospective on this post at a later time and evaluate how I&amp;rsquo;m doing.
+Those interested but unfamiliar with the concept of the maker&amp;rsquo;s and manager&amp;rsquo;s schedule, should checkout Paul Graham&amp;rsquo;s post on the topic:Maker&amp;rsquo;s Schedule, Manager&amp;rsquo;s Schedule</description>
+    </item>
+    
+    <item>
+      <title>Arch Linux on a Macbook Pro 8.1</title>
+      <link>https://mattsurabian.github.io/arch-linux-on-a-macbook-pro-8.1/</link>
+      <pubDate>Fri, 12 Dec 2014 17:00:00 +0900</pubDate>
+      
+      <guid>https://mattsurabian.github.io/arch-linux-on-a-macbook-pro-8.1/</guid>
+      <description>Pass The Tinfoil I grew up using Apple computers, and even though my chosen career path has thoroughly exposed me to Windows and Linux, my daily driver has always been some form of mac. But for the last several years as their mobile devices have taken over; I&amp;rsquo;ve become disenchanted.
+Personally, I don&amp;rsquo;t much care for the cellphone or tablet form factor and am not a user of iOS. As a result I feel I&amp;rsquo;m drifting further and further from Apple&amp;rsquo;s target market.</description>
+    </item>
+    
+    <item>
+      <title>Always Be Deploying™</title>
+      <link>https://mattsurabian.github.io/always-be-deploying/</link>
+      <pubDate>Sun, 06 Apr 2014 17:00:00 +0900</pubDate>
+      
+      <guid>https://mattsurabian.github.io/always-be-deploying/</guid>
+      <description>There is a dirty little secret waiting to be discovered by anyone with a great idea: Deployment. Regardless of how amazing your functional prototype is it doesn&amp;rsquo;t amount to anything if it can&amp;rsquo;t be deployed and successfully scaled.
+It&amp;rsquo;s not difficult these days to find some entrepreneurial type who has a great idea and only needs &amp;ldquo;a programmer to build it for them&amp;rdquo; (for a flat fee of course) and they&amp;rsquo;ll take it from there.</description>
+    </item>
+    
+    <item>
+      <title>RequireJS Projects and Asynchronously Loading the Google Maps API</title>
+      <link>https://mattsurabian.github.io/requirejs-projects-and-asynchronously-loading-the-google-maps-api/</link>
+      <pubDate>Mon, 09 Dec 2013 17:00:00 +0900</pubDate>
+      
+      <guid>https://mattsurabian.github.io/requirejs-projects-and-asynchronously-loading-the-google-maps-api/</guid>
+      <description>##The Problem
+Recently I was talking with my good friend Adam Jarret about some bugs he was running into with Google Maps while attempting to load the JavaScript API in a project that used RequireJS.
+The script responsible for loading the Google Maps API does so by making calls to several other scripts, all of which must be loaded before the Google Maps API can be used. If you&amp;rsquo;re using Google Maps in your project you&amp;rsquo;re probably familiar with this URL:</description>
+    </item>
+    
+    <item>
+      <title>How I Test Locally Hosted Sites With Physical Devices</title>
+      <link>https://mattsurabian.github.io/how-i-test-locally-hosted-sites-with-physical-devices/</link>
+      <pubDate>Thu, 05 Dec 2013 17:00:00 +0900</pubDate>
+      
+      <guid>https://mattsurabian.github.io/how-i-test-locally-hosted-sites-with-physical-devices/</guid>
+      <description>Building web apps is totally awesome, especially when they work great in our multiscreen world. But behind the scenes to all kinds of amazing consistent functionality is a developer banging their head against the wall trying to figure out how to test things across all these different mobile devices locally, because the simulators aren&amp;rsquo;t always good enough and pushing code for every little tweak and test is ridiculous.
+That used to be me banging my head against the wall trying to solve this problem.</description>
+    </item>
+    
+    <item>
+      <title>My Off Grid Power Setup</title>
+      <link>https://mattsurabian.github.io/my-off-grid-power-setup/</link>
+      <pubDate>Mon, 25 Nov 2013 17:00:00 +0900</pubDate>
+      
+      <guid>https://mattsurabian.github.io/my-off-grid-power-setup/</guid>
+      <description>I&amp;rsquo;ve got the power Though technically it&amp;rsquo;s on loan from the sun.
+My wife and I used to live in a small cabin on a farm at the edge of the woods a little more than a quarter of a mile from the road. We had a dedicated power line running from the street to the house and lots of trees along the road and driveway.
+More than once while we were living there, large trees came down and knocked out our power.</description>
+    </item>
+    
+    <item>
+      <title>Retrospective: 10 Commandments of Working From Home</title>
+      <link>https://mattsurabian.github.io/retrospective-10-commandments-of-working-from-home/</link>
+      <pubDate>Mon, 25 Nov 2013 17:00:00 +0900</pubDate>
+      
+      <guid>https://mattsurabian.github.io/retrospective-10-commandments-of-working-from-home/</guid>
+      <description>It has been almost two years since I wrote myself 10 commandments for working from home; I think it&amp;rsquo;s time for a retrospective.
+#1: Google Voice Number A dedicated work line is something I’m still a very firm believer in. But because the development team I’m a part of is “hyper-communicative” (we’re in a chat all day and frequently working collaboratively on GoTo Meeting or via Google Hangouts) I don’t use the actual “phone” very much.</description>
+    </item>
+    
+    <item>
+      <title>Moving My Blog To Jekyll</title>
+      <link>https://mattsurabian.github.io/moving-my-blog-to-jekyll/</link>
+      <pubDate>Sat, 04 May 2013 17:00:00 +0900</pubDate>
+      
+      <guid>https://mattsurabian.github.io/moving-my-blog-to-jekyll/</guid>
+      <description>Performance At Scale WordPress is an incredible blogging platform and the strategy for deploying WordPress at moderate scale is pretty straightforward: a horizontally scaling web array and a vertically scaling database.
+The problem is that I (and I imagine the majority of people with industry blogs) don&amp;rsquo;t need constant scale. A &amp;ldquo;scaling event&amp;rdquo; might occur once every few months. I refuse to sacrifice ability to scale for convenience or cost.</description>
+    </item>
+    
+    <item>
+      <title>Eliminating Confirmation Bias: Putting the Science Back Into Computer Science</title>
+      <link>https://mattsurabian.github.io/eliminating-confirmation-bias-putting-the-science-back-into-computer-science/</link>
+      <pubDate>Thu, 03 Jan 2013 17:00:00 +0900</pubDate>
+      
+      <guid>https://mattsurabian.github.io/eliminating-confirmation-bias-putting-the-science-back-into-computer-science/</guid>
+      <description>What is Confirmation Bias Confirmation bias is the tendency to favor information that supports one’s views or hypothesis. Every time you’re troubleshooting a problem and think, “I know it can’t be ________” you might be guilty of it. As a web developer I know that feeling all too well.
+Think about your last debugging experience. Did you solve the problem as quickly as you expected? How familiar with the codebase were you?</description>
+    </item>
+    
+    <item>
+      <title>A Better Way To Unique Arrays In PHP</title>
+      <link>https://mattsurabian.github.io/a-better-way-to-unique-arrays-in-php/</link>
+      <pubDate>Sat, 29 Dec 2012 17:00:00 +0900</pubDate>
+      
+      <guid>https://mattsurabian.github.io/a-better-way-to-unique-arrays-in-php/</guid>
+      <description>Are you uniquing PHP arrays using array_unique? Consider doubling up with array_flip instead. Array_unique is pretty slow.</description>
+    </item>
+    
+    <item>
+      <title>Validating Multiple Input Options in PHP</title>
+      <link>https://mattsurabian.github.io/validating-multiple-input-options-in-php/</link>
+      <pubDate>Mon, 05 Mar 2012 17:00:00 +0900</pubDate>
+      
+      <guid>https://mattsurabian.github.io/validating-multiple-input-options-in-php/</guid>
+      <description>While pair programming last week a colleague of mine showed me a great trick for validating user input with multiple options. This trick works best in PHP because of its fantastic array support. But with the right utility classes or frameworks you could really use it with any language. It just might not save you as much time as it does in PHP.
+In this case we were writing some setters for a class.</description>
+    </item>
+    
+    <item>
+      <title>Working With Poorly Documented APIs</title>
+      <link>https://mattsurabian.github.io/working-with-poorly-documented-apis/</link>
+      <pubDate>Tue, 28 Feb 2012 17:00:00 +0900</pubDate>
+      
+      <guid>https://mattsurabian.github.io/working-with-poorly-documented-apis/</guid>
+      <description>APIs are awesome! Being able to tap into a web service and work with data can make a lot of tasks easier and cleaner. APIs also allow us to link into advanced functionality and provide a richer experience for end users. Unfortunately, a lot of APIs are poorly documented, even ones for well known online services (you know who you are). This can make working with them challenging, and debugging their errors even more of a nightmare.</description>
+    </item>
+    
+    <item>
+      <title>10 Commandments of Working From Home</title>
+      <link>https://mattsurabian.github.io/10-commandments-of-working-from-home/</link>
+      <pubDate>Thu, 09 Feb 2012 17:00:00 +0900</pubDate>
+      
+      <guid>https://mattsurabian.github.io/10-commandments-of-working-from-home/</guid>
+      <description>I&amp;rsquo;ve reflected on this old post!
+Lots of people, not just developers, dream about working from home. Whiling away the hours in the comfort of their castle and making a living at the same time. Why not? Everything is perfect when you’re working from home. Nothing can interrupt or distract you. Success is guaranteed, and just being there dissolves time management challenges and makes meeting deadlines a breeze.
+Working from home solves all your problems… right?</description>
+    </item>
+    
+  </channel>
+</rss>
