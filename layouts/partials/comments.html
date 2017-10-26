@@ -2,6 +2,6 @@
             layout="responsive"
             sandbox="allow-scripts allow-same-origin allow-modals allow-popups allow-forms"
             resizable
-            src="https://mattsurabian.com/js/amp-disqus-uc.html?identifier={{ .Title }}&url={{ .Permalink }}&title={{ .Title }}">
+            src="https://mattsurabian.com/js/amp-disqus-uc.html?identifier={{ .Title | urlize }}">
     <div overflow tabindex=0 role=button aria-label="Load more comments..." style="text-align:right"><em>Click to load more comments...</em></div>
 </amp-iframe>
