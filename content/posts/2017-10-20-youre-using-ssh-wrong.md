@@ -20,7 +20,7 @@ ssh-keygen -t rsa -b 4096
 Over the next week or two I'll be publishing posts that show how I:
 
   - [Automatically configure SSH key-based access to remote machines with a single command.]({{< ref "posts/2017-10-20-automatically-configure-ssh-key-access.md" >}})
-  - Get information quickly from remote machines by running one off commands over SSH.
+  - [Get information quickly from remote machines by running one off commands over SSH]({{< ref "posts/2017-10-27-run-commands-over-ssh-to-securely-interact-with-a-server.md" >}}).
   - Give remote machines access to things like git without needing to copy your private key(s) onto them.
   - Access resources on external networks from a remote machine using port forwarding
   - Debug common SSH access problems.
