@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://mattsurabian.github.io/use-ssh-run-one-off-commands-to-securely-interact-with-a-server/</loc>
+    <lastmod>2017-10-27T17:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://mattsurabian.github.io/3-ways-docker-has-improved-my-development-workflow/</loc>
     <lastmod>2017-10-25T17:00:00+09:00</lastmod>
   </url>
@@ -118,13 +123,13 @@
   
   <url>
     <loc>https://mattsurabian.github.io/</loc>
-    <lastmod>2017-10-25T17:00:00+09:00</lastmod>
+    <lastmod>2017-10-27T17:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://mattsurabian.github.io/posts/</loc>
-    <lastmod>2017-10-25T17:00:00+09:00</lastmod>
+    <lastmod>2017-10-27T17:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   

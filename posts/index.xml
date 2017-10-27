@@ -5,10 +5,20 @@
     <link>https://mattsurabian.github.io/posts/</link>
     <description>Recent content in Posts on Matt vs Computers</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 25 Oct 2017 17:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 27 Oct 2017 17:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://mattsurabian.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Use SSH: Run One Off Commands To Securely Interact With A Server</title>
+      <link>https://mattsurabian.github.io/use-ssh-run-one-off-commands-to-securely-interact-with-a-server/</link>
+      <pubDate>Fri, 27 Oct 2017 17:00:00 +0900</pubDate>
+      
+      <guid>https://mattsurabian.github.io/use-ssh-run-one-off-commands-to-securely-interact-with-a-server/</guid>
+      <description>This post is part of a series about using SSH more effectively. SSH is one of those programs that a lot of developers interact with but few seem to take full advantage of. This series highlights some of the very powerful features that have saved me a lot of time over the years.
+Passing Commands To SSH You can run a quick command on a remote system without needing to open a whole persistent terminal session.</description>
+    </item>
     
     <item>
       <title>3 Ways Docker Has Improved My Development Workflow</title>
