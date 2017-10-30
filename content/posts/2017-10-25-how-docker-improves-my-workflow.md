@@ -45,7 +45,7 @@ people excited and making it seem approachable.
 Over the next few weeks, this series will focus on the 3 things that I started doing with Docker that changed my mind about
 using containers during development:
 
-  - Spinning up ad hoc dependent services (like Redis or Postgres) instead of going through all the work of configuring a VM. Especially on projects where those dependencies were managed by a different team.
+  - [Spinning up ad hoc dependent services (like Redis or Postgres) instead of going through all the work of configuring a VM.]({{< ref "posts/2017-10-30-use-docker-isolated-ad-hoc-dependencies.md">}}) Especially on projects where those dependencies were managed by a different team.
   - Ensuring a totally consistent and clean environment for building,compiling, and testing software across a diverse team.
   - Quickly simulating different data center environments to test networking and fail-over patterns in total isolation and at zero cost.
 
