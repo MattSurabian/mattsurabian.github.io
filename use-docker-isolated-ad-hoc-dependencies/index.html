@@ -11,7 +11,7 @@
 <link rel="apple-touch-icon" href="https://mattsurabian.github.io/images/logo.png">
 
 
-<link rel="canonical" href="https://mattsurabian.github.io/overcoming-the-managers-schedule/">
+<link rel="canonical" href="https://mattsurabian.github.io/use-docker-isolated-ad-hoc-dependencies/">
 
 <link rel="icon" href="https://mattsurabian.github.io/favicon.ico?v=2">
     
@@ -19,29 +19,29 @@
     
     <link href="https://fonts.googleapis.com/css?family=Oswald:700%7cOpen&#43;Sans" rel="stylesheet">
     
-    <title>Overcoming the Manager&#39;s Schedule - Matt vs Computers</title>
+    <title>Use Docker: Isolated Ad Hoc Dependencies - Matt vs Computers</title>
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
       <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
   
     
-<meta name="description" content="Exploring how to stay sane when transitioning from the maker&#39;s schedule to the manager&#39;s schedule as a developer turned account manager.">
+<meta name="description" content="This post is about how I use Docker to handle project dependencies to increase my efficiency and give me more room to experiment.">
 
-<meta property="og:title" content="Overcoming the Manager&#39;s Schedule - Matt vs Computers">
+<meta property="og:title" content="Use Docker: Isolated Ad Hoc Dependencies - Matt vs Computers">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://mattsurabian.github.io/overcoming-the-managers-schedule/">
-<meta property="og:image" content="https://mattsurabian.github.io/images/broken-headphones.jpg">
+<meta property="og:url" content="https://mattsurabian.github.io/use-docker-isolated-ad-hoc-dependencies/">
+<meta property="og:image" content="https://mattsurabian.github.io/images/container-crane.jpg">
 <meta property="og:site_name" content="Matt vs Computers">
-<meta property="og:description" content="Exploring how to stay sane when transitioning from the maker&#39;s schedule to the manager&#39;s schedule as a developer turned account manager.">
+<meta property="og:description" content="This post is about how I use Docker to handle project dependencies to increase my efficiency and give me more room to experiment.">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="Matt vs Computers">
-<meta name="twitter:url" content="https://mattsurabian.github.io/overcoming-the-managers-schedule/">
-<meta name="twitter:title" content="Overcoming the Manager&#39;s Schedule - Matt vs Computers">
-<meta name="twitter:description" content="Exploring how to stay sane when transitioning from the maker&#39;s schedule to the manager&#39;s schedule as a developer turned account manager.">
-<meta name="twitter:image" content="https://mattsurabian.github.io/images/broken-headphones.jpg">
+<meta name="twitter:url" content="https://mattsurabian.github.io/use-docker-isolated-ad-hoc-dependencies/">
+<meta name="twitter:title" content="Use Docker: Isolated Ad Hoc Dependencies - Matt vs Computers">
+<meta name="twitter:description" content="This post is about how I use Docker to handle project dependencies to increase my efficiency and give me more room to experiment.">
+<meta name="twitter:image" content="https://mattsurabian.github.io/images/container-crane.jpg">
 
 
 <script type="application/ld+json">
@@ -52,15 +52,15 @@
       "@type": "WebPage",
       "@id":"https://mattsurabian.github.io/"
     },
-    "headline": "Overcoming the Manager&#39;s Schedule - Matt vs Computers",
+    "headline": "Use Docker: Isolated Ad Hoc Dependencies - Matt vs Computers",
     "image": {
       "@type": "ImageObject",
-      "url": "https://mattsurabian.github.io/images/broken-headphones.jpg",
+      "url": "https://mattsurabian.github.io/images/container-crane.jpg",
       "height": 800,
       "width": 800
     },
-    "datePublished": "2014-12-13T17:00:00JST",
-    "dateModified": "2014-12-13T17:00:00JST",
+    "datePublished": "2017-10-30T17:00:00JST",
+    "dateModified": "2017-10-30T17:00:00JST",
     "author": {
       "@type": "Person",
       "name": "Matt vs Computers"
@@ -75,7 +75,7 @@
         "height": 60
       }
     },
-    "description": "Exploring how to stay sane when transitioning from the maker&#39;s schedule to the manager&#39;s schedule as a developer turned account manager."
+    "description": "This post is about how I use Docker to handle project dependencies to increase my efficiency and give me more room to experiment."
   }
 </script>
 
@@ -127,13 +127,13 @@
     <main>
       
 <div class="l-container">
-  <article class="single article-6aa8e26fdc21ebe50824b6c4fa6a95c4">
+  <article class="single article-743d7ce5f0ae96e8ead36f2d6a6c9120">
   <header class="article-header">
     <div class="clearfix content-inner">
 
-      <h1 class="title">Overcoming the Manager&#39;s Schedule</h1>
+      <h1 class="title">Use Docker: Isolated Ad Hoc Dependencies</h1>
       <ul class="p-facts">
-        <li><i class="inline calendar"></i><time datetime="2014-12-13T17:00:00JST">12.13.2014</time></li>
+        <li><i class="inline calendar"></i><time datetime="2017-10-30T17:00:00JST">10.30.2017</time></li>
         <li><i class="inline cursor"></i><a href="https://mattsurabian.github.io/posts/">posts</a></li>
         
       </ul>
@@ -141,10 +141,10 @@
     <div class="thumbnail"></div>
     <aside class="p-share">
     <div class="share-inner">
-        <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fmattsurabian.github.io%2fovercoming-the-managers-schedule%2f&t=Overcoming%20the%20Manager%27s%20Schedule" title="Facebook" class="fb" target="_blank" rel="nofollow"></a>
-        <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fmattsurabian.github.io%2fovercoming-the-managers-schedule%2f&text=Overcoming%20the%20Manager%27s%20Schedule&tw_p=tweetbutton" title="Twitter" class="tw" target="_blank" rel="nofollow"></a>
-        <a href="https://plus.google.com/share?url=https%3a%2f%2fmattsurabian.github.io%2fovercoming-the-managers-schedule%2f" title="Google Plus" class="gp" target="_blank" rel="nofollow"></a>
-        <a href="https://www.linkedin.com/cws/share?url=https%3a%2f%2fmattsurabian.github.io%2fovercoming-the-managers-schedule%2f" title="LinkedIn" class="ln" target="_blank" rel="nofollow"></a>
+        <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fmattsurabian.github.io%2fuse-docker-isolated-ad-hoc-dependencies%2f&t=Use%20Docker%3a%20Isolated%20Ad%20Hoc%20Dependencies" title="Facebook" class="fb" target="_blank" rel="nofollow"></a>
+        <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fmattsurabian.github.io%2fuse-docker-isolated-ad-hoc-dependencies%2f&text=Use%20Docker%3a%20Isolated%20Ad%20Hoc%20Dependencies&tw_p=tweetbutton" title="Twitter" class="tw" target="_blank" rel="nofollow"></a>
+        <a href="https://plus.google.com/share?url=https%3a%2f%2fmattsurabian.github.io%2fuse-docker-isolated-ad-hoc-dependencies%2f" title="Google Plus" class="gp" target="_blank" rel="nofollow"></a>
+        <a href="https://www.linkedin.com/cws/share?url=https%3a%2f%2fmattsurabian.github.io%2fuse-docker-isolated-ad-hoc-dependencies%2f" title="LinkedIn" class="ln" target="_blank" rel="nofollow"></a>
     </div>
 </aside>
 
@@ -153,98 +153,71 @@
   <div class="content-inner">
     <div class="article-body">
 
-<p>Just as with my <a href="https://mattsurabian.github.io/the-10-commandments-of-working-from-home/">10 Commandments of Working From Home</a> post, I wrote this as a way to explore my thoughts and hold myself accountable. I don&rsquo;t know if anything here will resonate with anyone else. I plan to do a retrospective on this post at a later time and evaluate how I&rsquo;m doing.</p>
+<p>This post is <a href="https://mattsurabian.github.io/3-ways-docker-has-improved-my-development-workflow/">part of a series about using Docker in your development workflow</a> even if you’re not ready to start shipping containers into production. Whether you’re just getting started with VMs and Vagrant, have avoided Docker because it seems too complicated, or are just looking for ideas on how to use Docker more, this series covers some of the things that helped me start loving it.</p>
 
-<p>Those interested but unfamiliar with the concept of the maker&rsquo;s and manager&rsquo;s schedule, should checkout Paul Graham&rsquo;s post on the topic:<a href="http://www.paulgraham.com/makersschedule.html">Maker&rsquo;s Schedule, Manager&rsquo;s Schedule</a></p>
+<h2 id="my-first-aha-moment">My First Aha Moment</h2>
 
-<h2 id="denial">Denial</h2>
+<p>About two years ago I was working as a consultant with an application I had never run locally before and it needed a
+Redis server. In the production environment, this server was completely controlled by another team and all I knew was
+that the application needed a valid Redis connection string to do its work. Rather than install redis locally or set-up
+an entire Vagrant box just for one random dependency I decided to run:</p>
 
-<p>As a developer and someone who has always worked on the maker&rsquo;s schedule, the idea of breaking up my day into individual hour long blocks and switching to the manager&rsquo;s schedule has been the most intimidating thing about transitioning to my new role as account manager at <a href="http://bocoup.com">Bocoup</a>.</p>
+<pre><code>docker run -d -p 6379:6379 --name my-app-redis redis
+</code></pre>
 
-<p>Not because of all the meetings, but because I wasn&rsquo;t really sure how to remain productive; and I feared that being off the maker&rsquo;s schedule for too long could inhibit my ability to support the team.</p>
+<p>In <em>less less than a minute</em> I had a local Redis server available at <code>localhost:6379</code> ready to be connected to that was
+totally isolated from my machine and was able to be brought up and down essentially instantly. I also realized I was able
+to easily switch between different versions of Redis and the underlying Linux distribution by slightly altering my Docker
+command; no more having to Google the right shell incantations necessary to get things up and running in my own Vagrant
+box.</p>
 
-<p>At first, I believed there might be a way to stay on the maker&rsquo;s schedule despite my new role being a management one in which I&rsquo;d be attending and organizing all kinds of meetings everyday. <a href="https://twitter.com/_gsmith">Greg Smith</a> and <a href="https://www.linkedin.com/in/brianabent">Brian Abent</a> warned me that this was probably not possible.</p>
+<p>Best of all, <a href="https://hub.docker.com/_/redis/">the Redis maintainers took care of putting the container together for me</a> so I knew it was configured
+properly. I still love Vagrant, but the trusted ecosystem for base boxes is nothing compared to Docker; add to that the
+instant availability of a container and the whole thing is just too good to pass up.</p>
 
-<p>They were absolutely right. It took less than one day in the role to realize my initial idea was completely outrageous. There was no way to retain even a shred of the maker&rsquo;s schedule when managing multiple teams, projects, and customer relationships.</p>
+<h2 id="docker-hadn-t-really-changed-i-had">Docker Hadn’t Really Changed I Had</h2>
 
-<p>But what if I moved the goal post?</p>
+<p>Docker hadn’t really changed much since the last time I had played around with it; I was just in a better place to give
+things a shot. I ran into a real world problem that was blocking me from getting things done and I was able to use Docker
+to solve it quickly without a lot of ceremony. Suddenly I understood what everyone was so excited about.</p>
 
-<h2 id="re-imagining-the-manager-s-schedule">Re-imagining the manager&rsquo;s schedule</h2>
+<p>In future posts I’ll go into more detail about setting up specific configurations for dependencies like ElasticSearch and
+Redis which I’ve used many times; but the official documentation for many containers usually covers how to tune the
+settings or start with seed data.</p>
 
-<p>Once I realized some kind of modified maker&rsquo;s schedule was impossible, I spent time thinking about potential side effects of the manager&rsquo;s schedule, and came up with a list of things I wanted to avoid.</p>
+<h2 id="task-runners-make-something">Task Runners, Make, Something!</h2>
 
-<ul>
-<li>The impulse to bounce from task to task or &ldquo;fire to fire&rdquo; as dictated by the ring of a phone or the receipt of an email; and more importantly, the tendency to pass this hyper-activity and lack of focus on to the rest of a team.</li>
-<li>Needing to be &ldquo;always on&rdquo; in order to feel productive. Losing personal/professional life balance.</li>
-<li>Thinking the only way to ensure proper communication is including everyone in every meeting.</li>
-<li>Scheduling meetings &ldquo;for a whole hour just in case&rdquo; as a way to pad out one&rsquo;s schedule and avoid potential conflicts instead of effectively time boxing meetings.</li>
-<li>Conflating being &ldquo;busy&rdquo; with being effective, productive, or supportive.</li>
-</ul>
+<p>One thing that can help a lot is wrapping some of this stuff with a task runner of some kind. That can be as simple as
+<code>npm</code> scripts in JS projects, <code>Make</code>, or even a <code>bin</code> <a href="https://github.com/MattSurabian/mass-keno-tracker-api/tree/master/tasks">folder with scripts that handle the lifecycle of dependent containers</a>.
+This will help others on your team start working with Docker without feeling like they need to learn how every flag works.</p>
 
-<h2 id="ping">Ping!</h2>
+<h2 id="when-to-think-about-trying-containers-instead-of-a-traditional-vm">When To Think About Trying Containers Instead of a Traditional VM</h2>
 
-<p>The urge to constantly check email whether through a mobile device or on a computer is something that makes us feel productive, like &ldquo;we&rsquo;re getting out ahead of problems&rdquo;, but is that true?</p>
+<p><strong>Front-end applications that need persistent data stores</strong></p>
 
-<p>In my view there are three kinds of email transactions we deal with on a daily basis:</p>
+<p>This is a great place to start with containers. I know plenty of folks running Vagrant machines just to provide postgres to an application and it makes no sense. If I had a dollar for every time I heard, “it builds on my machine but not in the VM” or my personal favorite, “something is going on with canonical right now and my Vagrant up is hung”&hellip; woof.</p>
 
-<p><strong>Reactive:</strong> Replying to an existing email on some particular issue forces us to recall lots of information about overall context along with the nuances of an individual&rsquo;s personality and motives; this takes more <a href="http://seriouspony.com/blog/2013/7/24/your-app-makes-me-fat">cognitive bandwidth</a> than one might expect.</p>
+<p><strong>Any application where a dependency is a black box</strong></p>
 
-<p>Try replying to a string of reactive emails then going directly into a meeting without feeling a hit to your attention span.</p>
+<p>Usually this occurs when something is totally controlled by another team or outside vendor.</p>
 
-<p><strong>Promissory:</strong> Sending a new email as a means of starting a dialog is essentially a contract promising one&rsquo;s time and attention when the other party responds. This is future cognitive debt.</p>
+<p><strong>To simulate or troubleshoot single points of failure</strong></p>
 
-<p><strong>Static Information:</strong> Emails that do not require anyone to respond and usually don&rsquo;t take too much of a cognitive toll, unless the information being communicated is complex in nature and must be carefully worded or read. These emails are dangerous because they can be irritating to the receivers if the frequency of them isn&rsquo;t tempered.</p>
+<p>I’ll go into this more in a future post, but if your application implements any kind of fallback state or graceful error handling being able to test and demo that with containers is so much faster than with traditional VMs.</p>
 
-<p>I try to work through my inbox in a strategic way that reduces the tax on my overall productivity and attention span based on what type of email it is and how much time I have available.</p>
+<p><strong>Any time a dependency is configured but not installed by you/your team</strong></p>
 
-<h2 id="always-connected-and-auto-sync">Always Connected and Auto-Sync</h2>
-
-<p><a href="http://heeris.id.au/2013/this-is-why-you-shouldnt-interrupt-a-programmer/">It&rsquo;s well established</a> that <a href="http://programmers.stackexchange.com/questions/105891/where-can-i-find-articles-on-why-interruptions-are-bad-for-programmers">frequent interruptions are toxic</a> to a <a href="http://www.ted.com/talks/jason_fried_why_work_doesn_t_happen_at_work">programmer&rsquo;s productivity</a> and overall happiness. For this reason I&rsquo;ve always avoided having my phone on auto-sync and as a rule don&rsquo;t use it for work email or calendaring.</p>
-
-<p>This is a practice I feel capable of continuing at least in some capacity. My colleague <a href="https://twitter.com/bobholt">Bob Holt</a> suggested that sharing the calendar with my personal email account <a href="https://twitter.com/bobholt/status/540527206720892928">using view only permissions</a> would offer the majority of the benefits without the baggage of full &ldquo;always-on&rdquo; connectivity. For now, I&rsquo;m getting by without doing this, but it&rsquo;s a compromise I could live with.</p>
-
-<p>My current system for staying on top of my schedule involves reviewing the day&rsquo;s calendar about 30 minutes after starting work and tomorrow&rsquo;s before going home.</p>
-
-<h2 id="supportive-management">Supportive Management</h2>
-
-<p>I&rsquo;m still figuring out what this looks like in different situations, and how best to go about achieving it for myself, but one thing has become clear to me from exposure to various management styles, the key is: <strong>seriously listening and caring about people</strong>. The trick is doing it all the time no matter what external pressures or forces are present.</p>
-
-<h2 id="being-straightforward-and-honest">Being Straightforward and Honest</h2>
-
-<p>Avoid weasel words and niceties. Trying to be &ldquo;nice&rdquo; is <em>not</em> being respectful, as far as I&rsquo;m concerned it&rsquo;s the opposite. &ldquo;Beating around the bush&rdquo; is confusing and doesn&rsquo;t give people the chance to effectively advocate on behalf of their ideas. More importantly, it increases the risk that people will have different takeaways from the same conversation.</p>
-
-<p>I believe people are more than capable of defending their ideas if provided with the proper venue and opportunity to do so.</p>
-
-<h2 id="don-t-encourage-ass-covering-activities">Don&rsquo;t Encourage Ass Covering Activities</h2>
-
-<p>This one isn&rsquo;t about assigning blame, it&rsquo;s the opposite. Everyone makes mistakes, but unless mistakes are explored honestly and openly, it&rsquo;s very difficult to avoid them in the future.</p>
-
-<p>Maybe someone accidentally overwrote the production database. First and foremost, this shouldn&rsquo;t really be a problem <a href="https://mattsurabian.github.io/always-be-deploying/">because proper backup and restore procedures are in place</a> (right!?). However if we don&rsquo;t understand <em>why</em> this happened we can&rsquo;t fix it. Maybe it&rsquo;s because the deployment process required someone to be SSH&rsquo;d into multiple machines and they copy and pasted a command onto the wrong box.</p>
-
-<p>No one on the team should feel like they&rsquo;re going to be embarrassed or shamed for making a mistake. Mistakes are often an indicator that processes and support structures need to be improved, and rarely due to incompetence or malice.</p>
-
-<h2 id="behaviors-that-help">Behaviors That Help</h2>
-
-<p>Here, in no particular order are behaviors that have helped me remain semi-productive:</p>
-
-<ul>
-<li>I don&rsquo;t check my email until I&rsquo;ve been at work for at least an hour.</li>
-<li>I avoid checking emails/messages while in other meetings.</li>
-<li>I try to avoid back-to-back meetings. If I have more than 10 minutes between meetings, I time box the excess and check my email. If I have less than 10 minutes I <em>DO NOT</em> check my email. Instead I try to decompress from the previous meeting and review notes for the upcoming one.</li>
-<li>I try to take good notes. My notes tend to be things I think might help the team or clips of conversations that convey motives and priorities.</li>
-<li>I heavily lean on filters and colored labels for email.</li>
-<li>I bookend the work day by reviewing my calendar.</li>
-</ul>
+<p>I’ve worked in plenty of restricted network environments where an application team ends up only being able to ship configuration instructions to another team that manages the servers. Practicing in a container is a great way to ensure your team’s understanding of the current configuration stays fresh instead of letting a pet VM or shared dev environment sit around and get stale.</p>
 </div>
   </div>
 
   <footer class="article-footer">
     <aside class="p-share">
     <div class="share-inner">
-        <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fmattsurabian.github.io%2fovercoming-the-managers-schedule%2f&t=Overcoming%20the%20Manager%27s%20Schedule" title="Facebook" class="fb" target="_blank" rel="nofollow"></a>
-        <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fmattsurabian.github.io%2fovercoming-the-managers-schedule%2f&text=Overcoming%20the%20Manager%27s%20Schedule&tw_p=tweetbutton" title="Twitter" class="tw" target="_blank" rel="nofollow"></a>
-        <a href="https://plus.google.com/share?url=https%3a%2f%2fmattsurabian.github.io%2fovercoming-the-managers-schedule%2f" title="Google Plus" class="gp" target="_blank" rel="nofollow"></a>
-        <a href="https://www.linkedin.com/cws/share?url=https%3a%2f%2fmattsurabian.github.io%2fovercoming-the-managers-schedule%2f" title="LinkedIn" class="ln" target="_blank" rel="nofollow"></a>
+        <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fmattsurabian.github.io%2fuse-docker-isolated-ad-hoc-dependencies%2f&t=Use%20Docker%3a%20Isolated%20Ad%20Hoc%20Dependencies" title="Facebook" class="fb" target="_blank" rel="nofollow"></a>
+        <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fmattsurabian.github.io%2fuse-docker-isolated-ad-hoc-dependencies%2f&text=Use%20Docker%3a%20Isolated%20Ad%20Hoc%20Dependencies&tw_p=tweetbutton" title="Twitter" class="tw" target="_blank" rel="nofollow"></a>
+        <a href="https://plus.google.com/share?url=https%3a%2f%2fmattsurabian.github.io%2fuse-docker-isolated-ad-hoc-dependencies%2f" title="Google Plus" class="gp" target="_blank" rel="nofollow"></a>
+        <a href="https://www.linkedin.com/cws/share?url=https%3a%2f%2fmattsurabian.github.io%2fuse-docker-isolated-ad-hoc-dependencies%2f" title="LinkedIn" class="ln" target="_blank" rel="nofollow"></a>
     </div>
 </aside>
 
@@ -254,7 +227,7 @@
         
         <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://mattsurabian.github.io/posts/" itemprop="url"><span itemprop="title">posts</span></a></li>
         
-        <li>Overcoming the Manager&#39;s Schedule</li>
+        <li>Use Docker: Isolated Ad Hoc Dependencies</li>
       </ol>
 
       
@@ -272,7 +245,7 @@
             layout="responsive"
             sandbox="allow-scripts allow-same-origin allow-modals allow-popups allow-forms"
             resizable
-            src="https://mattsurabian.com/js/amp-disqus-uc.html?identifier=overcoming-the-managers-schedule">
+            src="https://mattsurabian.com/js/amp-disqus-uc.html?identifier=use-docker-isolated-ad-hoc-dependencies">
     <div overflow tabindex=0 role=button aria-label="Load more comments..." style="text-align:right"><em>Click to load more comments...</em></div>
 </amp-iframe>
 
@@ -282,22 +255,7 @@
     <header>Recent articles</header>
     <ul class="p-articles bordered">
       
-      <li><article class="li sm article-743d7ce5f0ae96e8ead36f2d6a6c9120">
-  <div class="content-inner">
-    <header class="article-header">
-      <div class="clearfix">
-        <a href="https://mattsurabian.github.io/use-docker-isolated-ad-hoc-dependencies/" class="thumbnail" title="Use Docker: Isolated Ad Hoc Dependencies"></a>
-        <div class="title"><a href="https://mattsurabian.github.io/use-docker-isolated-ad-hoc-dependencies/">Use Docker: Isolated Ad Hoc Dependencies</a></div>
-        <ul class="p-facts">
-          <li><i class="inline calendar"></i><time datetime="2017-10-30T17:00:00JST">10.30.2017</time></li>
-          <li><i class="inline cursor"></i><a href="https://mattsurabian.github.io/posts/">posts</a></li>
-          
-        </ul>
-      </div>
-    </header>
-  </div>
-</article>
-</li><li><article class="li sm article-bac65f6094b5285dd310804a2da40299">
+      <li><article class="li sm article-bac65f6094b5285dd310804a2da40299">
   <div class="content-inner">
     <header class="article-header">
       <div class="clearfix">
@@ -350,6 +308,21 @@
         <div class="title"><a href="https://mattsurabian.github.io/use-ssh-configure-key-based-access-automatically/">Use SSH: Configure Key Based Access Automatically</a></div>
         <ul class="p-facts">
           <li><i class="inline calendar"></i><time datetime="2017-10-20T18:00:00JST">10.20.2017</time></li>
+          <li><i class="inline cursor"></i><a href="https://mattsurabian.github.io/posts/">posts</a></li>
+          
+        </ul>
+      </div>
+    </header>
+  </div>
+</article>
+</li><li><article class="li sm article-7c507f28ab3f4c9e333e370dfba69926">
+  <div class="content-inner">
+    <header class="article-header">
+      <div class="clearfix">
+        <a href="https://mattsurabian.github.io/youre-using-ssh-wrong/" class="thumbnail" title="You&#39;re Using SSH Wrong"></a>
+        <div class="title"><a href="https://mattsurabian.github.io/youre-using-ssh-wrong/">You&#39;re Using SSH Wrong</a></div>
+        <ul class="p-facts">
+          <li><i class="inline calendar"></i><time datetime="2017-10-20T17:00:00JST">10.20.2017</time></li>
           <li><i class="inline cursor"></i><a href="https://mattsurabian.github.io/posts/">posts</a></li>
           
         </ul>

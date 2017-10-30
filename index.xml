@@ -5,10 +5,20 @@
     <link>https://mattsurabian.github.io/</link>
     <description>Recent content on Matt vs Computers</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 27 Oct 2017 17:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 30 Oct 2017 17:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://mattsurabian.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Use Docker: Isolated Ad Hoc Dependencies</title>
+      <link>https://mattsurabian.github.io/use-docker-isolated-ad-hoc-dependencies/</link>
+      <pubDate>Mon, 30 Oct 2017 17:00:00 +0900</pubDate>
+      
+      <guid>https://mattsurabian.github.io/use-docker-isolated-ad-hoc-dependencies/</guid>
+      <description>This post is part of a series about using Docker in your development workflow even if you’re not ready to start shipping containers into production. Whether you’re just getting started with VMs and Vagrant, have avoided Docker because it seems too complicated, or are just looking for ideas on how to use Docker more, this series covers some of the things that helped me start loving it.
+My First Aha Moment About two years ago I was working as a consultant with an application I had never run locally before and it needed a Redis server.</description>
+    </item>
     
     <item>
       <title>Use SSH: Run One Off Commands To Securely Interact With A Server</title>
