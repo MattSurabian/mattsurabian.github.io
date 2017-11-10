@@ -5,10 +5,20 @@
     <link>https://mattsurabian.github.io/</link>
     <description>Recent content on Matt vs Computers</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 30 Oct 2017 17:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 09 Nov 2017 17:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://mattsurabian.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Use Docker: Clean Room Style Build and Test Environments</title>
+      <link>https://mattsurabian.github.io/use-docker-clean-room-style-build-and-test-environments/</link>
+      <pubDate>Thu, 09 Nov 2017 17:00:00 +0900</pubDate>
+      
+      <guid>https://mattsurabian.github.io/use-docker-clean-room-style-build-and-test-environments/</guid>
+      <description>This post is part of a series about using Docker in your development workflow even if you’re not ready to start shipping containers into production. Whether you’re just getting started with VMs and Vagrant, have avoided Docker because it seems too complicated, or are just looking for ideas on how to use Docker more, this series covers some of the things that helped me start loving it.
+Docker is a consistent on-demand computing environment My next aha moment with Docker came while I was working with an application that had a lot of prerequisites that developers were expected to set up on their machines in order to produce a build or run the test suite.</description>
+    </item>
     
     <item>
       <title>Use Docker: Isolated Ad Hoc Dependencies</title>

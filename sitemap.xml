@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://mattsurabian.github.io/use-docker-clean-room-style-build-and-test-environments/</loc>
+    <lastmod>2017-11-09T17:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://mattsurabian.github.io/use-docker-isolated-ad-hoc-dependencies/</loc>
     <lastmod>2017-10-30T17:00:00+09:00</lastmod>
   </url>
@@ -128,13 +133,13 @@
   
   <url>
     <loc>https://mattsurabian.github.io/</loc>
-    <lastmod>2017-10-30T17:00:00+09:00</lastmod>
+    <lastmod>2017-11-09T17:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://mattsurabian.github.io/posts/</loc>
-    <lastmod>2017-10-30T17:00:00+09:00</lastmod>
+    <lastmod>2017-11-09T17:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   

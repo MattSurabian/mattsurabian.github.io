@@ -9,9 +9,9 @@
 <meta name="generator" content="Hugo 0.30-DEV" />
 
 <link rel="apple-touch-icon" href="https://mattsurabian.github.io/images/logo.png">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="https://mattsurabian.github.io/index.xml">
 
-<link rel="canonical" href="">
+
+<link rel="canonical" href="https://mattsurabian.github.io/use-docker-clean-room-style-build-and-test-environments/">
 
 <link rel="icon" href="https://mattsurabian.github.io/favicon.ico?v=2">
     
@@ -19,13 +19,68 @@
     
     <link href="https://fonts.googleapis.com/css?family=Oswald:700%7cOpen&#43;Sans" rel="stylesheet">
     
-    <title>404 Page not found - Matt vs Computers</title>
+    <title>Use Docker: Clean Room Style Build and Test Environments - Matt vs Computers</title>
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
       <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
   
     
+<meta name="description" content="This post is part of a series about using Docker in your development workflow even if you’re not ready to start shipping containers into production. Whether you’re just getting started with VMs and Vagrant, have avoided Docker because it seems too complicated, or are just looking for ideas on how to use Docker more, this series covers some of the things that helped me start loving it.Docker is a consistent on-demand computing environment My next aha moment with Docker came while I was working with an application that had a lot of prerequisites that developers were expected to set up on their machines in order to produce a build or run the test suite.">
+
+<meta property="og:title" content="Use Docker: Clean Room Style Build and Test Environments - Matt vs Computers">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://mattsurabian.github.io/use-docker-clean-room-style-build-and-test-environments/">
+<meta property="og:image" content="https://mattsurabian.github.io/images/clean-room.jpg">
+<meta property="og:site_name" content="Matt vs Computers">
+<meta property="og:description" content="This post is part of a series about using Docker in your development workflow even if you’re not ready to start shipping containers into production. Whether you’re just getting started with VMs and Vagrant, have avoided Docker because it seems too complicated, or are just looking for ideas on how to use Docker more, this series covers some of the things that helped me start loving it.Docker is a consistent on-demand computing environment My next aha moment with Docker came while I was working with an application that had a lot of prerequisites that developers were expected to set up on their machines in order to produce a build or run the test suite.">
+<meta property="og:locale" content="ja_JP">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="Matt vs Computers">
+<meta name="twitter:url" content="https://mattsurabian.github.io/use-docker-clean-room-style-build-and-test-environments/">
+<meta name="twitter:title" content="Use Docker: Clean Room Style Build and Test Environments - Matt vs Computers">
+<meta name="twitter:description" content="This post is part of a series about using Docker in your development workflow even if you’re not ready to start shipping containers into production. Whether you’re just getting started with VMs and Vagrant, have avoided Docker because it seems too complicated, or are just looking for ideas on how to use Docker more, this series covers some of the things that helped me start loving it.Docker is a consistent on-demand computing environment My next aha moment with Docker came while I was working with an application that had a lot of prerequisites that developers were expected to set up on their machines in order to produce a build or run the test suite.">
+<meta name="twitter:image" content="https://mattsurabian.github.io/images/clean-room.jpg">
+
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id":"https://mattsurabian.github.io/"
+    },
+    "headline": "Use Docker: Clean Room Style Build and Test Environments - Matt vs Computers",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://mattsurabian.github.io/images/clean-room.jpg",
+      "height": 800,
+      "width": 800
+    },
+    "datePublished": "2017-11-09T17:00:00JST",
+    "dateModified": "2017-11-09T17:00:00JST",
+    "author": {
+      "@type": "Person",
+      "name": "Matt vs Computers"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Matt vs Computers",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://mattsurabian.github.io/images/logo.png",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "description": "This post is part of a series about using Docker in your development workflow even if you’re not ready to start shipping containers into production. Whether you’re just getting started with VMs and Vagrant, have avoided Docker because it seems too complicated, or are just looking for ideas on how to use Docker more, this series covers some of the things that helped me start loving it.
+Docker is a consistent on-demand computing environment My next aha moment with Docker came while I was working with an application that had a lot of prerequisites that developers were expected to set up on their machines in order to produce a build or run the test suite."
+  }
+</script>
+
+
     <style amp-custom>
       html { font-size: 18px;}@media (max-width: 768px) { html { font-size: 15px; }}body { font-family: Lato,'Hiragino Kaku Gothic Pro',メイリオ,Meiryo,sans-serif; font-size: inherit; margin: 0; color: #263238; background-color: #eceff1; background-image: url(https://mattsurabian.github.io/images/bg-body.jpg); background-size: cover; background-position: top center; background-repeat: no-repeat; background-attachment: fixed;}html, body { margin: 0;}a { color: #ff9800; text-decoration: none;}p { margin: 0;}ul,ol { margin: 0; padding: 0;}h1, h2, h3, h4, h5, h6 { margin: 0; font-weight: 700;}h1 { font-size: 1.8rem; line-height: 2rem; margin: 1.5rem 0; }h2 { font-size: 1.4rem; line-height: 2rem; margin: 1.5rem 0; }h3 { font-size: 1.2rem; line-height: 1.5rem; margin: 1.5rem 0; }h4, h5, h6 { font-size: 1rem; line-height: 1.5rem; margin: 1.5rem 0; }.clearfix::after { content: ''; display: block; clear: both;}.content-inner { padding: 2rem 4rem;}.content-inner.thin { padding-top: 1rem; padding-bottom: 1rem;}@media (max-width: 768px) { .content-inner { padding: 2rem; }}.l-header { padding: 2rem; padding-bottom: 2rem;}.l-footer { font-size: .8rem; text-align: center; color: #fff;}.l-footer aside { margin-top: 1rem; font-size: .7rem;}main { display: block; max-width: 48rem; margin: 0 auto;}.l-container { background-color: #fff; border-radius: 5px;}@media (max-width: 768px) { .l-container { border-radius: 0; }}.p-page-title { border-bottom: 1px solid #eceff1; text-transform: uppercase;}.p-paginator { margin-bottom: 1.5rem;}.p-paginator a { display: block; width: 3rem; height: 3rem; background-position: center; background-size: contain;}.p-paginator a.prev { background-image: url(https://mattsurabian.github.io/images/icon-arrow-left-inverse.png); }.p-paginator a.next { background-image: url(https://mattsurabian.github.io/images/icon-arrow-right-inverse.png); float: right; }.p-nav { position: absolute; top: 2rem; right: 2rem;}@media (max-width: 768px) { .p-nav { position: static; text-align: center; }}.p-nav ul { list-style: none;}.p-nav li { display: inline-block; margin-left: .5rem;}@media (max-width: 768px) { .p-nav li { margin: 0 .5rem; }}.p-nav a { display: inline-block; color: #fff; line-height: 2rem; font-weight: 700; font-size: .8rem; text-transform: uppercase;}.p-movetop { position: fixed; right: 1rem; bottom: 1rem; width: 3rem; height: 3rem; background-color: #fff; border: 3px solid #263238; background-image: url(https://mattsurabian.github.io/images/icon-arrow-up.png); background-position: center; background-size: 1.5rem; background-repeat: no-repeat; border-radius: 50%; display: block;}.p-logo { color: #fff;}@media (max-width: 768px) { .p-logo { margin: 0 auto; margin-bottom: 1rem; text-align: center; }}.p-logo a { display: inline-block; font-size: 2rem; line-height: 2rem; color: #fff;}.h-logo { font-family: Lobster, cursive;}.p-share { min-width: 100%;}.p-share .share-inner { display: table; table-layout: fixed; width: 100%;}.p-share a { display: table-cell; text-align: center; font-weight: 700; font-size: .8rem; padding: .75rem 0; color: #fff;}.p-share a.ht { background-color: #00a4de; }.p-share a.fb { background-color: #3b5998; }.p-share a.tw { background-color: #1da1f2; }.p-share a.gp { background-color: #dd4b39; }.p-share a.ln { background-color: #00c300; }.p-share a.ht::before { content: 'Hatena'; }.p-share a.fb::before { content: 'Facebook'; }.p-share a.tw::before { content: 'Twitter'; }.p-share a.gp::before { content: 'Google+'; }.p-share a.ln::before { content: 'LINE'; }.p-crumb { margin-bottom: 1.5rem; font-size: .8rem; list-style: none; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;}.p-crumb:last-child { margin-bottom: 0;}.p-crumb li { display: inline;}.p-crumb li::after { content: '/'; margin: 0 .25rem;}.p-crumb li:last-child::after { content: ''; }.p-crumb li i { width: 1rem; height: 1rem;}.p-facts { margin-bottom: 1rem;}.p-facts:last-child { margin-bottom: 0;}.p-facts,.p-facts ul { list-style: none; text-transform: uppercase;}.p-facts li { display: inline-block; margin-right: 1rem; line-height: 1.25rem; font-size: .8rem; font-weight: 700;}.p-facts li li { margin-right: .25rem;}.p-facts li li::after { content: ',';}.p-facts li li:last-child::after { content: '';}.p-facts header { margin-bottom: .5rem;}.p-facts header a { color: #263238; text-decoration: underline;}.p-terms { list-style: none;}.p-terms>li { border-bottom: 1px solid #eceff1;}.p-terms>li:last-child { border-bottom: none;}.p-terms .terms-title { margin: 0; text-transform: uppercase;}section>header { position: relative; text-align: center; font-weight: 700; font-size: .8rem; text-transform: uppercase; padding: 1rem 0; background-color: #263238; color: #fff; letter-spacing: 3px;}.p-articles { list-style: none;}.p-articles>li { border-bottom: 1px solid #eceff1;}.p-articles li:last-child { margin-bottom: 0; border-bottom: none; }article { word-break: break-word;}article .title { position: relative; margin: 0; margin-bottom: .5rem; color: #000; font-size: 1.4rem; font-weight: 700;}article .title a { color: #000;}article .summary { margin-bottom: 2.5rem;}article .readmore { text-align: right;}article .readmore a { display: inline-block; color: #263238; line-height: 1.5rem; font-weight: 700; font-size: .8rem;}article .readmore a::after { content: ''; display: block; float: right; width: 1.5rem; height: 1.5rem; margin-left: .5rem; background-image: url(https://mattsurabian.github.io/images/icon-arrow-right.png); background-position: center; background-size: contain;}article .thumbnail { display: block; height: 12rem; background-position: center; background-size: cover; background-image: url(https://mattsurabian.github.io/images/default.jpg);}@media (max-width: 768px) { article .thumbnail { height: 10rem; }}article .article-footer { background-color: #eceff1;}article.li.sm .thumbnail { float: right; width: 8rem; height: 5rem; margin-left: 1.5rem; margin-bottom: 0;}@media (max-width: 768px) { article.li.sm .thumbnail { float: none; width: auto; margin: 0; margin-bottom: 1rem; }}article.li.sm .article-header { margin-bottom: 0;}.article-body h2 { padding: 1rem 0; border-bottom: 2px solid #eceff1;}.article-body h2:first-child { margin-top: 0; }.article-body h3 { color: #00acc1;}.article-body h4 { border-left: solid .25rem #00acc1; padding: 0 .5rem;}.article-body p { margin: 1.5rem 0; line-height: 1.5rem;}.article-body a { text-decoration: underline;}.article-body ul,.article-body ol { padding-left: 1.5rem;}.article-body code { display: inline-block; font-family: Menlo, consolas, monospace; background-color: #eceff1; font-size: .8rem; padding: 0 .5rem; line-height: 1.5rem;}.article-body pre { margin: 1.5rem 0; padding: 1.5rem; font-size: .8rem; background-color: #263238; color: #fff; overflow: auto;}.article-body pre code { background-color: transparent;}.article-body blockquote { margin: 1.5rem 0; padding: .5rem 0; font-size: .8rem; border-top: 1px solid #eceff1; border-bottom: 1px solid #eceff1; color: #607d8b;}.article-body blockquote p { margin: .5rem 0; line-height: 1rem;}.article-body strong { box-shadow: 0 -.5rem 0 0 #ffd54f inset;}.article-body em { font-style: normal; font-weight: 700; color: #e91e63;}.article-body figure { margin: 1.5rem -4rem; }.article-body figure.left,.article-body figure.right { width: 15rem; height: 12rem; margin-top: 0; margin-left: 0; margin-right: 0;}.article-body figure.left { float: left; margin-right: 1rem; margin-left: -4rem; }.article-body figure.right { float: right; margin-left: 1rem; margin-right: -4rem; }@media (max-width: 768px) { .article-body figure { margin: 0 -2rem; } .article-body figure.left, .article-body figure.right { float: none; margin: 0 -2rem; width: auto; height: auto; }}.article-body figcaption { padding: .5rem 0; font-size: .8rem; text-align: center;}.article-body figcaption a { color: #263238;}i { width: 1.5em; height: 1.5em; background-position: center; background-size: contain; background-repeat: no-repeat; float: left;}i.inline { margin-right: .5em;}i.calendar { background-image: url(https://mattsurabian.github.io/images/icon-calendar.svg); }i.cursor { background-image: url(https://mattsurabian.github.io/images/icon-cursor.svg); }i.clip { background-image: url(https://mattsurabian.github.io/images/icon-clip.svg); }i.home { background-image: url(https://mattsurabian.github.io/images/icon-home.svg); }
       h1, h2, h3, h4, h5, h6 { font-family: "Oswald", sans-serif;}.p-logo a, .p-nav a, article .title, article .title a { color: #393939;}.p-logo a { font-size:3rem; line-height: 3rem;}.p-nav a{ font-size: 1.4rem; line-height:4rem;}.l-container { background-color: #fafafa;}.l-footer { color: #fafafa;}.content-inner { padding: 1rem 4rem;}.p-share a.ln::before { content: 'LinkedIn'; }.p-share a.ln { background-color: #0077B5; }body{ background-blend-mode: luminosity; color: #393939;}@media (max-width: 900px) { .p-nav { position: static; text-align: center; } .p-nav a { line-height: 2.75rem; } .p-logo { margin: 0 auto; margin-bottom: 1rem; text-align: center; }}
@@ -73,30 +128,130 @@
     <main>
       
 <div class="l-container">
-  <header class="p-page-title">
-    <div class="content-inner">
-      <h1 class="title">404 Page not found</h1>
-      <p>You are looking for articles could not be found.</p>
+  <article class="single article-447283c5f075ce5b89dc62310cfcf120">
+  <header class="article-header">
+    <div class="clearfix content-inner">
+
+      <h1 class="title">Use Docker: Clean Room Style Build and Test Environments</h1>
+      <ul class="p-facts">
+        <li><i class="inline calendar"></i><time datetime="2017-11-09T17:00:00JST">11.9.2017</time></li>
+        <li><i class="inline cursor"></i><a href="https://mattsurabian.github.io/posts/">posts</a></li>
+        
+      </ul>
     </div>
+    <div class="thumbnail"></div>
+    <aside class="p-share">
+    <div class="share-inner">
+        <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fmattsurabian.github.io%2fuse-docker-clean-room-style-build-and-test-environments%2f&t=Use%20Docker%3a%20Clean%20Room%20Style%20Build%20and%20Test%20Environments" title="Facebook" class="fb" target="_blank" rel="nofollow"></a>
+        <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fmattsurabian.github.io%2fuse-docker-clean-room-style-build-and-test-environments%2f&text=Use%20Docker%3a%20Clean%20Room%20Style%20Build%20and%20Test%20Environments&tw_p=tweetbutton" title="Twitter" class="tw" target="_blank" rel="nofollow"></a>
+        <a href="https://plus.google.com/share?url=https%3a%2f%2fmattsurabian.github.io%2fuse-docker-clean-room-style-build-and-test-environments%2f" title="Google Plus" class="gp" target="_blank" rel="nofollow"></a>
+        <a href="https://www.linkedin.com/cws/share?url=https%3a%2f%2fmattsurabian.github.io%2fuse-docker-clean-room-style-build-and-test-environments%2f" title="LinkedIn" class="ln" target="_blank" rel="nofollow"></a>
+    </div>
+</aside>
+
   </header>
 
-  <ul class="p-articles">
-    <li><article class="li sm article-447283c5f075ce5b89dc62310cfcf120">
   <div class="content-inner">
-    <header class="article-header">
-      <div class="clearfix">
-        <a href="https://mattsurabian.github.io/use-docker-clean-room-style-build-and-test-environments/" class="thumbnail" title="Use Docker: Clean Room Style Build and Test Environments"></a>
-        <div class="title"><a href="https://mattsurabian.github.io/use-docker-clean-room-style-build-and-test-environments/">Use Docker: Clean Room Style Build and Test Environments</a></div>
-        <ul class="p-facts">
-          <li><i class="inline calendar"></i><time datetime="2017-11-09T17:00:00JST">11.9.2017</time></li>
-          <li><i class="inline cursor"></i><a href="https://mattsurabian.github.io/posts/">posts</a></li>
-          
-        </ul>
-      </div>
-    </header>
+    <div class="article-body">
+
+<p>This post is <a href="https://mattsurabian.github.io/3-ways-docker-has-improved-my-development-workflow/">part of a series about using Docker in your development workflow</a> even if you’re not ready to start shipping containers into production. Whether you’re just getting started with VMs and Vagrant, have avoided Docker because it seems too complicated, or are just looking for ideas on how to use Docker more, this series covers some of the things that helped me start loving it.</p>
+
+<h2 id="docker-is-a-consistent-on-demand-computing-environment">Docker is a consistent on-demand computing environment</h2>
+
+<p>My next aha moment with Docker came while I was working with an application that had a lot of prerequisites that developers were expected to set up on their machines in order to produce a build or run the test suite.</p>
+
+<p>Subtle differences between all of our machines meant that few or none of us were running the exact same thing that our continuous integration machine was shipping to production. We also dealt with our fair share of false alarm test failures because something would change in one of our environments as a result of one of the other projects we were also working on. These challenges forced us to move slower and occasionally would result in us releasing buggy software.</p>
+
+<p>Then I remembered that Docker could do more than just run daemonized dependencies in the background. It could also do arbitrary computing in a totally isolated environment. I altered our make file to run our build and test commands inside of a Docker container running the same Linux flavor our CI was using and viola. Everyone suddenly had access to the exact same build artifact and the exact same testing environment our production pipeline was using. Best of all the chore of setting up our local build and testing environments was gone.</p>
+
+<p>Unfortunately there’s no magic one liner for this, but I’ll definitely devote future blog posts to digging into this more as it comes up for me again.</p>
+
+<h2 id="there-are-some-good-tutorials-and-github-repos-out-there">There are some good tutorials and GitHub repos out there</h2>
+
+<p><strong>JavaScript</strong></p>
+
+<ul>
+<li><a href="http://paislee.io/the-ultimate-nodejs-development-setup-with-docker/">Caleb Sotelo&rsquo;s Ultimate front end and node JS dev setup.</a></li>
+</ul>
+
+<p><strong>Go</strong></p>
+
+<ul>
+<li><a href="https://github.com/thockin/go-build-template">An example of an amazing containerized build pipeline from the Kubernetes team.</a></li>
+</ul>
+
+<p><strong>.NET</strong></p>
+
+<ul>
+<li><a href="https://blogs.msdn.microsoft.com/dotnet/2017/05/25/using-net-and-docker-together/">Microsoft&rsquo;s guide to using .NET and Docker with some example projects.</a></li>
+</ul>
+
+<p><strong>PHP</strong></p>
+
+<ul>
+<li><a href="http://ctankersley.com/2016/07/27/my-php-docker-workflow/">An NGINX based PHP and Docker workflow from Chris Tankersley</a></li>
+<li><a href="https://perchrunway.com/blog/2017-01-19-getting-started-with-docker-for-local-development">An Apache based PHP and Docker workflow from Rachel Andrew</a></li>
+</ul>
+
+<h2 id="things-to-keep-in-mind-when-using-docker-to-wrap-builds-and-tests">Things to keep in mind when using Docker to wrap builds and tests:</h2>
+
+<ul>
+<li>Shared volumes are great, but tend to be a little finicky if you’re not using Linux. Definitely try with shared volumes first but if folks on your team start having trouble just use the copy command inside a Docker or Docker Compose file. It’s not worth the time suck of chasing random userid and permissions issues.</li>
+<li>I love using the Docker CLI directly and learning about all the tool&rsquo;s flags, but most people aren’t going to want to deal with all that every time they need to run tests. Help folks out by writing a script or integrating into an existing Makefile. That way people still just run <code>make test</code>, <code>npm test</code>, <code>make build</code>, <code>npm run build</code>, etc.</li>
+<li>Avoid doing anything that would prevent folks from being able to run tests or builds OUTSIDE of the Docker environment. While the ideal workflow should revolve around Docker and some task runner that shouldn’t be at the expense of the traditional toolchain. Ideally you want to be running your regular build or test commands, just inside a consistent environment. For example: if your build or test runner needs environment variables specified, don’t set them in the Dockerfile, write a wrapper script that specifies the variables so it can be run inside or outside of the container.</li>
+</ul>
+
+<p>Hopefully this helps convince you to try using Docker in your development workflow even if you’re not ready or
+interested in shipping containers to production. Checkout the <a href="https://mattsurabian.github.io/use-docker-isolated-ad-hoc-dependencies/">previous post in this series about using Docker for
+isolated ad-hoc dependencies</a>. The next post is about how to use Docker as a personal network lab.</p>
+</div>
   </div>
+
+  <footer class="article-footer">
+    <aside class="p-share">
+    <div class="share-inner">
+        <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fmattsurabian.github.io%2fuse-docker-clean-room-style-build-and-test-environments%2f&t=Use%20Docker%3a%20Clean%20Room%20Style%20Build%20and%20Test%20Environments" title="Facebook" class="fb" target="_blank" rel="nofollow"></a>
+        <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fmattsurabian.github.io%2fuse-docker-clean-room-style-build-and-test-environments%2f&text=Use%20Docker%3a%20Clean%20Room%20Style%20Build%20and%20Test%20Environments&tw_p=tweetbutton" title="Twitter" class="tw" target="_blank" rel="nofollow"></a>
+        <a href="https://plus.google.com/share?url=https%3a%2f%2fmattsurabian.github.io%2fuse-docker-clean-room-style-build-and-test-environments%2f" title="Google Plus" class="gp" target="_blank" rel="nofollow"></a>
+        <a href="https://www.linkedin.com/cws/share?url=https%3a%2f%2fmattsurabian.github.io%2fuse-docker-clean-room-style-build-and-test-environments%2f" title="LinkedIn" class="ln" target="_blank" rel="nofollow"></a>
+    </div>
+</aside>
+
+    <div class="content-inner">
+      <ol class="p-crumb">
+        <li><a href="https://mattsurabian.github.io/"><i class="home"></i></a></li>
+        
+        <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://mattsurabian.github.io/posts/" itemprop="url"><span itemprop="title">posts</span></a></li>
+        
+        <li>Use Docker: Clean Room Style Build and Test Environments</li>
+      </ol>
+
+      
+      
+      
+      
+      
+      
+    </div>
+  </footer>
+
 </article>
-</li><li><article class="li sm article-743d7ce5f0ae96e8ead36f2d6a6c9120">
+
+  <amp-iframe width=600 height=175
+            layout="responsive"
+            sandbox="allow-scripts allow-same-origin allow-modals allow-popups allow-forms"
+            resizable
+            src="https://mattsurabian.com/js/amp-disqus-uc.html?identifier=use-docker-clean-room-style-build-and-test-environments">
+    <div overflow tabindex=0 role=button aria-label="Load more comments..." style="text-align:right"><em>Click to load more comments...</em></div>
+</amp-iframe>
+
+  
+  
+  <section>
+    <header>Recent articles</header>
+    <ul class="p-articles bordered">
+      
+      <li><article class="li sm article-743d7ce5f0ae96e8ead36f2d6a6c9120">
   <div class="content-inner">
     <header class="article-header">
       <div class="clearfix">
@@ -156,9 +311,27 @@
     </header>
   </div>
 </article>
+</li><li><article class="li sm article-b264197169c0eed62762dfca90983ec9">
+  <div class="content-inner">
+    <header class="article-header">
+      <div class="clearfix">
+        <a href="https://mattsurabian.github.io/use-ssh-configure-key-based-access-automatically/" class="thumbnail" title="Use SSH: Configure Key Based Access Automatically"></a>
+        <div class="title"><a href="https://mattsurabian.github.io/use-ssh-configure-key-based-access-automatically/">Use SSH: Configure Key Based Access Automatically</a></div>
+        <ul class="p-facts">
+          <li><i class="inline calendar"></i><time datetime="2017-10-20T18:00:00JST">10.20.2017</time></li>
+          <li><i class="inline cursor"></i><a href="https://mattsurabian.github.io/posts/">posts</a></li>
+          
+        </ul>
+      </div>
+    </header>
+  </div>
+</article>
 </li>
-  </ul>
+    </ul>
+  </section>
+  
 </div>
+
 
     </main>
 
