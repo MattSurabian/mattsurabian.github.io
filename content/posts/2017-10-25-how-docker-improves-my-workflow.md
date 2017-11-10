@@ -46,7 +46,7 @@ Over the next few weeks, this series will focus on the 3 things that I started d
 using containers during development:
 
   - [Spinning up ad hoc dependent services (like Redis or Postgres) instead of going through all the work of configuring a VM.]({{< ref "posts/2017-10-30-use-docker-isolated-ad-hoc-dependencies.md">}}) Especially on projects where those dependencies were managed by a different team.
-  - Ensuring a totally consistent and clean environment for building,compiling, and testing software across a diverse team.
+  - [Ensuring a totally consistent and clean environment for building,compiling, and testing software across a diverse team.]({{< ref "posts/2017-11-9-use-docker-clean-room-style-builds-and-tests.md">}})
   - Quickly simulating different data center environments to test networking and fail-over patterns in total isolation and at zero cost.
 
 While I'll definitely be finding time to blog about scheduling, bin-packing, and security models in the future, I wanted to

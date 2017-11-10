@@ -57,3 +57,6 @@ I’ll go into this more in a future post, but if your application implements an
 **Any time a dependency is configured but not installed by you/your team**
 
 I’ve worked in plenty of restricted network environments where an application team ends up only being able to ship configuration instructions to another team that manages the servers. Practicing in a container is a great way to ensure your team’s understanding of the current configuration stays fresh instead of letting a pet VM or shared dev environment sit around and get stale.
+
+Hopefully this has convinced you to give Docker a try, if you're interested in learning more the next post in this series is 
+about [ensuring a totally consistent and clean environment for building, compiling, and testing software across a diverse team.]({{< ref "posts/2017-11-9-use-docker-clean-room-style-builds-and-tests.md">}})
