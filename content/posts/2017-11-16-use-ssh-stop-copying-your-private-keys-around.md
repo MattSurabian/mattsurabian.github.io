@@ -1,5 +1,5 @@
 +++
-date = "2017-11-T17:00:00+09:00"
+date = "2017-11-16T17:00:00+09:00"
 title = "Use SSH: Stop Copying Your Private Keys Around"
 description = "How to use SSH agent to maintain secure access to everything while connected to a remote machine."
 thumbnail = "images/keys-in-door.jpg"
