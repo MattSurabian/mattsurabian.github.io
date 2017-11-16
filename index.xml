@@ -5,10 +5,20 @@
     <link>https://mattsurabian.github.io/</link>
     <description>Recent content on Matt vs Computers</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 09 Nov 2017 17:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 16 Nov 2017 17:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://mattsurabian.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Use SSH: Stop Copying Your Private Keys Around</title>
+      <link>https://mattsurabian.github.io/use-ssh-stop-copying-your-private-keys-around/</link>
+      <pubDate>Thu, 16 Nov 2017 17:00:00 +0900</pubDate>
+      
+      <guid>https://mattsurabian.github.io/use-ssh-stop-copying-your-private-keys-around/</guid>
+      <description>This post is part of a series about using SSH more effectively. SSH is one of those programs that a lot of developers interact with but few seem to take full advantage of. This series highlights some of the very powerful features that have saved me a lot of time over the years.
+The most common pain point is git A common problem I see folks runing into is when they try to check out code from git repositories on remote systems.</description>
+    </item>
     
     <item>
       <title>Use Docker: Clean Room Style Build and Test Environments</title>
@@ -256,16 +266,6 @@ In this case we were writing some setters for a class.</description>
       <description>I&amp;rsquo;ve reflected on this old post!
 Lots of people, not just developers, dream about working from home. Whiling away the hours in the comfort of their castle and making a living at the same time. Why not? Everything is perfect when you’re working from home. Nothing can interrupt or distract you. Success is guaranteed, and just being there dissolves time management challenges and makes meeting deadlines a breeze.
 Working from home solves all your problems… right?</description>
-    </item>
-    
-    <item>
-      <title>Use SSH: Stop Copying Your Private Keys Around</title>
-      <link>https://mattsurabian.github.io/use-ssh-stop-copying-your-private-keys-around/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://mattsurabian.github.io/use-ssh-stop-copying-your-private-keys-around/</guid>
-      <description>This post is part of a series about using SSH more effectively. SSH is one of those programs that a lot of developers interact with but few seem to take full advantage of. This series highlights some of the very powerful features that have saved me a lot of time over the years.
-The most common pain point is git A common problem I see folks runing into is when they try to check out code from git repositories on remote systems.</description>
     </item>
     
   </channel>
