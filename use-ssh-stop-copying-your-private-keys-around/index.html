@@ -9,9 +9,9 @@
 <meta name="generator" content="Hugo 0.30-DEV" />
 
 <link rel="apple-touch-icon" href="https://mattsurabian.github.io/images/logo.png">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="https://mattsurabian.github.io/index.xml">
 
-<link rel="canonical" href="https://mattsurabian.github.io/">
+
+<link rel="canonical" href="https://mattsurabian.github.io/use-ssh-stop-copying-your-private-keys-around/">
 
 <link rel="icon" href="https://mattsurabian.github.io/favicon.ico?v=2">
     
@@ -19,13 +19,67 @@
     
     <link href="https://fonts.googleapis.com/css?family=Oswald:700%7cOpen&#43;Sans" rel="stylesheet">
     
-    <title>Matt vs Computers</title>
+    <title>Use SSH: Stop Copying Your Private Keys Around - Matt vs Computers</title>
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
       <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
   
     
+<meta name="description" content="How to use SSH agent to maintain secure access to everything while connected to a remote machine.">
+
+<meta property="og:title" content="Use SSH: Stop Copying Your Private Keys Around - Matt vs Computers">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://mattsurabian.github.io/use-ssh-stop-copying-your-private-keys-around/">
+<meta property="og:image" content="https://mattsurabian.github.io/images/keys-in-door.jpg">
+<meta property="og:site_name" content="Matt vs Computers">
+<meta property="og:description" content="How to use SSH agent to maintain secure access to everything while connected to a remote machine.">
+<meta property="og:locale" content="ja_JP">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="Matt vs Computers">
+<meta name="twitter:url" content="https://mattsurabian.github.io/use-ssh-stop-copying-your-private-keys-around/">
+<meta name="twitter:title" content="Use SSH: Stop Copying Your Private Keys Around - Matt vs Computers">
+<meta name="twitter:description" content="How to use SSH agent to maintain secure access to everything while connected to a remote machine.">
+<meta name="twitter:image" content="https://mattsurabian.github.io/images/keys-in-door.jpg">
+
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id":"https://mattsurabian.github.io/"
+    },
+    "headline": "Use SSH: Stop Copying Your Private Keys Around - Matt vs Computers",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://mattsurabian.github.io/images/keys-in-door.jpg",
+      "height": 800,
+      "width": 800
+    },
+    "datePublished": "0001-01-01T00:00:00JST",
+    "dateModified": "0001-01-01T00:00:00JST",
+    "author": {
+      "@type": "Person",
+      "name": "Matt vs Computers"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Matt vs Computers",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://mattsurabian.github.io/images/logo.png",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "description": "How to use SSH agent to maintain secure access to everything while connected to a remote machine."
+  }
+</script>
+
+
     <style amp-custom>
       html { font-size: 18px;}@media (max-width: 768px) { html { font-size: 15px; }}body { font-family: Lato,'Hiragino Kaku Gothic Pro',メイリオ,Meiryo,sans-serif; font-size: inherit; margin: 0; color: #263238; background-color: #eceff1; background-image: url(https://mattsurabian.github.io/images/bg-body.jpg); background-size: cover; background-position: top center; background-repeat: no-repeat; background-attachment: fixed;}html, body { margin: 0;}a { color: #ff9800; text-decoration: none;}p { margin: 0;}ul,ol { margin: 0; padding: 0;}h1, h2, h3, h4, h5, h6 { margin: 0; font-weight: 700;}h1 { font-size: 1.8rem; line-height: 2rem; margin: 1.5rem 0; }h2 { font-size: 1.4rem; line-height: 2rem; margin: 1.5rem 0; }h3 { font-size: 1.2rem; line-height: 1.5rem; margin: 1.5rem 0; }h4, h5, h6 { font-size: 1rem; line-height: 1.5rem; margin: 1.5rem 0; }.clearfix::after { content: ''; display: block; clear: both;}.content-inner { padding: 2rem 4rem;}.content-inner.thin { padding-top: 1rem; padding-bottom: 1rem;}@media (max-width: 768px) { .content-inner { padding: 2rem; }}.l-header { padding: 2rem; padding-bottom: 2rem;}.l-footer { font-size: .8rem; text-align: center; color: #fff;}.l-footer aside { margin-top: 1rem; font-size: .7rem;}main { display: block; max-width: 48rem; margin: 0 auto;}.l-container { background-color: #fff; border-radius: 5px;}@media (max-width: 768px) { .l-container { border-radius: 0; }}.p-page-title { border-bottom: 1px solid #eceff1; text-transform: uppercase;}.p-paginator { margin-bottom: 1.5rem;}.p-paginator a { display: block; width: 3rem; height: 3rem; background-position: center; background-size: contain;}.p-paginator a.prev { background-image: url(https://mattsurabian.github.io/images/icon-arrow-left-inverse.png); }.p-paginator a.next { background-image: url(https://mattsurabian.github.io/images/icon-arrow-right-inverse.png); float: right; }.p-nav { position: absolute; top: 2rem; right: 2rem;}@media (max-width: 768px) { .p-nav { position: static; text-align: center; }}.p-nav ul { list-style: none;}.p-nav li { display: inline-block; margin-left: .5rem;}@media (max-width: 768px) { .p-nav li { margin: 0 .5rem; }}.p-nav a { display: inline-block; color: #fff; line-height: 2rem; font-weight: 700; font-size: .8rem; text-transform: uppercase;}.p-movetop { position: fixed; right: 1rem; bottom: 1rem; width: 3rem; height: 3rem; background-color: #fff; border: 3px solid #263238; background-image: url(https://mattsurabian.github.io/images/icon-arrow-up.png); background-position: center; background-size: 1.5rem; background-repeat: no-repeat; border-radius: 50%; display: block;}.p-logo { color: #fff;}@media (max-width: 768px) { .p-logo { margin: 0 auto; margin-bottom: 1rem; text-align: center; }}.p-logo a { display: inline-block; font-size: 2rem; line-height: 2rem; color: #fff;}.h-logo { font-family: Lobster, cursive;}.p-share { min-width: 100%;}.p-share .share-inner { display: table; table-layout: fixed; width: 100%;}.p-share a { display: table-cell; text-align: center; font-weight: 700; font-size: .8rem; padding: .75rem 0; color: #fff;}.p-share a.ht { background-color: #00a4de; }.p-share a.fb { background-color: #3b5998; }.p-share a.tw { background-color: #1da1f2; }.p-share a.gp { background-color: #dd4b39; }.p-share a.ln { background-color: #00c300; }.p-share a.ht::before { content: 'Hatena'; }.p-share a.fb::before { content: 'Facebook'; }.p-share a.tw::before { content: 'Twitter'; }.p-share a.gp::before { content: 'Google+'; }.p-share a.ln::before { content: 'LINE'; }.p-crumb { margin-bottom: 1.5rem; font-size: .8rem; list-style: none; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;}.p-crumb:last-child { margin-bottom: 0;}.p-crumb li { display: inline;}.p-crumb li::after { content: '/'; margin: 0 .25rem;}.p-crumb li:last-child::after { content: ''; }.p-crumb li i { width: 1rem; height: 1rem;}.p-facts { margin-bottom: 1rem;}.p-facts:last-child { margin-bottom: 0;}.p-facts,.p-facts ul { list-style: none; text-transform: uppercase;}.p-facts li { display: inline-block; margin-right: 1rem; line-height: 1.25rem; font-size: .8rem; font-weight: 700;}.p-facts li li { margin-right: .25rem;}.p-facts li li::after { content: ',';}.p-facts li li:last-child::after { content: '';}.p-facts header { margin-bottom: .5rem;}.p-facts header a { color: #263238; text-decoration: underline;}.p-terms { list-style: none;}.p-terms>li { border-bottom: 1px solid #eceff1;}.p-terms>li:last-child { border-bottom: none;}.p-terms .terms-title { margin: 0; text-transform: uppercase;}section>header { position: relative; text-align: center; font-weight: 700; font-size: .8rem; text-transform: uppercase; padding: 1rem 0; background-color: #263238; color: #fff; letter-spacing: 3px;}.p-articles { list-style: none;}.p-articles>li { border-bottom: 1px solid #eceff1;}.p-articles li:last-child { margin-bottom: 0; border-bottom: none; }article { word-break: break-word;}article .title { position: relative; margin: 0; margin-bottom: .5rem; color: #000; font-size: 1.4rem; font-weight: 700;}article .title a { color: #000;}article .summary { margin-bottom: 2.5rem;}article .readmore { text-align: right;}article .readmore a { display: inline-block; color: #263238; line-height: 1.5rem; font-weight: 700; font-size: .8rem;}article .readmore a::after { content: ''; display: block; float: right; width: 1.5rem; height: 1.5rem; margin-left: .5rem; background-image: url(https://mattsurabian.github.io/images/icon-arrow-right.png); background-position: center; background-size: contain;}article .thumbnail { display: block; height: 12rem; background-position: center; background-size: cover; background-image: url(https://mattsurabian.github.io/images/default.jpg);}@media (max-width: 768px) { article .thumbnail { height: 10rem; }}article .article-footer { background-color: #eceff1;}article.li.sm .thumbnail { float: right; width: 8rem; height: 5rem; margin-left: 1.5rem; margin-bottom: 0;}@media (max-width: 768px) { article.li.sm .thumbnail { float: none; width: auto; margin: 0; margin-bottom: 1rem; }}article.li.sm .article-header { margin-bottom: 0;}.article-body h2 { padding: 1rem 0; border-bottom: 2px solid #eceff1;}.article-body h2:first-child { margin-top: 0; }.article-body h3 { color: #00acc1;}.article-body h4 { border-left: solid .25rem #00acc1; padding: 0 .5rem;}.article-body p { margin: 1.5rem 0; line-height: 1.5rem;}.article-body a { text-decoration: underline;}.article-body ul,.article-body ol { padding-left: 1.5rem;}.article-body code { display: inline-block; font-family: Menlo, consolas, monospace; background-color: #eceff1; font-size: .8rem; padding: 0 .5rem; line-height: 1.5rem;}.article-body pre { margin: 1.5rem 0; padding: 1.5rem; font-size: .8rem; background-color: #263238; color: #fff; overflow: auto;}.article-body pre code { background-color: transparent;}.article-body blockquote { margin: 1.5rem 0; padding: .5rem 0; font-size: .8rem; border-top: 1px solid #eceff1; border-bottom: 1px solid #eceff1; color: #607d8b;}.article-body blockquote p { margin: .5rem 0; line-height: 1rem;}.article-body strong { box-shadow: 0 -.5rem 0 0 #ffd54f inset;}.article-body em { font-style: normal; font-weight: 700; color: #e91e63;}.article-body figure { margin: 1.5rem -4rem; }.article-body figure.left,.article-body figure.right { width: 15rem; height: 12rem; margin-top: 0; margin-left: 0; margin-right: 0;}.article-body figure.left { float: left; margin-right: 1rem; margin-left: -4rem; }.article-body figure.right { float: right; margin-left: 1rem; margin-right: -4rem; }@media (max-width: 768px) { .article-body figure { margin: 0 -2rem; } .article-body figure.left, .article-body figure.right { float: none; margin: 0 -2rem; width: auto; height: auto; }}.article-body figcaption { padding: .5rem 0; font-size: .8rem; text-align: center;}.article-body figcaption a { color: #263238;}i { width: 1.5em; height: 1.5em; background-position: center; background-size: contain; background-repeat: no-repeat; float: left;}i.inline { margin-right: .5em;}i.calendar { background-image: url(https://mattsurabian.github.io/images/icon-calendar.svg); }i.cursor { background-image: url(https://mattsurabian.github.io/images/icon-cursor.svg); }i.clip { background-image: url(https://mattsurabian.github.io/images/icon-clip.svg); }i.home { background-image: url(https://mattsurabian.github.io/images/icon-home.svg); }
       h1, h2, h3, h4, h5, h6 { font-family: "Oswald", sans-serif;}.p-logo a, .p-nav a, article .title, article .title a { color: #393939;}.p-logo a { font-size:3rem; line-height: 3rem;}.p-nav a{ font-size: 1.4rem; line-height:4rem;}.l-container { background-color: #fafafa;}.l-footer { color: #fafafa;}.content-inner { padding: 1rem 4rem;}.p-share a.ln::before { content: 'LinkedIn'; }.p-share a.ln { background-color: #0077B5; }body{ background-blend-mode: luminosity; color: #393939;}@media (max-width: 900px) { .p-nav { position: static; text-align: center; } .p-nav a { line-height: 2.75rem; } .p-logo { margin: 0 auto; margin-bottom: 1rem; text-align: center; }}
@@ -73,219 +127,233 @@
     <main>
       
 <div class="l-container">
-  
-
-  <ul class="p-articles">
-    <li><article class="li article-447283c5f075ce5b89dc62310cfcf120">
+  <article class="single article-ca767790003a2873992d941deab6b959">
   <header class="article-header">
+    <div class="clearfix content-inner">
+
+      <h1 class="title">Use SSH: Stop Copying Your Private Keys Around</h1>
+      <ul class="p-facts">
+        <li><i class="inline calendar"></i><time datetime="0001-01-01T00:00:00JST">1.1.0001</time></li>
+        <li><i class="inline cursor"></i><a href="https://mattsurabian.github.io/posts/">posts</a></li>
+        
+      </ul>
+    </div>
+    <div class="thumbnail"></div>
+    <aside class="p-share">
+    <div class="share-inner">
+        <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fmattsurabian.github.io%2fuse-ssh-stop-copying-your-private-keys-around%2f&t=Use%20SSH%3a%20Stop%20Copying%20Your%20Private%20Keys%20Around" title="Facebook" class="fb" target="_blank" rel="nofollow"></a>
+        <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fmattsurabian.github.io%2fuse-ssh-stop-copying-your-private-keys-around%2f&text=Use%20SSH%3a%20Stop%20Copying%20Your%20Private%20Keys%20Around&tw_p=tweetbutton" title="Twitter" class="tw" target="_blank" rel="nofollow"></a>
+        <a href="https://plus.google.com/share?url=https%3a%2f%2fmattsurabian.github.io%2fuse-ssh-stop-copying-your-private-keys-around%2f" title="Google Plus" class="gp" target="_blank" rel="nofollow"></a>
+        <a href="https://www.linkedin.com/cws/share?url=https%3a%2f%2fmattsurabian.github.io%2fuse-ssh-stop-copying-your-private-keys-around%2f" title="LinkedIn" class="ln" target="_blank" rel="nofollow"></a>
+    </div>
+</aside>
+
+  </header>
+
+  <div class="content-inner">
+    <div class="article-body">
+
+<p>This post is <a href="https://mattsurabian.github.io/youre-using-ssh-wrong/">part of a series about using SSH more effectively</a>.
+SSH is one of those programs that a lot of developers interact with but few seem to take full advantage of. This series
+highlights some of the very powerful features that have saved me a lot of time over the years.</p>
+
+<h2 id="the-most-common-pain-point-is-git">The most common pain point is git</h2>
+
+<p>A common problem I see folks runing into is when they try to check out code from git repositories on remote systems.</p>
+
+<p>Locally you can just run a regular old SSH clone like:
+<code>git clone git@github.com:MattSurabian/DuckHunt-JS.git</code></p>
+
+<p>and the download starts immediately if the git server has been configured to know about your machine’s public key.</p>
+
+<p>On a remote system though, your private key doesn’t exist and the same command will throw an access denied error and
+you’ll likely need to fall back to cloning over <code>https</code> <a href="https://mattsurabian.github.io/use-ssh-configure-key-based-access-automatically/">like some kind of username and password typing animal</a> or worse:
+using <code>scp</code> to shuffle giant git repo directories around. Yikes.</p>
+
+<p>Of course, it’s not just <code>git clone</code> that will cause you to have to deal with this problem, but that’s definitely the most common
+reason I’ve seen folks encounter it. Really, this will happen anytime a process is making additional remote connections and
+expects to authenticate with a key pair that the remote machine doesn’t have.</p>
+
+<h2 id="do-you-leave-your-keys-in-your-door">Do you leave your keys in your door?</h2>
+
+<p>To get around this, a lot of people copy their private keys around to anyplace they need them. Not only does this not
+scale if you’re someone that has more than one or two SSH keys for things, but from a security perspective it&rsquo;s like
+leaving your keys in the door to your office. It&rsquo;s easy to loose track of where your keys are all living and it&rsquo;s even
+harder to ensure the security of the remote machines over time- especially if other folks have access to the same box and
+could potentially copy your private keys themselves. Fortunately, your operating system is ready to help you with a built
+in program called <code>ssh-agent</code>.</p>
+
+<p>To take advantage of SSH Agent you need to tell it about your keys. If you only have a single default SSH key you can
+just run <code>ssh-add</code> (on OS X run <code>ssh-add -K</code>) if you have multiple keys use <code>ssh-add PATH/TO/PRIVATE_KEY</code>. This stores
+your key data in your local SSH Agent which can be made to handle cryptographic challenges from remote systems using a
+feature called SSH Agent forwarding.</p>
+
+<p>Note that generally SSH Agent will only hold onto these keys until you reboot your system. If you need to remote into systems frequently
+you should consider updating your local <code>~/.bash_profile</code> file by adding the <code>ssh-add</code> commands for the keys you regularly use
+so that your agent is always ready to go. Some operating systems will do this for you automatically once you&rsquo;ve used SSH Agent once,
+but I always add the lines in my shell profile just to be sure, and because I’m a crazy person that uses Linux.</p>
+
+<p>Now the next time you SSH into a machine just pass the <code>-A</code> flag which enables the SSH Agent forwarding feature:</p>
+
+<pre><code>ssh -A username@serveraddress
+</code></pre>
+
+<p>This feature ensures that whenever the remote system receives a cryptographic challenge requiring a keypair it doesn’t have,
+the request is sent over your SSH tunnel so your local machine can respond. That&rsquo;s important to understand; SSH Agent is not just
+copying your keys onto the remote system for you, instead your keys remain securely on your local system and auth
+requests are simply forwarded along.</p>
+
+<p>The end result is that your remote machine is granted access to anything your local machine has access to. The best
+part is that SSH Agent will loop through every key it knows about until it finds one that works or it runs out of keys.
+So if you have lots of keys you don’t need to explicitly say which to use for any given task, so long as they’ve been <code>ssh-add</code>’d your
+agent can handle the rest.</p>
+
+<h2 id="a-psa-about-encrypting-your-private-key">A PSA about encrypting your private key</h2>
+
+<p>I give this speech all the time to folks new to SSH and I&rsquo;m sure it mostly falls on deaf ears, but please understand:
+<em>possession of your private key is proof of identity</em>. That means if someone were to steal your private key, say from a
+remote system you copied it onto, that thumb drive you carry around, your unencrypted laptop, etc they could effectively
+impersonate you to any service or system setup for key based auth.</p>
+
+<p>SSH has built in protection from this threat model: it allows you to easily add a passphrase to your key. That
+passphrase encrypts your key so it cannot be used until the passphease is entered and the key is decrypted. Please set a
+passphrase on your SSH keys today!</p>
+
+<p>SSH agent and your OS&rsquo;s keychain are able to save these passwords so you don&rsquo;t have to
+constantly enter it everytime you use your key (only once per key per session). While it&rsquo;s true that the majority of
+folks will probably never have their private key stolen, setting a passphrase and using SSH Agent forwarding
+improves your SSH security dramatically, while also making it a lot easier to work securely on remote systems as this post
+has hopefully shown.</p>
+
+<p>If you want to learn more about how to leverage SSH&rsquo;s features checkout the previous post in this series about <a href="https://mattsurabian.github.io/use-ssh-run-one-off-commands-to-securely-interact-with-a-server/">running
+ad-hoc commands to securely interact with remove services</a>.</p>
+</div>
+  </div>
+
+  <footer class="article-footer">
+    <aside class="p-share">
+    <div class="share-inner">
+        <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fmattsurabian.github.io%2fuse-ssh-stop-copying-your-private-keys-around%2f&t=Use%20SSH%3a%20Stop%20Copying%20Your%20Private%20Keys%20Around" title="Facebook" class="fb" target="_blank" rel="nofollow"></a>
+        <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fmattsurabian.github.io%2fuse-ssh-stop-copying-your-private-keys-around%2f&text=Use%20SSH%3a%20Stop%20Copying%20Your%20Private%20Keys%20Around&tw_p=tweetbutton" title="Twitter" class="tw" target="_blank" rel="nofollow"></a>
+        <a href="https://plus.google.com/share?url=https%3a%2f%2fmattsurabian.github.io%2fuse-ssh-stop-copying-your-private-keys-around%2f" title="Google Plus" class="gp" target="_blank" rel="nofollow"></a>
+        <a href="https://www.linkedin.com/cws/share?url=https%3a%2f%2fmattsurabian.github.io%2fuse-ssh-stop-copying-your-private-keys-around%2f" title="LinkedIn" class="ln" target="_blank" rel="nofollow"></a>
+    </div>
+</aside>
+
     <div class="content-inner">
+      <ol class="p-crumb">
+        <li><a href="https://mattsurabian.github.io/"><i class="home"></i></a></li>
+        
+        <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://mattsurabian.github.io/posts/" itemprop="url"><span itemprop="title">posts</span></a></li>
+        
+        <li>Use SSH: Stop Copying Your Private Keys Around</li>
+      </ol>
+
+      
+      
+      
+      
+      
+      
+    </div>
+  </footer>
+
+</article>
+
+  <amp-iframe width=600 height=175
+            layout="responsive"
+            sandbox="allow-scripts allow-same-origin allow-modals allow-popups allow-forms"
+            resizable
+            src="https://mattsurabian.com/js/amp-disqus-uc.html?identifier=use-ssh-stop-copying-your-private-keys-around">
+    <div overflow tabindex=0 role=button aria-label="Load more comments..." style="text-align:right"><em>Click to load more comments...</em></div>
+</amp-iframe>
+
+  
+  
+  <section>
+    <header>Recent articles</header>
+    <ul class="p-articles bordered">
+      
+      <li><article class="li sm article-447283c5f075ce5b89dc62310cfcf120">
+  <div class="content-inner">
+    <header class="article-header">
       <div class="clearfix">
-        <h2 class="title"><a href="https://mattsurabian.github.io/use-docker-clean-room-style-build-and-test-environments/">Use Docker: Clean Room Style Build and Test Environments</a></h2>
+        <a href="https://mattsurabian.github.io/use-docker-clean-room-style-build-and-test-environments/" class="thumbnail" title="Use Docker: Clean Room Style Build and Test Environments"></a>
+        <div class="title"><a href="https://mattsurabian.github.io/use-docker-clean-room-style-build-and-test-environments/">Use Docker: Clean Room Style Build and Test Environments</a></div>
         <ul class="p-facts">
           <li><i class="inline calendar"></i><time datetime="2017-11-09T17:00:00JST">11.9.2017</time></li>
           <li><i class="inline cursor"></i><a href="https://mattsurabian.github.io/posts/">posts</a></li>
           
         </ul>
       </div>
-    </div>
-    <a href="https://mattsurabian.github.io/use-docker-clean-room-style-build-and-test-environments/" class="thumbnail" title="Use Docker: Clean Room Style Build and Test Environments"></a>
-  </header>
-  <div class="content-inner">
-    <div class="article-body summary">This post is part of a series about using Docker in your development workflow even if you’re not ready to start shipping containers into production. Whether you’re just getting started with VMs and Vagrant, have avoided Docker because it seems too complicated, or are just looking for ideas on how to use Docker more, this series covers some of the things that helped me start loving it.
-Docker is a consistent on-demand computing environment My next aha moment with Docker came while I was working with an application that had a lot of prerequisites that developers were expected to set up on their machines in order to produce a build or run the test suite.</div>
-    <footer class="readmore"><a href="https://mattsurabian.github.io/use-docker-clean-room-style-build-and-test-environments/">READ MORE</a></footer>
+    </header>
   </div>
 </article>
-</li><li><article class="li article-743d7ce5f0ae96e8ead36f2d6a6c9120">
-  <header class="article-header">
-    <div class="content-inner">
+</li><li><article class="li sm article-743d7ce5f0ae96e8ead36f2d6a6c9120">
+  <div class="content-inner">
+    <header class="article-header">
       <div class="clearfix">
-        <h2 class="title"><a href="https://mattsurabian.github.io/use-docker-isolated-ad-hoc-dependencies/">Use Docker: Isolated Ad Hoc Dependencies</a></h2>
+        <a href="https://mattsurabian.github.io/use-docker-isolated-ad-hoc-dependencies/" class="thumbnail" title="Use Docker: Isolated Ad Hoc Dependencies"></a>
+        <div class="title"><a href="https://mattsurabian.github.io/use-docker-isolated-ad-hoc-dependencies/">Use Docker: Isolated Ad Hoc Dependencies</a></div>
         <ul class="p-facts">
           <li><i class="inline calendar"></i><time datetime="2017-10-30T17:00:00JST">10.30.2017</time></li>
           <li><i class="inline cursor"></i><a href="https://mattsurabian.github.io/posts/">posts</a></li>
           
         </ul>
       </div>
-    </div>
-    <a href="https://mattsurabian.github.io/use-docker-isolated-ad-hoc-dependencies/" class="thumbnail" title="Use Docker: Isolated Ad Hoc Dependencies"></a>
-  </header>
-  <div class="content-inner">
-    <div class="article-body summary">This post is part of a series about using Docker in your development workflow even if you’re not ready to start shipping containers into production. Whether you’re just getting started with VMs and Vagrant, have avoided Docker because it seems too complicated, or are just looking for ideas on how to use Docker more, this series covers some of the things that helped me start loving it.
-My First Aha Moment About two years ago I was working as a consultant with an application I had never run locally before and it needed a Redis server.</div>
-    <footer class="readmore"><a href="https://mattsurabian.github.io/use-docker-isolated-ad-hoc-dependencies/">READ MORE</a></footer>
+    </header>
   </div>
 </article>
-</li><li><article class="li article-bac65f6094b5285dd310804a2da40299">
-  <header class="article-header">
-    <div class="content-inner">
+</li><li><article class="li sm article-bac65f6094b5285dd310804a2da40299">
+  <div class="content-inner">
+    <header class="article-header">
       <div class="clearfix">
-        <h2 class="title"><a href="https://mattsurabian.github.io/use-ssh-run-one-off-commands-to-securely-interact-with-a-server/">Use SSH: Run One Off Commands To Securely Interact With A Server</a></h2>
+        <a href="https://mattsurabian.github.io/use-ssh-run-one-off-commands-to-securely-interact-with-a-server/" class="thumbnail" title="Use SSH: Run One Off Commands To Securely Interact With A Server"></a>
+        <div class="title"><a href="https://mattsurabian.github.io/use-ssh-run-one-off-commands-to-securely-interact-with-a-server/">Use SSH: Run One Off Commands To Securely Interact With A Server</a></div>
         <ul class="p-facts">
           <li><i class="inline calendar"></i><time datetime="2017-10-27T17:00:00JST">10.27.2017</time></li>
           <li><i class="inline cursor"></i><a href="https://mattsurabian.github.io/posts/">posts</a></li>
           
         </ul>
       </div>
-    </div>
-    <a href="https://mattsurabian.github.io/use-ssh-run-one-off-commands-to-securely-interact-with-a-server/" class="thumbnail" title="Use SSH: Run One Off Commands To Securely Interact With A Server"></a>
-  </header>
-  <div class="content-inner">
-    <div class="article-body summary">This post is part of a series about using SSH more effectively. SSH is one of those programs that a lot of developers interact with but few seem to take full advantage of. This series highlights some of the very powerful features that have saved me a lot of time over the years.
-Passing Commands To SSH You can run a quick command on a remote system without needing to open a whole persistent terminal session.</div>
-    <footer class="readmore"><a href="https://mattsurabian.github.io/use-ssh-run-one-off-commands-to-securely-interact-with-a-server/">READ MORE</a></footer>
+    </header>
   </div>
 </article>
-</li><li><article class="li article-4cedcca77a8a54ec3063c09ef62c0f9d">
-  <header class="article-header">
-    <div class="content-inner">
+</li><li><article class="li sm article-4cedcca77a8a54ec3063c09ef62c0f9d">
+  <div class="content-inner">
+    <header class="article-header">
       <div class="clearfix">
-        <h2 class="title"><a href="https://mattsurabian.github.io/3-ways-docker-has-improved-my-development-workflow/">3 Ways Docker Has Improved My Development Workflow</a></h2>
+        <a href="https://mattsurabian.github.io/3-ways-docker-has-improved-my-development-workflow/" class="thumbnail" title="3 Ways Docker Has Improved My Development Workflow"></a>
+        <div class="title"><a href="https://mattsurabian.github.io/3-ways-docker-has-improved-my-development-workflow/">3 Ways Docker Has Improved My Development Workflow</a></div>
         <ul class="p-facts">
           <li><i class="inline calendar"></i><time datetime="2017-10-25T17:00:00JST">10.25.2017</time></li>
           <li><i class="inline cursor"></i><a href="https://mattsurabian.github.io/posts/">posts</a></li>
           
         </ul>
       </div>
-    </div>
-    <a href="https://mattsurabian.github.io/3-ways-docker-has-improved-my-development-workflow/" class="thumbnail" title="3 Ways Docker Has Improved My Development Workflow"></a>
-  </header>
-  <div class="content-inner">
-    <div class="article-body summary">When Docker came out four years ago it seemed to me like complicated virtual machines with an obtuse workflow, and like a fool I decided it didn’t seem worth the trouble. I should have taken it as a sign that people way smarter than me like Jessie Frazelle were all over containers and doing really cool things right with them right out of the gate. Instead, I buried my head in the sand, thinking that containers were “too much for my needs”.</div>
-    <footer class="readmore"><a href="https://mattsurabian.github.io/3-ways-docker-has-improved-my-development-workflow/">READ MORE</a></footer>
+    </header>
   </div>
 </article>
-</li><li><article class="li article-e63d5bd7546c161599039701fdabb73e">
-  <header class="article-header">
-    <div class="content-inner">
+</li><li><article class="li sm article-e63d5bd7546c161599039701fdabb73e">
+  <div class="content-inner">
+    <header class="article-header">
       <div class="clearfix">
-        <h2 class="title"><a href="https://mattsurabian.github.io/debugging-process-signaling-in-bash/">Debugging Process Signaling In Bash</a></h2>
+        <a href="https://mattsurabian.github.io/debugging-process-signaling-in-bash/" class="thumbnail" title="Debugging Process Signaling In Bash"></a>
+        <div class="title"><a href="https://mattsurabian.github.io/debugging-process-signaling-in-bash/">Debugging Process Signaling In Bash</a></div>
         <ul class="p-facts">
           <li><i class="inline calendar"></i><time datetime="2017-10-23T17:00:00JST">10.23.2017</time></li>
           <li><i class="inline cursor"></i><a href="https://mattsurabian.github.io/posts/">posts</a></li>
           
         </ul>
       </div>
-    </div>
-    <a href="https://mattsurabian.github.io/debugging-process-signaling-in-bash/" class="thumbnail" title="Debugging Process Signaling In Bash"></a>
-  </header>
-  <div class="content-inner">
-    <div class="article-body summary">Recently I was working on this blog in my favorite IDE: IntelliJ IDEA. This blog is a hugo site and recently I noticed that whenever I ran hugo serve locally from inside my IDE I was unable to ctrl-c out of it. I didn&rsquo;t remember this being a problem the last time I was using hugo. So I did what any developer might do in this situation: cried to the internet for help.</div>
-    <footer class="readmore"><a href="https://mattsurabian.github.io/debugging-process-signaling-in-bash/">READ MORE</a></footer>
-  </div>
-</article>
-</li><li><article class="li article-b264197169c0eed62762dfca90983ec9">
-  <header class="article-header">
-    <div class="content-inner">
-      <div class="clearfix">
-        <h2 class="title"><a href="https://mattsurabian.github.io/use-ssh-configure-key-based-access-automatically/">Use SSH: Configure Key Based Access Automatically</a></h2>
-        <ul class="p-facts">
-          <li><i class="inline calendar"></i><time datetime="2017-10-20T18:00:00JST">10.20.2017</time></li>
-          <li><i class="inline cursor"></i><a href="https://mattsurabian.github.io/posts/">posts</a></li>
-          
-        </ul>
-      </div>
-    </div>
-    <a href="https://mattsurabian.github.io/use-ssh-configure-key-based-access-automatically/" class="thumbnail" title="Use SSH: Configure Key Based Access Automatically"></a>
-  </header>
-  <div class="content-inner">
-    <div class="article-body summary">This post is part of a series about using SSH more effectively. SSH is one of those programs that a lot of developers interact with but few seem to take full advantage of. This series highlights some of the very powerful features that have saved me a lot of time over the years.
-Stop typing your password when connecting to remote servers I really hate having to type my password over and over again when logging into remote machines.</div>
-    <footer class="readmore"><a href="https://mattsurabian.github.io/use-ssh-configure-key-based-access-automatically/">READ MORE</a></footer>
-  </div>
-</article>
-</li><li><article class="li article-7c507f28ab3f4c9e333e370dfba69926">
-  <header class="article-header">
-    <div class="content-inner">
-      <div class="clearfix">
-        <h2 class="title"><a href="https://mattsurabian.github.io/youre-using-ssh-wrong/">You&#39;re Using SSH Wrong</a></h2>
-        <ul class="p-facts">
-          <li><i class="inline calendar"></i><time datetime="2017-10-20T17:00:00JST">10.20.2017</time></li>
-          <li><i class="inline cursor"></i><a href="https://mattsurabian.github.io/posts/">posts</a></li>
-          
-        </ul>
-      </div>
-    </div>
-    <a href="https://mattsurabian.github.io/youre-using-ssh-wrong/" class="thumbnail" title="You&#39;re Using SSH Wrong"></a>
-  </header>
-  <div class="content-inner">
-    <div class="article-body summary">Ok, maybe you’re not using it wrong exactly, but I’m willing to bet there are some pretty awesome features you could be using that would make your life easier. In this series I’ll cover some of my favorite SSH features that you can hopefully put to use right away and save yourself some time. This series assumes you already have at least one SSH key pair created that lives in the default location ~/.</div>
-    <footer class="readmore"><a href="https://mattsurabian.github.io/youre-using-ssh-wrong/">READ MORE</a></footer>
-  </div>
-</article>
-</li><li><article class="li article-be3c5db3951565a06e6b7142e8e227f4">
-  <header class="article-header">
-    <div class="content-inner">
-      <div class="clearfix">
-        <h2 class="title"><a href="https://mattsurabian.github.io/one-weird-old-trick-that-changed-my-digital-life-forever.../">One weird old trick that changed my digital life forever...</a></h2>
-        <ul class="p-facts">
-          <li><i class="inline calendar"></i><time datetime="2017-10-18T17:00:00JST">10.18.2017</time></li>
-          <li><i class="inline cursor"></i><a href="https://mattsurabian.github.io/posts/">posts</a></li>
-          
-        </ul>
-      </div>
-    </div>
-    <a href="https://mattsurabian.github.io/one-weird-old-trick-that-changed-my-digital-life-forever.../" class="thumbnail" title="One weird old trick that changed my digital life forever..."></a>
-  </header>
-  <div class="content-inner">
-    <div class="article-body summary">Today is the first day of the rest of my digital life. I quit Twitter on Sunday evening after reflecting on some of the pros/cons:
-   In an M Night Shyamalan twist this means the only social network I&rsquo;m on these days is LinkedIn where I&rsquo;ve commandeered the im-matt-surabian short link.
-Last night I purchased the shockingly available domain name weirdoldtricks.com at the urging of my good friend Tyler Kellen from Going Slowly.</div>
-    <footer class="readmore"><a href="https://mattsurabian.github.io/one-weird-old-trick-that-changed-my-digital-life-forever.../">READ MORE</a></footer>
-  </div>
-</article>
-</li><li><article class="li article-bccf15e04bab0fba8f39aeeb74a295dd">
-  <header class="article-header">
-    <div class="content-inner">
-      <div class="clearfix">
-        <h2 class="title"><a href="https://mattsurabian.github.io/podcasting-with-jekyll/">Podcasting With Jekyll</a></h2>
-        <ul class="p-facts">
-          <li><i class="inline calendar"></i><time datetime="2015-06-02T17:00:00JST">6.2.2015</time></li>
-          <li><i class="inline cursor"></i><a href="https://mattsurabian.github.io/posts/">posts</a></li>
-          
-        </ul>
-      </div>
-    </div>
-    <a href="https://mattsurabian.github.io/podcasting-with-jekyll/" class="thumbnail" title="Podcasting With Jekyll"></a>
-  </header>
-  <div class="content-inner">
-    <div class="article-body summary">At the beginning of this year Matt Gagne, Adam Jarret, and I finally decided to follow through with our idea to record a podcast together; it&rsquo;s called Rubber Ducking and we try to record twice a month. We started out by making sure everyone was setup to properly record vocals and did a few riff sessions to determine the overall tone and content. Given that we&rsquo;re three loudmouths from New England, this was the easy part.</div>
-    <footer class="readmore"><a href="https://mattsurabian.github.io/podcasting-with-jekyll/">READ MORE</a></footer>
-  </div>
-</article>
-</li><li><article class="li article-4a1425d67d83daf404e93baea7b2a9b1">
-  <header class="article-header">
-    <div class="content-inner">
-      <div class="clearfix">
-        <h2 class="title"><a href="https://mattsurabian.github.io/a-proxpn-client-for-linux/">A ProXPN Client for Linux</a></h2>
-        <ul class="p-facts">
-          <li><i class="inline calendar"></i><time datetime="2015-04-30T17:00:00JST">4.30.2015</time></li>
-          <li><i class="inline cursor"></i><a href="https://mattsurabian.github.io/projects/">projects</a></li>
-          
-        </ul>
-      </div>
-    </div>
-    <a href="https://mattsurabian.github.io/a-proxpn-client-for-linux/" class="thumbnail" title="A ProXPN Client for Linux"></a>
-  </header>
-  <div class="content-inner">
-    <div class="article-body summary">At the end of 2014 I switched to Arch Linux from OS X. I&rsquo;d though about making the switch before, and for the first time everything lined up to make it so. All of the programs I used on a daily basis would run fine or had solid alternatives available. I had to give up a few programs I only used occasionally, and for the most part they haven&rsquo;t been missed.</div>
-    <footer class="readmore"><a href="https://mattsurabian.github.io/a-proxpn-client-for-linux/">READ MORE</a></footer>
+    </header>
   </div>
 </article>
 </li>
-  </ul>
+    </ul>
+  </section>
+  
 </div>
-
-
-<div class="content-inner">
-  <nav class="clearfix p-paginator">
-    
-    
-    <a href="/page/2/" rel="next" class="next"></a>
-    
-  </nav>
-</div>
-
 
 
     </main>
