@@ -5,10 +5,21 @@
     <link>https://mattsurabian.github.io/</link>
     <description>Recent content on Matt vs Computers</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 16 Nov 2017 17:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 20 Apr 2018 17:00:00 +0100</lastBuildDate>
     
 	<atom:link href="https://mattsurabian.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CFSummit NA 2018: Managing Container Secrets at Scale</title>
+      <link>https://mattsurabian.github.io/cfsummit-na-2018-managing-container-secrets-at-scale/</link>
+      <pubDate>Fri, 20 Apr 2018 17:00:00 +0100</pubDate>
+      
+      <guid>https://mattsurabian.github.io/cfsummit-na-2018-managing-container-secrets-at-scale/</guid>
+      <description>This talk was given in April at the Cloudfoundry North American summit as part of the containers &amp;amp; serverless track.
+The abstract for this talk was:
+ Secret management for containers at scale is a huge challenge, especially if you have compliance requirements like regular rotation of credentials, auditability, and emergency response time. Thankfully there are lots of great community projects that are able to help; the trick is knowing which to leverage given your threat model.</description>
+    </item>
     
     <item>
       <title>Use SSH: Stop Copying Your Private Keys Around</title>
