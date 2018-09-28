@@ -7,6 +7,7 @@ googleAnalytics = "UA-40781616-1" # Optional
 [permalinks]
   posts = "/:title/"
   projects = "/:title/"
+  presentations = "/:title/"
 
 [params]
   contact = "matt@mattsurabian.com" # Optional
@@ -17,4 +18,5 @@ googleAnalytics = "UA-40781616-1" # Optional
   logofontfamily = "'Oswald', sans-serif" # Optional, Override logo font.
   ampscripts = """
   <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+  <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
   """
