@@ -5,10 +5,21 @@
     <link>https://mattsurabian.github.io/</link>
     <description>Recent content on Matt vs Computers</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 20 Apr 2018 17:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 24 Sep 2018 17:00:00 +0100</lastBuildDate>
     
 	<atom:link href="https://mattsurabian.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>DevOpsDays Boston 2018: Vault at Scale</title>
+      <link>https://mattsurabian.github.io/devopsdays-boston-2018-vault-at-scale/</link>
+      <pubDate>Mon, 24 Sep 2018 17:00:00 +0100</pubDate>
+      
+      <guid>https://mattsurabian.github.io/devopsdays-boston-2018-vault-at-scale/</guid>
+      <description>This talk was given in September at DevOpsDays Boston.
+The abstract for this talk was:
+ As an organization with 25 production environments and over 6,000 containerized applications we have a lot of secrets to manage. Enough to run 12 geographically distributed HA Vault deployments across multiple cloud providers. Even though the Open Source community provides us with some really awesome tooling, managing that many Vault environments can be tricky.</description>
+    </item>
     
     <item>
       <title>CFSummit NA 2018: Managing Container Secrets at Scale</title>
