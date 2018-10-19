@@ -16,4 +16,10 @@ The abstract for this talk was:
 The slides are available via Google slides:
 [http://bit.ly/devopsdays2018-vault-at-scale](http://bit.ly/devopsdays2018-vault-at-scale)
 
-There was a video of the talk taken but it is not available yet.
+A video of the talk is available on the Confreaks youtube channel:
+
+<amp-youtube
+    data-videoid="Y6MMnQ6mtLg"
+    layout="responsive"
+    width="480" height="270"></amp-youtube>
+
